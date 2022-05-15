@@ -1,0 +1,10 @@
+name: Video
+form: $/ssi/sekcje/models/video/fields.yaml
+modelClass: SSI\Sekcje\Models\Video
+defaultRedirect: ssi/sekcje/video
+create:
+    redirect: 'ssi/sekcje/video/update/:id'
+    redirectClose: ssi/sekcje/video
+update:
+    redirect: ssi/sekcje/video
+    redirectClose: ssi/sekcje/video

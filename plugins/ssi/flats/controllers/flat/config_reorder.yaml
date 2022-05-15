@@ -1,0 +1,5 @@
+title: Flat
+modelClass: SSI\Flats\Models\Flat
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

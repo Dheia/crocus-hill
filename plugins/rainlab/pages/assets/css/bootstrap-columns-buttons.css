@@ -1,0 +1,22 @@
+.row {
+  position: relative;
+}
+.row::after{
+  content: 'Remove column: ctrl+shift+backspace';
+  width: 280px;
+  height: 25px;
+  color: #ffffff;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .3s ease-in-out;
+}
+.row:hover::after{
+  background-color: lightcoral;
+}
+.row div {
+  border: 1px solid rgba(0,0,0,.2);
+  min-height: 50px;
+  padding: 5px 15px;
+}

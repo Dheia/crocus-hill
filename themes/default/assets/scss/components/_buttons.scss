@@ -1,0 +1,33 @@
+.button {
+  color: $color-font-light;
+  padding: 15px 20px;
+  transition-property: color, border, background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+  background-color: $color-main;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  border: solid 1px $color-main;
+  align-self: flex-start;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    color: $color-main;
+    border-color: $color-main;
+  }
+
+  &--secondary{
+    background-color: transparent;
+    color: $color-main;
+    border-color: $color-main;
+
+    &:hover {
+      color: $color-font-light;
+      background-color: $color-main;
+      border-color: $color-main;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+title: News
+modelClass: SSI\News\Models\News
+nameFrom: sort_order
+toolbar:
+    buttons: reorder_toolbar

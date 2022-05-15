@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: false
+        sortable: true
+    name:
+        label: nazwa
+        type: text
+        searchable: true
+        sortable: true
+    area:
+        label: metraż
+        type: text
+        searchable: true
+        sortable: true
+    building:
+      label: budynek
+      relation: building
+      select: name
+      sortable: true

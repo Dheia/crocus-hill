@@ -1,0 +1,6 @@
+plugin:
+    name: 'ssi.popup::lang.plugin.name'
+    description: 'ssi.popup::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-comment-o
+    homepage: ''

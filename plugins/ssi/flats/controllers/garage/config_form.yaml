@@ -1,0 +1,11 @@
+name: Garage
+modelClass: SSI\Flats\Models\Garage
+form: $/ssi/flats/models/garage/fields.yaml
+defaultRedirect: ssi/flats/garage
+create:
+    redirect: 'ssi/flats/garage/update/:id'
+    redirectClose: ssi/flats/garage
+update:
+    redirect: ssi/flats/garage
+    redirectClose: ssi/flats/garage
+preview: {  }

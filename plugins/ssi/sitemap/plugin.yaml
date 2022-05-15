@@ -1,0 +1,6 @@
+plugin:
+    name: 'ssi.sitemap::lang.plugin.name'
+    description: 'Plugin umożliwiający generowanie sitemap.xml'
+    author: SSI
+    icon: oc-icon-sitemap
+    homepage: ''

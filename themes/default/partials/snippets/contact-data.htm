@@ -1,0 +1,78 @@
+description = "Dane kontaktowe - do uzupełnienia Settings->Front-end theme->Customize"
+
+[viewBag]
+snippetCode = "contact"
+snippetName = "Dane kontaktowe"
+==
+
+
+
+<div class="contact-data">
+    {% if this.theme.contact_name %}
+        <div class="contact-data__section contact-data__section--name">
+            {{ this.theme.contact_name | raw }}
+        </div>
+    {% endif %}
+    {% if this.theme.contact_address %}
+        <div class="contact-data__section">
+            <div class="contact-data__icon">
+                {% partial 'svg/address' %}
+            </div>
+            <div class="contact-data__content">
+                {{ this.theme.contact_address | raw }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if this.theme.contact_hours %}
+        <div class="contact-data__section contact-data__section--hours">
+            <div class="contact-data__icon">
+                {% partial 'svg/clock' %}
+            </div>
+            <div class="contact-data__content">
+                {{ this.theme.contact_hours | raw }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if this.theme.contact_phones %}
+        <div class="contact-data__section">
+            <div class="contact-data__icon">
+                {% partial 'svg/phone' %}
+            </div>
+            <div class="contact-data__content contact-data__content--phones">
+                {% for item in this.theme.contact_phones %}
+                    <a href="tel:{{ item.contact_phone | replace({' ': '' }) }}" class="contact-data__phone">
+                        {{ item.contact_phone }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if this.theme.contact_emails %}
+        <div class="contact-data__section">
+            <div class="contact-data__icon">
+                {% partial 'svg/mail' %}
+            </div>
+            <div class="contact-data__content contact-data__content--emails">
+                {% for item in this.theme.contact_emails %}
+                    <a href="mailto:{{ item.contact_email }}" class="contact-data__email">
+                        {{ item.contact_email }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if this.theme.contact_fb or this.theme.contact_insta %}
+        <div class="contact-data__section contact-data__section--social">
+            <a href="{{ this.theme.contact_fb }}" class="contact-data__fb" target="_blank">
+                {% partial 'svg/social/fb' %}
+            </a>
+            <a href="{{ this.theme.contact_insta }}" class="contact-data__insta" target="_blank">
+                {% partial 'svg/social/insta' %}
+            </a>
+        </div>
+    {% endif %}
+</div>

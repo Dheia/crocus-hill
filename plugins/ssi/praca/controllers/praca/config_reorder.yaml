@@ -1,0 +1,4 @@
+title: Praca
+modelClass: Ssi\Praca\Models\Praca
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,4 @@
+title: Ikony
+modelClass: SSI\Sekcje\Models\Ikony
+toolbar:
+    buttons: reorder_toolbar

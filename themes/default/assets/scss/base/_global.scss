@@ -1,0 +1,167 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.blocked{
+  overflow: hidden;
+}
+
+.site-wrapper{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    @include mq($until: md){
+      overflow: hidden;
+      position: relative;
+    }
+}
+
+.map{
+  @include mq($until: md){
+    max-height: 400px;
+  }
+  @include mq($until: xs){
+    max-height: 250px;
+  }
+}
+
+$padding-xxl: 8vw;
+$padding-xl: 100px;
+$padding-lg: 50px;
+$padding-sm: 30px;
+$padding-xs: 15px;
+
+.padding-container{
+  padding-left: $padding-xxl;
+  padding-right: $padding-xxl;
+  @include mq($until: xl){
+    padding-left: $padding-xl;
+    padding-right: $padding-xl;
+  }
+  @include mq($until: lg) {
+    padding-left: $padding-lg;
+    padding-right: $padding-lg;
+  }
+  @include mq($until: sm) {
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+  }
+  @include mq($until: xs) {
+    padding-left: $padding-xs;
+    padding-right: $padding-xs;
+  }
+  &-left{
+    padding-left: $padding-xxl;
+    @include mq($until: xl){
+      padding-left: $padding-xl;
+    }
+    @include mq($until: lg) {
+      padding-left: $padding-lg;
+    }
+    @include mq($until: sm) {
+      padding-left: $padding-sm;
+    }
+    @include mq($until: xs) {
+      padding-left: $padding-xs;
+    }
+  }
+  &-right{
+    padding-right: $padding-xxl;
+    @include mq($until: xl){
+      padding-right: $padding-xl;
+    }
+    @include mq($until: lg) {
+      padding-right: $padding-lg;
+    }
+    @include mq($until: sm) {
+      padding-right: $padding-sm;
+    }
+    @include mq($until: xs) {
+      padding-right: $padding-xs;
+    }
+  }
+}
+
+.margin-container{
+  margin-left: $padding-xxl;
+  margin-right: $padding-xxl;
+  @include mq($until: xl){
+    margin-left: $padding-xl;
+    margin-right: $padding-xl;
+  }
+  @include mq($until: lg) {
+    margin-left: $padding-lg;
+    margin-right: $padding-lg;
+  }
+  @include mq($until: sm) {
+    margin-left: $padding-sm;
+    margin-right: $padding-sm;
+  }
+  @include mq($until: xs) {
+    margin-left: $padding-xs;
+    margin-right: $padding-xs;
+  }
+  &-left{
+    margin-left: $padding-xxl;
+    @include mq($until: xl){
+      margin-left: $padding-xl;
+    }
+    @include mq($until: lg) {
+      margin-left: $padding-lg;
+    }
+    @include mq($until: sm) {
+      margin-left: $padding-sm;
+    }
+    @include mq($until: xs) {
+      margin-left: $padding-xs;
+    }
+  }
+  &-right{
+    margin-right: $padding-xxl;
+    @include mq($until: xl){
+      margin-right: $padding-xl;
+    }
+    @include mq($until: lg) {
+      margin-right: $padding-lg;
+    }
+    @include mq($until: sm) {
+      margin-right: $padding-sm;
+    }
+    @include mq($until: xs) {
+      margin-right: $padding-xs;
+    }
+  }
+}
+
+footer{
+    margin-top: auto;
+}
+
+.no-gutters{
+    & > .col-left{
+        padding-right: 30px;
+        @include mq($until: md) {padding-right: 0;}
+    }
+    & > .col-right{
+        padding-left: 30px;
+        @include mq($until: md) {padding-left: 0;}
+    }
+}
+
+.col-left, .col-right, col-inside{
+    margin-bottom: 30px;
+}
+
+.leaflet-marker-icon{
+  width: auto !important;
+}
+
+// no list decoration
+.nd {
+  li {
+    padding-left: 0;
+    list-style: none;
+    &::before {
+      content: none;
+    }
+  }
+}

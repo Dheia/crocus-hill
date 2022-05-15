@@ -1,0 +1,117 @@
+fields:
+    title:
+        label: Tytuł
+        span: left
+        required: 1
+        type: text
+    categories:
+        label: Kategoria
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    slug:
+        label: Slug
+        span: left
+        disabled: 1
+        required: 1
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
+        type: text
+    published_at:
+        label: 'Data utworzenia'
+        mode: date
+        format: d.m.Y
+        span: right
+        type: datepicker
+    visibility:
+        label: 'Widoczność aktualności'
+        span: left
+        default: 1
+        type: switch
+    on_main:
+        label: 'Widoczność na stronie głównej'
+        span: left
+        type: switch
+    promo:
+        label: 'Aktualność promowana'
+        span: right
+        type: switch
+        comment: 'Akualność będzie wyświetlała się dodatkowo na górze listy'
+    promo_end:
+        label: 'Data końca promowania'
+        mode: date
+        format: d.m.Y
+        span: right
+        type: datepicker
+tabs:
+    fields:
+        excerpt:
+            label: 'Krótki opis'
+            size: small
+            span: full
+            required: 1
+            type: textarea
+            commentAbove: 'Krótki opis jest widoczny na stronie głównej'
+            tab: Opis
+        content:
+            label: 'Treść posta'
+            size: giant
+            span: full
+            required: 1
+            type: richeditor
+            commentAbove: 'Treść widoczna jest po wejściu na stronę posta'
+            tab: Opis
+        image:
+            label: 'Zdjęcie główne'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: exact
+                extension: auto
+            span: auto
+            required: 0
+            type: fileupload
+            tab: Zdjęcia
+        images:
+            label: 'Galeria zdjęć'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Zdjęcia
+        show_main_image:
+            label: 'Pokazuj zdjęcie główne w aktualności'
+            span: auto
+            default: 1
+            type: switch
+            comment: 'Zdjęcie główne będzie wyświetlane również po wejściu na podstronę z konkretną aktualnością'
+            tab: Zdjęcia
+        files:
+            label: 'Lista plików'
+            mode: file
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Pliki
+        meta_title:
+            label: 'Meta title'
+            span: auto
+            type: text
+            commentAbove: 'Jeżeli to pole nie jest uzupełnione meta titlem będzie krótki opis aktualności'
+            tab: Meta
+        meta_description:
+            label: 'Meta description'
+            size: small
+            span: auto
+            type: textarea
+            commentAbove: 'Jeżeli to pole nie jest uzupełnione meta titlem będzie krótki opis aktualności'
+            tab: Meta

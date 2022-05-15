@@ -1,0 +1,208 @@
+name: default
+description: ""
+author: SSI
+homepage: "https://www.ssi.com.pl"
+code: ""
+
+form:
+  tabs:
+    fields:
+      general_logo:
+        label: Logo
+        mode: image
+        type: fileupload
+        fileTypes: svg, jpg, png
+        tab: General
+        span: left
+      general_favicon:
+        label: favicona
+        type: fileupload
+        mode: image
+        tab: General
+        span: right
+      header_fullscreen_menu:
+        label: Menu pełnoekranowe z hamburgerem
+        type: switch
+        on: tak
+        off: nie
+        tab: Header
+        permissions: is_superuser
+      header_sticky:
+        label: sticky menu
+        type: switch
+        on: tak
+        off: nie
+        tab: Header
+        permissions: is_superuser
+      header_sticky_subsites:
+        label: sticky menu na subsite
+        type: switch
+        on: tak
+        off: nie
+        tab: Header
+        permissions: is_superuser
+      header_robots:
+        label: no-index, no-follow
+        type: switch
+        default: 1
+        on: tak
+        off: nie
+        tab: Header
+        permissions: is_superuser
+      home_meta_title:
+        span: left
+        label: meta title dla strony głównej
+        type: text
+        tab: Header
+        translatable: true
+      home_meta_description:
+        span: right
+        label: meta description dla strony głównej
+        type: text
+        tab: Header
+        translatable: true
+      header_title:
+        span: left
+        label: meta title dla każdej strony
+        type: text
+        tab: Header
+        translatable: true
+      header_description:
+        span: right
+        label: meta description dla każdej strony
+        type: text
+        tab: Header
+        translatable: true
+      header_type:
+        label: og:type - opisuje rodzaj udostępnianego adresu
+        comment: Pełną listę tagów znajdziesz tutaj - http://ogp.me/#types
+        default: website
+        type: text
+        tab: Header
+      header_image:
+        label: og:image - zdjęcie wyświetlane przy udostępnianiu w social media
+        comment: Zalecana rozdzielczość zdjęć dla tagu og:image to odpowiednio 1200 x 630 oraz 600 x 315, zaś zdjęcie nie może przekroczyć 8 MB.
+        type: fileupload
+        mode: image
+        tab: Header
+      header_fbid:
+        label: fb:app_id - umieszczenie tego tagu w sekcji head pozwoli Facebookowi powiązać adres URL z aplikacją
+        type: text
+        tab: Header
+      header_scripts:
+        label: dodatkowe skrypty umieszczane na końcu head
+        type: codeeditor
+        tab: Header
+        permissions: is_superuser
+      top_bg:
+        label: Tłó topu
+        mode: image
+        type: fileupload
+        fileTypes: jpg, png
+        tab: Top
+        span: left
+      title:
+        label: Nagłówek
+        tab: Top
+        type: text
+        size: small
+        span: right
+      icons_bg:
+        label: Tłó sekcji
+        mode: image
+        type: fileupload
+        fileTypes: jpg, png
+        tab: Ikony
+        span: left
+      icons_title:
+        label: Nagłówek
+        tab: Ikony
+        type: text
+        size: small
+        span: right
+      map_marker:
+        label: Marker
+        mode: image
+        type: fileupload
+        fileTypes: jpg, png, svg
+        tab: Mapa
+        span: left
+      map_street:
+        label: Ulica
+        tab: Mapa
+        type: text
+        span: left
+      map_zip:
+        label: Kod
+        tab: Mapa
+        type: text
+        span: left
+      map_city:
+        label: Miasto
+        tab: Mapa
+        type: text
+        span: left
+      contact_name:
+        label: Nazwa firmy
+        tab: Contact
+        type: richeditor
+        size: small
+        span: left
+        translatable: true
+      contact_address:
+        label: Adres
+        tab: Contact
+        type: richeditor
+        size: small
+        span: left
+        translatable: true
+      contact_hours:
+        label: Godziny otwarcia
+        tab: Contact
+        type: richeditor
+        size: small
+        span: right
+        translatable: true
+      contact_phones:
+        label: Numery telefonów
+        tab: Contact
+        type: repeater
+        span: left
+        form:
+          fields:
+            contact_phone:
+              label: Numer telefonu
+              type: text
+      contact_emails:
+        label: Adresy e-mail
+        tab: Contact
+        type: repeater
+        span: right
+        form:
+          fields:
+            contact_email:
+              label: Adres e-mail
+              type: text
+      contact_fb:
+        label: Link do facebook
+        tab: Contact
+        type: text
+        span: left
+      contact_insta:
+        label: Link do instagram
+        tab: Contact
+        type: text
+        span: right
+      footer_name:
+        label: Nazwa firmy
+        tab: Footer
+        type: text
+        span: left
+      footer_realization:
+        label: Realizacja
+        tab: Footer
+        type: switch
+        on: SSI
+        off: HTL
+        span: left
+        permissions: is_superuser

@@ -1,0 +1,10 @@
+$delay-interval: 0.3;
+
+@for $i from 1 through 10 {
+  .delay#{$i}{
+    animation-delay: #{$i*$delay-interval}s;
+    @include mq($until: xs){
+      animation-delay: #{$delay-interval}s;
+    }
+  }
+}

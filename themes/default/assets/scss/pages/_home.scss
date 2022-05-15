@@ -1,0 +1,125 @@
+.top {
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    * {
+        color: white;
+    }
+
+    &__name {
+        font-size: 12vw;
+        text-shadow: 0px 3px 36px #0000009B;
+        line-height: 1.1;
+    }
+
+    h1 {
+        font-weight: 400;
+    }
+
+    &__button {
+        background: $bg-trans-rev;
+        padding: 20px 35px;
+        font-weight: 300;
+        font-size: rem(18px);
+        display: flex;
+        align-items: center;
+        margin: 5vw auto 3vw;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all .4s;
+
+        &:hover {
+            border: 1px solid white;
+        }
+    }
+}
+
+.arrow-down {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+
+    &::before {
+        width: 15px;
+        height: 15px;
+        content: '';
+        display: block;
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
+        transform: rotate(-45deg);
+        margin-top: 7px;
+    }
+}
+
+.two-columns {
+    margin-top: 100px;
+    display: flex;
+
+    &> div {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    &__left {
+        justify-content: space-between;
+        margin-top: 100px;
+
+        &> div {
+            padding: 50px 10%;
+            width: 85%;
+            border-right: 2px solid #b2b2b2;
+        }
+
+        img {
+            width: 95%;
+        }
+    }
+
+
+    &__right {
+        place-items: end;
+        justify-content: space-between;
+        
+        &> div {
+            width: 85%;
+            border-left: 2px solid #b2b2b2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5vw;
+        }
+
+        img {
+            width: 95%;
+        }
+
+        a {
+            margin-top: 30px;
+            font-family: $secondary-font;
+        }
+    }
+}
+
+
+.text {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    max-width: 930px;
+    text-align: center;
+    align-self: center;
+}

@@ -1,0 +1,52 @@
+.svg-icon{
+  transition: fill .3s ease-in-out;
+  @include mq($until: xs){
+    max-width: 25px;
+  }
+}
+.contact-data{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-bottom: 50px;
+  grid-gap: 30px;
+
+  @include mq($until: md){
+    grid-template-columns: 1fr;
+  }
+
+  &__section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    p{
+      margin-bottom: 0;
+    }
+    &--name{
+      display: block;
+      p{
+        font-size: rem(20px);
+        font-weight: $fw-semi-bold;
+      }
+    }
+    &--social .svg-icon{
+      max-width: unset;
+      margin-right: 5px;
+      @include mq($until: xs){
+          max-width: 35px;
+      }
+    }
+    &--social a:hover .svg-icon{
+        fill: $color-main;
+    }
+  }
+
+  &__icon{
+    margin-right: 15px;
+  }
+  &__content{
+    &--phones, &--emails{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

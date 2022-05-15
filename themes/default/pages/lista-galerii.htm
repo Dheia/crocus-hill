@@ -1,0 +1,32 @@
+title = "Galeria"
+url = "/galeria"
+layout = "subpage"
+description = "Lista galerii"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderList]
+modelClass = "SSI\Galeria\Models\Galeria"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "Nie znaleziono żadnej galerii"
+detailsPage = "galeria"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "sort_order"
+sortDirection = "asc"
+==
+<div class="gallery-list">
+    {% for record in records %}
+        {% set slug = detailsPage|page({ id: record.id, slug: record.slug}) %}
+        <a href="{{ slug }}" class="gallery-list__link">
+            <div class="gallery-list__image-wrapper">
+                <img class="gallery-list__image lazy" data-src="{{ record.images[0].path | resize(600, 450, {mode:'crop'}) }}" alt="{{ record.name }}">
+            </div>
+            <span class="gallery-list__name">{{ record.name }}</span>
+        </a>
+    {% endfor %}
+</div>

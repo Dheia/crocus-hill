@@ -1,0 +1,25 @@
+{% set section = __SELF__.section() %}
+
+<section class="article"> 
+
+    {% if section.extra %}
+        <div class="article__logo post-left delay1">
+            <img class="lazy" data-src="{{this.theme.general_logo.path}}" alt="Osiedle Słoneczne" width="240" height="100">
+        </div>
+    {% endif %}
+
+    <div class="article__image post-left delay1">
+        <img class="lazy" data-src="{{ section.img[0].path }}" alt="{{ section.name }}" height="700" width="500">
+    </div>
+
+    <div class="article__text">
+        <h3>{{ section.name }}</h3>
+
+        {{ section.description | raw }}  
+
+        {% if section.button_link %}
+            <a class="button" href="{{ section.button_link }}">{{ section.button_name }}</a>
+        {% endif %}
+    </div>
+    
+</section>

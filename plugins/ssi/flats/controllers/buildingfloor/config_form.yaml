@@ -1,0 +1,11 @@
+name: BuildingFloor
+modelClass: SSI\Flats\Models\BuildingFloor
+form: $/ssi/flats/models/buildingfloor/fields.yaml
+defaultRedirect: ssi/flats/buildingfloor
+create:
+    redirect: 'ssi/flats/buildingfloor/update/:id'
+    redirectClose: ssi/flats/buildingfloor
+update:
+    redirect: ssi/flats/buildingfloor
+    redirectClose: ssi/flats/buildingfloor
+preview: {  }

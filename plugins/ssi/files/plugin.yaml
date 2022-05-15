@@ -1,0 +1,15 @@
+plugin:
+    name: Files
+    description: 'ssi.files::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-files-o
+    homepage: ''
+permissions:
+    files_ssi_plugin:
+        tab: 'Pliki - plugin SSI'
+        label: 'Pliki - plugin SSI'
+navigation:
+    files:
+        label: Pliki
+        url: /ssi/files/files
+        icon: icon-files-o

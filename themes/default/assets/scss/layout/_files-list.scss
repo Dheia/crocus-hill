@@ -1,0 +1,65 @@
+//============
+// PLIKI
+//============
+
+/*Lista plików*/
+.files_tree .file_wrapper {
+  max-width: 810px;
+  display: flex;
+  align-items: center;
+  background: lighten($color-main, 43%);
+  margin-bottom: 10px;
+  margin-left: 25px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  padding: 0;
+}
+.files_tree .file_wrapper:hover {
+  background: lighten($color-main, 35%);
+}
+.files_tree .file_wrapper:hover .number {
+  background: darken($color-main, 10%);
+}
+.files_tree .file_wrapper .number {
+  color: white;
+  font-size: rem(27px);
+  font-weight: 600;
+  background: $color-main;
+  width: 55px;
+  min-width: 55px;
+  text-align: center;
+  border-radius: 50%;
+  height: 55px;
+  padding: rem(14px) 0px;
+  line-height: 1;
+  margin-left: -25px;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mq($until: xs){
+    padding: rem(10px) 0px;
+  }
+}
+.files_tree .file_wrapper .name_link {
+  color: #525252;
+  font-size: rem(16px);
+  font-weight: 300;
+  padding-left: 20px;
+  padding-right: 80px;
+  @include mq($until: xs){
+    padding-left: 10px;
+  }
+}
+.files_tree .file_wrapper .name_link:hover {
+  color: #000;
+}
+.files_tree .file_wrapper .cloud_link {
+  position: absolute;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  @include mq($until: xs){
+    right: 10px;
+  }
+}

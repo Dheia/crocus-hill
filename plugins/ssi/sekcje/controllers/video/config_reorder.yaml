@@ -1,0 +1,4 @@
+title: Video
+modelClass: SSI\Sekcje\Models\Video
+toolbar:
+    buttons: reorder_toolbar

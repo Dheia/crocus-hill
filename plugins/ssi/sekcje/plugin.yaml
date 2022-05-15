@@ -1,0 +1,32 @@
+plugin:
+    name: 'ssi.sekcje::lang.plugin.name'
+    description: 'ssi.sekcje::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-bars
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Sekcje
+        url: ssi/sekcje/ikony
+        icon: icon-navicon
+        sideMenu:
+            side-menu-item:
+                label: Ikony
+                url: ssi/sekcje/ikony
+                icon: icon-info-circle
+            side-menu-item2:
+                label: Galeria
+                url: ssi/galeria/galeria
+                icon: icon-table
+            slider:
+                label: Slider
+                url: ssi/galeria/slider
+                icon: icon-play
+            textandimage:
+                label: Text-and-Image
+                url: ssi/sekcje/textandimage
+                icon: icon-indent
+            video:
+                label: Video
+                url: ssi/sekcje/video
+                icon: icon-play-circle

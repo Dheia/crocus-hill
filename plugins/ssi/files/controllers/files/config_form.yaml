@@ -1,0 +1,11 @@
+name: Files
+modelClass: SSI\Files\Models\Files
+form: $/ssi/files/models/files/fields.yaml
+defaultRedirect: ssi/files/files
+create:
+    redirect: 'ssi/files/files/update/:id'
+    redirectClose: ssi/files/files
+update:
+    redirect: ssi/files/files
+    redirectClose: ssi/files/files
+preview: {  }

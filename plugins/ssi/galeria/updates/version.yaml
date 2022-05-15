@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ssi_galeria_galeria'
+    - builder_table_create_ssi_galeria_galeria.php
+1.0.3:
+    - 'Created table ssi_galeria_slider'
+    - builder_table_create_ssi_galeria_slider.php
+1.0.4:
+    - 'Updated table ssi_galeria_slider'
+    - builder_table_update_ssi_galeria_slider.php
+1.0.5:
+    - 'Updated table ssi_galeria_slider'
+    - builder_table_update_ssi_galeria_slider_2.php
+1.0.6:
+    - 'Updated table ssi_galeria_slider'
+    - builder_table_update_ssi_galeria_slider_3.php
+1.0.7:
+    - 'Updated table ssi_galeria_slider'
+    - builder_table_update_ssi_galeria_slider_4.php
+1.0.8:
+    - 'Updated table ssi_galeria_slider'
+    - builder_table_update_ssi_galeria_slider_5.php
+1.0.9:
+    - 'Updated table ssi_galeria_galeria'
+    - builder_table_update_ssi_galeria_galeria.php
+1.0.10:
+    - 'Updated table ssi_galeria_galeria'
+    - builder_table_update_ssi_galeria_galeria_2.php

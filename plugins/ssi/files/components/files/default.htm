@@ -1,0 +1,20 @@
+{% set fileList = __SELF__.files %}
+
+<div class="files_tree">
+    {% if fileList %}
+        <h3>{{ fileList.name }}</h3>
+        {% for item in fileList.files %}
+            <a href="{{ item.file | media }}" target="_blank" title="Pobierz plik" class="item file_wrapper">
+                <div class="number">
+                    {{ loop.index }}
+                </div>
+                <span class="name_link">
+                    {{ item.file_name }}
+                </span>
+                <span class="cloud_link">
+                    <img src="{{ 'assets/images/cloud.png' | theme }}" alt="Pobierz plik"/>
+                </span>
+            </a>
+        {% endfor %}
+    {% endif %}
+</div>

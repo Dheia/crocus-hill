@@ -1,0 +1,16 @@
+fields:
+    title:
+        label: Tytuł
+        span: auto
+        placeholder: 'Tytuł oferty pracy'
+        required: 1
+        type: text
+    description:
+        label: Opis
+        size: huge
+        span: auto
+        type: richeditor
+    status:
+        label: 'Aktywna / Nieaktywna'
+        span: auto
+        type: switch

@@ -1,0 +1,30 @@
+title = "Galeria"
+url = "/galeria/:id/:slug"
+layout = "subpage"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderDetails]
+modelClass = "SSI\Galeria\Models\Galeria"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "name"
+notFoundMessage = "Taka galeria nie istnieje"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <h2>{{record.name}}</h2>
+    <div class="gallery columns-four">
+        {% for image in record.images %}
+                <a href="{{image.path | resize(1400)}}" data-lightbox="{{record.id}}" class="gallery__link lazy"
+                   data-bg="{{image.path | resize(600, 450, {mode:'crop'})}}">
+                </a>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

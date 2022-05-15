@@ -1,0 +1,10 @@
+name: Building
+modelClass: SSI\Flats\Models\Building
+form: $/ssi/flats/models/building/fields.yaml
+defaultRedirect: ssi/flats/building
+create:
+    redirect: 'ssi/flats/building/update/:id'
+    redirectClose: ssi/flats/building
+update:
+    redirect: ssi/flats/building
+    redirectClose: ssi/flats/building

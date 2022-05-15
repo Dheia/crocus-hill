@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        invisible: false
+        sortable: true
+    name:
+        label: 'Nazwa zestawu ikon'
+        type: text
+        searchable: true
+        invisible: false
+        sortable: true

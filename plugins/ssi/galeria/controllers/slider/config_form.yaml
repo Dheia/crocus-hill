@@ -1,0 +1,10 @@
+name: Slider
+form: $/ssi/galeria/models/slider/fields.yaml
+modelClass: SSI\Galeria\Models\Slider
+defaultRedirect: ssi/galeria/slider
+create:
+    redirect: 'ssi/galeria/slider/update/:id'
+    redirectClose: ssi/galeria/slider
+update:
+    redirect: ssi/galeria/slider
+    redirectClose: ssi/galeria/slider

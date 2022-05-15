@@ -1,0 +1,24 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: nazwa
+        type: text
+        searchable: true
+        sortable: true
+    area:
+        label: metraż
+        type: text
+        sortable: true
+    status:
+        label: status
+        type: text
+        searchable: true
+        sortable: true
+    symbol:
+        label: symbol
+        type: text
+        searchable: true
+        sortable: true

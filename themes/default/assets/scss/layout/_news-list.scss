@@ -1,0 +1,23 @@
+.news-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    &--promo{
+        margin-bottom: 30px;
+    }
+    &__header-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__header{
+        margin-bottom: 30px;
+        &--grid{
+            grid-column-start: span 4;
+            margin-bottom: 0;
+        }
+    }
+    &__link{
+        color: $color-main;
+    }
+}

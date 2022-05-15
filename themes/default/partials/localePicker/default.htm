@@ -1,0 +1,13 @@
+[viewBag]
+==
+<div class="header--lang" id="flags">
+    <a href="#" data-request="onSwitchLocale" data-request-data="locale: 'pl'"  class="{% if language == 'pl' %} active-lang {% endif %}">
+        <img src="{{ 'assets/images/lang/pl.png' |theme}}" alt="miniaturka polskiej flagi">
+    </a>
+    <a href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'" class="{% if language == 'en' %} active-lang {% endif %}">
+        <img src="{{ 'assets/images/lang/en.png' |theme}}" alt="miniaturka angielskiej flagi">
+    </a>
+    <a href="#" data-request="onSwitchLocale" data-request-data="locale: 'de'" class="{% if language == 'de' %} active-lang {% endif %}">
+        <img src="{{ 'assets/images/lang/de.png' |theme}}" alt="miniaturka niemieckiej flagi">
+    </a>
+</div>

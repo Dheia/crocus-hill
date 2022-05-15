@@ -1,0 +1,12 @@
+list: $/ssi/sekcje/models/textandimage/columns.yaml
+modelClass: SSI\Sekcje\Models\TextAndImage
+title: TextAndImage
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ssi/sekcje/textandimage/update/:id'

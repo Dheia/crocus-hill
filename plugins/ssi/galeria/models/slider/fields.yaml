@@ -1,0 +1,180 @@
+fields:
+    name:
+        label: 'Nazwa Slidera'
+        span: full
+        required: 1
+        type: text
+    center_mode:
+        label: 'Center mode'
+        span: auto
+        default: 0
+        attributes:
+            'true': 'true'
+            'false': 'false'
+        type: switch
+        comment: 'Wyszczególnienie jednego zdjęcia'
+    padding:
+        label: 'Padding pomiędzy zdjęciami w px lub %'
+        span: auto
+        default: 50px
+        type: text
+    slides_to_show:
+        label: 'Ilość pokazywanych zdjęć'
+        span: auto
+        default: '1'
+        type: number
+    slides_to_scroll:
+        label: 'Ilość przewijanych zdjęć'
+        span: auto
+        default: '1'
+        type: number
+tabs:
+    fields:
+        autoplay:
+            label: Autoplay
+            span: auto
+            type: switch
+            comment: 'Włącz/Wyłącz auto przewijanie'
+            tab: AutoPlay
+        autoplay_speed:
+            label: 'Szybkość automatycznego przewijania'
+            span: auto
+            default: '3000'
+            type: number
+            comment: 'Szybkość automatycznego przewijania w ms'
+            tab: AutoPlay
+        pause_on_focus:
+            label: 'Zatrzymanie na focus'
+            span: auto
+            default: 1
+            type: switch
+            comment: 'Włącz/Wyłącz zatrzymanie przewijania na focus'
+            tab: AutoPlay
+        pause_on_hover:
+            label: 'Zatrzymanie na hover'
+            span: auto
+            default: 1
+            type: switch
+            comment: 'Włącz/Wyłącz zatrzymanie przewijania na hover'
+            tab: AutoPlay
+        pause_on_dots:
+            label: 'Zatrzymaj przy najechaniu na kropki'
+            span: auto
+            type: switch
+            comment: 'Włącz/Wyłącz zatrzymanie przewijania po najechaniu na kropki'
+            tab: AutoPlay
+        speed:
+            label: 'Szybkość animacji'
+            span: auto
+            default: '300'
+            type: number
+            comment: 'Szybkość animacji w ms'
+            tab: Animation
+        css_ease:
+            label: 'Animacja css'
+            span: auto
+            default: ease
+            type: text
+            comment: 'easeOut, easeIn ....'
+            tab: Animation
+        arrows:
+            label: Arrows
+            span: auto
+            default: 1
+            type: switch
+            comment: 'Włącz/Wyłącz strzałki'
+            tab: Arrows
+        append_arrows:
+            label: 'Append arrows'
+            span: auto
+            default: $(element)
+            type: text
+            comment: 'Selektor, do którego mają być przeniesione strzałki'
+            tab: Arrows
+        prev_arrow:
+            label: 'Strzałka poprzedniego zdjęcia'
+            span: auto
+            default: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>'
+            type: text
+            comment: 'Selektor, który będzie służył jako poprzednia strzałka'
+            tab: Arrows
+        next_arrow:
+            label: 'Strzałka następnego zdjęcia'
+            span: auto
+            default: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></button>'
+            type: text
+            comment: 'Selektor, który będzie służył jako następna strzałka'
+            tab: Arrows
+        dots:
+            label: Kropki
+            span: auto
+            type: switch
+            comment: 'Włącz/Wyłącz kropki'
+            tab: Dots
+        append_dots:
+            label: 'Append Dots'
+            span: auto
+            default: $(element)
+            type: text
+            comment: 'Selektor, do którego mają być przeniesione kropki'
+            tab: Dots
+        rows:
+            label: 'Ilość wierszy'
+            span: auto
+            default: '1'
+            type: number
+            tab: Rows
+        slide_per_rows:
+            label: 'Ilość zdjęć w wierszu'
+            span: auto
+            default: '1'
+            type: number
+            tab: Rows
+        adaptive_height:
+            label: 'Wysokość boksu zależna od kontentu'
+            span: auto
+            type: checkbox
+            tab: Misc
+        variable_width:
+            label: 'Szerokość boksu zależna od kontentu'
+            span: auto
+            type: checkbox
+            tab: Misc
+        z_index:
+            label: zIndex
+            span: auto
+            default: '1000'
+            type: number
+            tab: Misc
+        swipe_to_slide:
+            label: 'swipe to slide'
+            span: auto
+            type: checkbox
+            comment: 'Nie wiem, przetestuj i zmień ten komentarz'
+            tab: Misc
+        rtl:
+            label: 'Odwróć przewijanie zdjęć'
+            span: auto
+            type: checkbox
+            tab: Misc
+        slide:
+            label: Slajd
+            prompt: 'Dodaj nowy slajd'
+            span: auto
+            type: repeater
+            tab: Zdjęcia
+            form:
+                fields:
+                    slide_name:
+                        label: Nazwa
+                        span: auto
+                        type: text
+                    slide_slug:
+                        label: Slug
+                        span: auto
+                        type: text
+                    slide_img:
+                        label: Obrazek
+                        span: full
+                        mode: image
+                        type: mediafinder

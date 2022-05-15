@@ -1,0 +1,70 @@
+.bread-crumb {
+  display: flex;
+  justify-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(129, 130, 131);
+
+  &__item {
+    display: flex;
+    justify-items: flex-start;
+    font-size: 1.4rem;
+    color: rgb(60, 60, 60);
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-right: 3px;
+
+      &::after {
+        content: "/";
+        color: grey;
+        align-self: center;
+        margin-left: 5px;
+        font-weight: 300;
+
+        @media screen and (max-width: 1499px) {
+          margin-top: 0;
+        }
+
+        @media screen and (min-width: 1921px) {
+          margin-top: -5px;
+        }
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    a {
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      color: rgb(129, 130, 131);
+      font-weight: 300;
+      transition: color .3s;
+
+      &:hover {
+        color: black;
+      }
+
+      img {
+        max-width: 30px;
+        max-height: 24px;
+        margin-right: 5px;
+        margin-top: -4px;
+
+        @media screen and (min-width: 1921px) {
+          margin-top: -1px;
+        }
+      }
+    }
+
+    &.active {
+      a {
+        color: $color-main;
+      }
+    }
+  }
+}

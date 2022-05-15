@@ -1,0 +1,71 @@
+// =========================
+// Modules and Variables
+// =========================
+
+/**
+    mq() takes up to three optional parameters:
+
+    $from: inclusive min-width boundary
+    $until: exclusive max-width boundary
+    $and: additional custom directives
+ */
+$mq-breakpoints: (
+        xs:  576px,
+        sm:  768px,
+        md:  992px,
+        lg: 1200px,
+        xl: 1500px,
+        xxl: 1920px
+);
+
+$color-main: #22242F;
+$color-extra: #84239F;
+$color-font-light: #fff;
+$color-font-dark: #3e3e3e;
+$bg: transparent linear-gradient(217deg, #22242F 0%, #262834E3 54%, #464B5D 100%) 0% 0% no-repeat padding-box;
+$bg-trans: transparent linear-gradient(90deg, #22242F 0%, #262834D8 54%, #464B5D 100%) 0% 0% no-repeat padding-box;
+$bg-trans-rev: transparent linear-gradient(78deg, #22242F 0%, #262834DE 54%, #464B5D 100%) 0% 0% no-repeat padding-box;
+
+// Font weights
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 700;
+$fw-black: 900;
+
+// Font Family
+$font-family: 'Montserrat', serif;
+$secondary-font: 'Proza Libre', sans-serif;
+
+// Base Font for HTML
+$base-font-size: 16px;
+
+// Paragraph Styles
+$paragraph-color      : #505050;
+$paragraph-size       : 16px;
+$paragraph-line-height: 1.5em;
+$paragraph-margin     : 20px;
+
+// Header Styles
+$header-color      : #3e3e3e;
+$header-size       : 40px;
+$header-line-height: 1.25em;
+$header-margin     : $paragraph-margin * 1.2;
+
+// Blockquote Styles
+$blockquote-color      : #505050;
+$blockquote-size       : 23px;
+$blockquote-line-height: 1.5em;
+$blockquote-margin     : $paragraph-margin * 1.5;
+
+// Links
+$link-color: $color-main;
+
+// hr
+$hr-margin: 30px;
+
+// Type Misc
+$font-weight-bold: 600;
+$border-color: #DADADA;

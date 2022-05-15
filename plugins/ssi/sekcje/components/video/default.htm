@@ -1,0 +1,20 @@
+{% set item = __SELF__.video %}
+{% set height = this.page.h %}
+{% set width = this.page.w %}
+
+<section class="embeded">
+
+    <h2 class="embeded__title">
+        {{ item.title }}
+    </h2>
+
+    <div class="embeded__video" style="width: {{ width }}%; height: {{ height }}vw;">
+        {{ item.video | raw }}
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        $('.embeded__video iframe').attr('width', '100%').attr('height', '100%');
+    })
+</script>

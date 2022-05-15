@@ -1,0 +1,33 @@
+description = "Szablon strona główna"
+
+[localePicker]
+forceUrl = 1
+
+[staticMenuMultilingual mainMenu]
+code = "menu-glowne"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'site/head-global' %}
+</head>
+<body>
+
+    <div class="site-wrapper home">
+        <!-- Header -->
+        <header class="header padding-container {{ this.theme.header_sticky ? 'header--fixed' }}">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        {% page %}
+
+        <!-- Footer -->
+        <footer class="padding-container">
+            {% partial 'site/footer' %}
+        </footer>
+    </div>
+    {% partial 'site/cookie-bar' %}
+    {% partial 'site/js-in-body' %}
+</body>
+</html>

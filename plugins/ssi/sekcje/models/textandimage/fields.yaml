@@ -1,0 +1,31 @@
+fields:
+    name:
+        label: 'Nazwa sekcji'
+        span: left
+        type: text
+    img:
+        label: Zdjęcie
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    description:
+        label: Tekst
+        size: huge
+        span: left
+        type: richeditor
+    button_name:
+        label: Przycisk
+        type: text
+        span: right
+    button_link:
+        label: 'Link przycisku'
+        type: text
+        span: right
+    extra:
+        label: Extra
+        span: left
+        type: switch

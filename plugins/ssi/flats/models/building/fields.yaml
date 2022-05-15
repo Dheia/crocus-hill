@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: Nazwa
+        span: auto
+        type: text
+    code:
+        label: Kod
+        span: auto
+        type: text

@@ -1,0 +1,11 @@
+{% set i = __SELF__.icons.icons_set|length  %}
+{% set j = __SELF__.property('iconsInRow')  %}
+
+<ul class="icons-set icons-grid--{% if j > 0 %}{{j}}{% else %}{{i}}{% endif %}">
+    {% for ikona in __SELF__.icons.icons_set %}
+        <li class="icons-set__item">
+            <img src="{{ ikona.img_src | media}}" alt="{{ ikona.description }}">
+            <span class="icons-set__item-text">{{ ikona.description }}</span>
+        </li>
+    {% endfor %}
+</ul>

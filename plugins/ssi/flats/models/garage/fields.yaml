@@ -1,0 +1,24 @@
+fields:
+    name:
+        label: Nazwa
+        span: auto
+        type: text
+    area:
+        label: Metraż
+        span: auto
+        type: text
+    building:
+        label: Budynek
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    status:
+        label: Status
+        span: auto
+        showSearch: true
+        options:
+            wolne: wolne
+            zarezerwowane: zarezerwowane
+            sprzedane: sprzedane
+        type: dropdown

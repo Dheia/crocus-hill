@@ -1,0 +1,11 @@
+<ul id="breadcrumbs">
+    {% for link in breadcrumbs %}
+        {% if loop.last %}
+            <li>{{ link.title|raw }}</li>
+        {% else %}
+            <li>
+                <a href="{{ link.url }}">{{ link.title|raw }}</a> —
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

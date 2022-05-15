@@ -1,0 +1,32 @@
+{% for item in items if not item.viewBag.isHidden %}
+    <li role="presentation"
+        class="
+            header__menuItem
+            {{ item.isChildActive ? 'child-active' : '' }}
+            {{ item.viewBag.cssClass }}
+            {{ item.items ? 'header__menuItem--hasSubmenu' : '' }}
+            {{ this.theme.header_fullscreen_menu ? 'header__menuItem--fullscreen' }}
+    ">
+        {% if item.url %}
+            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}
+               class="
+                header__menuLink
+                {{ (item.isActive or item.isChildActive) ? 'header__menuLink--active' : '' }}
+                {{ this.theme.header_fullscreen_menu ? 'header__menuLink--fullscreen' }}
+            ">
+                {{ item.title }}
+            </a>
+        {% else %}
+            <span>{{ item.title }}</span>
+        {% endif %}
+
+        {% if item.items %}
+            <ul
+                class="header__submenu  header__submenu--hidden
+                {{ this.theme.header_fullscreen_menu ? 'header__submenu--fullscreen' }}
+            ">
+                {% partial __SELF__ ~ "::items" items=item.items %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

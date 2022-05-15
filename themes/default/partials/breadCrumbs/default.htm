@@ -1,0 +1,10 @@
+{% if breadcrumbs %}
+<ul class="bread-crumb">
+    <li class="bread-crumb__item"><a href="/"><img src="{{ 'assets/images/domek.png' |theme}}" alt="Ikona domku">Strona&nbspgłówna</a></li>
+    {% for breadcrumb in breadcrumbs %}
+    <li class="{{ breadcrumb.isActive ? 'active' : '' }} bread-crumb__item">
+        <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,6 @@
+columns:
+    title:
+        label: Tytul
+        type: text
+        searchable: true
+        sortable: true

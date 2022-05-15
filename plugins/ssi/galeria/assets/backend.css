@@ -1,0 +1,20 @@
+.field-fileupload .upload-files-container {
+    max-height: unset!important;
+    display: grid!important;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1500px) {
+    .field-fileupload .upload-files-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 991px) {
+    .field-fileupload .upload-files-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 575px) {
+    .field-fileupload .upload-files-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

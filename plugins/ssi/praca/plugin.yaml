@@ -1,0 +1,17 @@
+plugin:
+    name: 'ssi.praca::lang.plugin.name'
+    description: 'ssi.praca::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-money
+    homepage: ''
+navigation:
+    praca:
+        label: 'Oferty pracy'
+        url: ssi/praca/praca
+        icon: icon-money
+        permissions:
+            - Praca
+permissions:
+    Praca:
+        tab: Praca
+        label: Praca

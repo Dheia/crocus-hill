@@ -1,0 +1,5 @@
+title: ExtraSpace
+modelClass: SSI\Flats\Models\ExtraSpace
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,5 @@
+title: Files
+modelClass: SSI\Files\Models\Files
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

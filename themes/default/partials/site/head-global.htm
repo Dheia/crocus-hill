@@ -1,0 +1,80 @@
+[viewBag]
+==
+<meta charset="utf-8">
+{% if redirect_url %}
+    <meta http-equiv="refresh" content="0; url={{redirect_url}}" />
+{% endif %}
+
+{% if canonical_url %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+{% endif %}
+
+{% if this.theme.home_meta_title and this.page.id == 'home' %}
+    <title>{{ this.theme.home_meta_title }}</title>
+    <meta name="title" content="{{ this.theme.home_meta_title }}">
+    <meta property="og:title" content="{{ this.theme.home_meta_title }}"/>
+{% elseif this.page.meta_title %}
+    <title>{{ this.page.meta_title }}</title>
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta property="og:title" content="{{ this.page.meta_title }}"/>
+{% elseif this.theme.header_title %}
+    <title>{{ this.theme.header_title }}</title>
+    <meta name="title" content="{{ this.theme.header_title }}">
+    <meta property="og:title" content="{{ this.theme.header_title }}"/>
+{% else %}
+    <title>{{ this.page.title }} - {{ this.theme.footer_name }}</title>
+    <meta name="title" content="{{ this.page.title }} - {{ this.theme.footer_name }}">
+    <meta property="og:title" content="{{ this.page.title }} - {{ this.theme.footer_name }}"/>
+{% endif %}
+
+{% if this.theme.home_meta_description and this.page.id == 'home' %}    
+    <meta name="description" content="{{ this.theme.home_meta_description }}">
+    <meta property="og:description" content="{{ this.theme.home_meta_description }}"/>
+{% elseif this.page.meta_description %}
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta property="og:description" content="{{ this.page.meta_description }}"/>
+{% elseif this.theme.header_description %}
+    <meta name="description" content="{{ this.theme.header_description }}">
+    <meta property="og:description" content="{{ this.theme.header_description }}"/>
+{% endif %}
+
+{% if seo_keywords %}
+    <meta name="keywords" content="{{ seo_keywords }}">
+{% endif %}
+
+{% if this.theme.header_type %}
+    <meta property="og:type" content="{{ this.theme.header_type }}"/>
+{% endif %}
+
+{% if this.theme.header_image %}
+    <meta property="og:image" content="{{ this.theme.header_image.path }}"/>
+{% endif %}
+
+{% if this.theme.header_fbid %}
+    <meta property="fb:app_id" content="{{ this.theme.header_fbid }}"/>
+{% endif %}
+
+<meta name="author" content="SSI - ssi.com.pl">
+
+{% if this.theme.header_robots %}
+    <meta name="robots" content="noindex,nofollow">
+{% else %}
+    {% if robot_index %}
+        <meta name="robots" content="{{ robot_index }},{{ robot_follow }}">
+    {% endif %}
+{% endif %}
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="{{ this.theme.general_favicon.path }}">
+<link  href="{{ 'assets/dist/css/fonts_import.css' |theme }}" rel="stylesheet preload" as="style">
+<link href="{{ 'assets/dist/css/main.css' |theme }}" rel="stylesheet">
+<link href="{{ ['assets/scss/fix.scss'] |theme }}" rel="stylesheet">
+{% styles %}
+<script defer src="{{ 'assets/dist/js/important-scripts.js'|theme }}"></script>
+
+{% if this.theme.header_scripts %}
+    {{ this.theme.header_scripts | raw }}
+{% endif %}

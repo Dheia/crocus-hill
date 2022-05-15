@@ -1,0 +1,40 @@
+plugin:
+    name: 'ssi.flats::lang.plugin.name'
+    description: 'ssi.flats::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    flats:
+        label: Mieszkania
+        url: /ssi/flats/flat
+        icon: icon-home
+        sideMenu:
+            flats:
+                label: Mieszkania
+                url: /ssi/flats/flat
+                icon: icon-home
+            # buildings:
+            #     label: Budynki
+            #     url: /ssi/flats/building
+            #     icon: icon-building
+            # buildingfloors:
+            #     label: 'Piętra budynku'
+            #     url: /ssi/flats/buildingfloor
+            #     icon: icon-sort
+            # flatfloors:
+            #     label: 'Piętra mieszkania'
+            #     url: /ssi/flats/flatfloor
+            #     icon: icon-sort
+            # rooms:
+            #     label: Pokoje
+            #     url: /ssi/flats/room
+            #     icon: icon-lightbulb-o
+            # garages:
+            #     label: Garaże
+            #     url: /ssi/flats/garage
+            #     icon: icon-car
+            # extraspace:
+            #     label: 'Dodatkowa przestrzeń'
+            #     url: ssi/flats/extraspace
+            #     icon: icon-plus

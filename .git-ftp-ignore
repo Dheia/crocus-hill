@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+.idea
+node_modules/*
+package-lock.json
+config/database.php
+.env
+themes/default/content/*
+themes/default/meta/*
+themes/standard-template/content/*
+themes/standard-template/meta/*
+storage/*
+sitemap.xml
+README.md

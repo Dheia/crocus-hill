@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: 'Nazwa zestawu ikon'
+        span: auto
+        type: text
+    icons_set:
+        label: Set
+        prompt: 'Dodaj ikonę'
+        span: left
+        type: repeater
+        form:
+            fields:
+                description:
+                    label: Tekst
+                    span: auto
+                    type: text
+                img_src:
+                    label: Ikona
+                    mode: image
+                    span: auto
+                    type: mediafinder

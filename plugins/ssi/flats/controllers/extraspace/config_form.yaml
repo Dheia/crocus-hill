@@ -1,0 +1,11 @@
+name: ExtraSpace
+modelClass: SSI\Flats\Models\ExtraSpace
+form: $/ssi/flats/models/extraspace/fields.yaml
+defaultRedirect: ssi/flats/extraspace
+create:
+    redirect: 'ssi/flats/extraspace/update/:id'
+    redirectClose: ssi/flats/extraspace
+update:
+    redirect: ssi/flats/extraspace
+    redirectClose: ssi/flats/extraspace
+preview: {  }

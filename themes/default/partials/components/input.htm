@@ -1,0 +1,31 @@
+<div class="input input--{{ type }}">
+    {% if type=='radio' or type=='checkbox' %}
+        <label class="input__label input__label--{{ type }}" for="{{ id ? id : name }}">{{ label | raw }}
+            <input class="input__item"
+                type="{{ type }}"
+                id="{{ id ? id : name }}"
+                name="{{ name }}"
+                value="{{ value }}"
+                {% if checked %}checked="checked"{% endif %}
+                {% if required %}
+                    required="required"
+                {% endif %}
+            >
+            <span class="input__checkmark input__checkmark--{{ type }}"></span>
+        </label>
+    {% elseif type=='textarea' %}
+        <label class="input__label" for="{{ id ? id : name }}">{{ label }}</label>
+        <textarea class="input__item" type="{{ type }}" rows="3" id="{{ id ? id : name }}" name="{{ name }}"
+                  value="{{ value }}"></textarea>
+    {% else %}
+        <label class="input__label" for="{{ id ? id : name }}">{{ label }}</label>
+        <input class="input__item"
+               type="{{ type }}"
+               id="{{ id ? id : name }}"
+               name="{{ name }}"
+               value="{{ value }}"
+               {% if readonly %}readonly="readonly"{% endif %}
+        >
+    {% endif %}
+</div>
+

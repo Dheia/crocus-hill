@@ -1,0 +1,11 @@
+name: Flat
+modelClass: SSI\Flats\Models\Flat
+form: $/ssi/flats/models/flat/fields.yaml
+defaultRedirect: ssi/flats/flat
+create:
+    redirect: 'ssi/flats/flat/update/:id'
+    redirectClose: ssi/flats/flat
+update:
+    redirect: ssi/flats/flat
+    redirectClose: ssi/flats/flat
+preview: {  }

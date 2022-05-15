@@ -1,0 +1,5 @@
+title: FlatFloor
+modelClass: SSI\Flats\Models\FlatFloor
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'Nazwa galerii'
+        span: left
+        type: text
+    images:
+        label: 'Zdjęcia galerii'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

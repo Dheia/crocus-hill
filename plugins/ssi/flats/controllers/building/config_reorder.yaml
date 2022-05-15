@@ -1,0 +1,5 @@
+title: Building
+modelClass: SSI\Flats\Models\Building
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

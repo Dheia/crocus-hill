@@ -1,0 +1,46 @@
+{% set news=__SELF__.news %}
+{% set withPromo=__SELF__.properties.newsPromo %}
+
+{% if not news.isEmpty %}
+
+    {% if withPromo %}
+        <div class="news-list news-list--promo">
+            {% for item in news if (item.promo and item.promo_end and ((item.promo_end | date) > ("now" | date)) ) %}
+                    {% if loop.index == 1 %}
+                        <h2 class="news-list__header news-list__header--grid">{{ 'Wyróżnione aktualności' |_ }}:</h2>
+                    {% endif %}
+
+                    {% set slug = 'pojedyncza-aktualnosc'|page({ id: item.id, slug: item.slug }) %}
+                    <a href="{{ slug }}" class="news-card">
+                        <img class="news-card__image lazy" data-src='{{ item.image.path | resize(420, 350, {mode: 'crop'})}}' alt='{{ item.title }}' />
+                        <h3 class="news-card__header">{{ str_words(item.title, 10) }}</h3>
+                        <div class="news-card__excerpt">
+                            {{ str_words(item.excerpt, 25) }}
+                        </div>
+                        <span class='news-card__more'>{{ 'więcej' |_ }}...</span>
+                    </a> 
+
+            {% endfor %}
+        </div>
+        <h2 class="news-list__header">{{ 'Lista aktualności' |_ }}:</h2>
+    {% endif %}
+    <div class="news-list news-list--normal">
+        {% for item in news %}
+            
+            {% set slug = 'pojedyncza-aktualnosc'|page({ id: item.id, slug: item.slug }) %}
+            <a href="{{ slug }}" class="news-card">
+                <img class="news-card__image lazy" data-src='{{ item.image.path | resize(420, 350, {mode: 'crop'})}}' alt='{{ item.title }}' />
+                <h3 class="news-card__header">{{ str_words(item.title, 10) }}</h3>
+                <div class="news-card__excerpt">
+                    {{ str_words(item.excerpt, 25) }}
+                </div>
+                <span class='news-card__more'>{{ 'więcej' |_ }}...</span>
+            </a> 
+
+        {% endfor %}
+    </div>
+{% else %}
+    <p>{{ 'Nie znaleziono aktualności' |_ }}</p>
+{% endif %}
+
+{% partial '@pagination'  %}

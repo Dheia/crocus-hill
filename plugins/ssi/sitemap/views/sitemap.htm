@@ -1,0 +1,25 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    {% for item in pages %}
+        <url>
+            <loc>{{ url(item)}}</loc>
+            <priority>1</priority>
+        </url>
+    {% endfor %}
+
+    {% for item in staticPages %}
+        <url>
+            <loc>{{ url(item)}}</loc>
+            <priority>1</priority>
+        </url>
+    {% endfor %}
+
+    {% for item in news %}
+        <url>
+            <loc>{{ url('aktualnosci') ~ '/' ~ item.id ~ '/' ~ item.slug }}</loc>
+            <lastmod>{{ item.updated_at|date('c') }}</lastmod>
+            <priority>0.5</priority>
+        </url>
+    {% endfor %}
+
+</urlset>

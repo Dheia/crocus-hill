@@ -1,0 +1,15 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: nazwa
+        type: text
+        searchable: true
+        sortable: true
+    code:
+        label: symbol
+        type: text
+        searchable: true
+        sortable: true

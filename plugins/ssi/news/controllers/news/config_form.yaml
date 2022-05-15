@@ -1,0 +1,11 @@
+name: News
+modelClass: SSI\News\Models\News
+form: $/ssi/news/models/news/fields.yaml
+defaultRedirect: ssi/news/news
+create:
+    redirect: 'ssi/news/news/update/:id'
+    redirectClose: ssi/news/news
+update:
+    redirect: ssi/news/news
+    redirectClose: ssi/news/news
+preview: {  }

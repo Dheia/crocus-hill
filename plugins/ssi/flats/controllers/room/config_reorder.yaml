@@ -1,0 +1,5 @@
+title: Room
+modelClass: SSI\Flats\Models\Room
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

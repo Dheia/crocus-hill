@@ -1,0 +1,5 @@
+title: Garage
+modelClass: SSI\Flats\Models\Garage
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

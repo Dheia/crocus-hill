@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: Nagłówek
+        span: left
+        type: text
+        commentAbove: 'Tekst będzie wyświetlany jako nagłówek nad nazwą plików'
+    files:
+        label: Pliki
+        prompt: 'Dodaj nowy plik'
+        span: full
+        type: repeater
+        form:
+            fields:
+                file_name:
+                    label: 'Nazwa pliku'
+                    span: auto
+                    oc.commentPosition: above
+                    type: text
+                file:
+                    label: Plik
+                    mode: file
+                    span: auto
+                    type: mediafinder

@@ -1,0 +1,10 @@
+name: Ikony
+form: $/ssi/sekcje/models/ikony/fields.yaml
+modelClass: SSI\Sekcje\Models\Ikony
+defaultRedirect: ssi/sekcje/ikony
+create:
+    redirect: 'ssi/sekcje/ikony/update/:id'
+    redirectClose: ssi/sekcje/ikony
+update:
+    redirect: ssi/sekcje/ikony
+    redirectClose: ssi/sekcje/ikony

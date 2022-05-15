@@ -1,0 +1,70 @@
+{% set news = __SELF__.news %}
+{% if news %}
+    <div class="news">
+        <div class="news__date">
+            <img src="/plugins/ssi/news/assets/images/calendar.svg" alt="{{ 'kalendarz' |_ }}">
+            <p>{{ 'data publikacji' |_ }}: {{ news.published_at |date('d.m.Y') }}</p>
+        </div>
+        {% if not news.categories.isEmpty %}
+            <div class="news__category">
+                <p>{{ 'Kategorie' |_ }}: </p>
+                <div class="news__categories">
+                    {% for category in news.categories %}
+                        <span>{{ category.name }}</span>
+                    {% endfor %}
+
+
+
+                </div>
+
+            </div>
+        {% endif %}
+
+        {% if news.image.path and news.show_main_image %}
+            <div class="news__image">
+                <a href="{{news.image.path | resize(1400)}}" data-lightbox="{{news.id}}" class="simplelightbox gallery__link">
+                    <img src="{{news.image.path | resize(auto, 450)}}" alt="">
+                </a>
+
+            </div>
+        {% endif %}
+
+        <div class="news__content">
+            {{ news.content |raw }}
+        </div>
+
+        {% if not news.files.isEmpty %}
+
+            <h2>{{ 'Pliki do pobrania' |_ }}:</h2>
+            <div class="files_tree">
+                {% for file in news.files %}
+                    <a href="{{ file.path }}" target="_blank" title="Pobierz plik" class="item file_wrapper">
+                        <div class="number">
+                            {{ loop.index }}
+                        </div>
+                        <span class="name_link">
+                        {{ file.file_name }}
+                    </span>
+                        <span class="cloud_link">
+                        <img src={{ 'assets/images/cloud.png' | theme }} alt="Pobierz plik">
+                    </span>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if not news.images.isEmpty %}
+            <div class="gallery columns-4">
+                {% for image in news.images %}
+                    <a href="{{ image.path | resize(1400) }}" data-lightbox="{{ __SELF__.id }}" class="gallery__link lazy"
+                       data-bg="{{ image.path | resize(600, 450, {mode:'crop'}) }}">
+                    </a>
+                {% endfor %}
+
+            </div>
+        {% endif %}
+
+    </div>
+{% else %}
+    <p>{{ 'Nie znaleziono takiej aktualności' |_ }}</p>
+{% endif %}

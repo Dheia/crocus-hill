@@ -1,0 +1,72 @@
+description = "Dodawanie mapy na podstawie współrzędnych"
+
+[viewBag]
+snippetCode = "map"
+snippetName = "Mapa - podaj współrzędne"
+snippetProperties[z][title] = "pierwsza współrzędna"
+snippetProperties[z][type] = "string"
+snippetProperties[z][default] = ""
+snippetProperties[z][options][] = ""
+snippetProperties[x][title] = "druga współrzędna"
+snippetProperties[x][type] = "string"
+snippetProperties[x][default] = ""
+snippetProperties[x][options][] = ""
+snippetProperties[y][title] = "oddalenie [0-20]"
+snippetProperties[y][type] = "string"
+snippetProperties[y][default] = "14"
+snippetProperties[y][options][] = ""
+snippetProperties[mapName][title] = "id kontenera mapy"
+snippetProperties[mapName][type] = "string"
+snippetProperties[mapName][default] = "map1"
+snippetProperties[mapName][options][] = ""
+snippetProperties[mapHeight][title] = "wysokość kontenera mapy"
+snippetProperties[mapHeight][type] = "string"
+snippetProperties[mapHeight][default] = "600px"
+snippetProperties[mapHeight][options][] = ""
+==
+<div class="map" id="{{ mapName }}" style="height:{{ mapHeight }}"></div>
+<script>
+
+window.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function () {
+        var map = L.map('{{ mapName }}').setView(['{{ z }}', '{{ x }}'], '{{ y }}');
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        map.scrollWheelZoom.disable();
+
+
+        var customIcon = L.icon({
+            //Ścieżka do ikony
+            iconUrl: "{{ 'assets/images/marker-map.png' |theme}}",
+            //Odpowiada za wielkość ikony
+            iconSize: [50, 50],
+            //Odpowiada za część wskazującą na obiekt
+            iconAnchor:   [25, 50],
+            //odpowiada w jakim pkt ma wyskoczyc popup?
+            popupAnchor:  [-3, -76]
+        });
+
+        var points = [
+            ["P1", '{{ z }}', '{{ x }}']
+            // Przykład dodatkowych znaczników ( z i x wpisz ręcznie )
+            // ["P2", 'z', 'x'],
+            // ["P3", 'z', 'x']
+        ];
+
+        var marker = [];
+        var i;
+        for (i = 0; i < points.length; i++) {
+            marker[i] = new L.Marker([points[i][1], points[i][2]], {
+                icon: customIcon
+            });
+            marker[i].addTo(map);
+        }
+
+
+    });
+
+});
+
+    
+</script>

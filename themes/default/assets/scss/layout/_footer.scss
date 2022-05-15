@@ -1,0 +1,22 @@
+.footer-small{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &__realization{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      span{
+        transition: color .3s ease-in-out;
+      }
+      &:hover span{
+        color: $color-main;
+      }
+      img{
+        margin-left: 15px;
+        max-width: 100px;
+      }
+    }
+}

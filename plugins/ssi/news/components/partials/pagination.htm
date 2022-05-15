@@ -1,0 +1,82 @@
+{% set currentPage = __SELF__.currentPage %}
+{% set lastPage = __SELF__.lastPage %}
+
+{% set paginationEnabled =
+    currentPage > 1 or
+    lastPage > 1 or
+    lastPage > currentPage
+    %}
+
+    {% if paginationEnabled %}
+    {# How many pages to display around the current page #}
+    {% set n = 1 %}
+
+    {% set currentPageZeroBased =  currentPage-1 %}
+
+    {% set pageLinks = [] %}
+    {% set pageSet = [] %}
+
+    {% set startOffset = max(currentPageZeroBased - n, 0) %}
+    {% if (startOffset + 2*n+1) > ( lastPage-1) %}
+    {% set startOffset = max( lastPage - 2*n - 1, 0) %}
+    {% endif %}
+
+    {% for page in 1.. lastPage %}
+    {% set pageLinks = pageLinks|merge([page]) %}
+    {% endfor %}
+
+    {% set activeBlock = pageLinks|slice(startOffset, 2*n + 1) %}
+
+    {% if startOffset > 0 %}
+    {% set pageSet = pageSet|merge([1]) %}
+
+    {% if startOffset > 1 %}
+    {% set pageSet = pageSet|merge(['...']) %}
+    {% endif %}
+    {% endif %}
+
+    {% set pageSet = pageSet|merge(activeBlock) %}
+
+    {% set diffToEnd = ( lastPage-1) - (startOffset + 2*n+1) + 1 %}
+
+    {% if diffToEnd > 0 %}
+    {% if diffToEnd > 1 %}
+    {% set pageSet = pageSet|merge(['...']) %}
+    {% endif %}
+
+    {% set pageSet = pageSet|merge([ lastPage]) %}
+    {% endif %}
+
+
+    
+            <ul class="pagination">
+
+                {% if  currentPage > 1 %}
+                <li class="pagination__item">
+                    <a class="pagination__link" href="?page={{currentPage-1}}" title="Previous"><i class="fa fa-angle-left pagination__arrow"></i></a>
+                </li>
+                {% endif %}
+
+                {% for page in pageSet %}
+                {% if page == '...' %}
+                <li class="pagination__item">
+                    <a href="javascript:void(0)" type="button" class="pagination__link pagination__link--disabled" >{{ page }}</a>
+                </li>
+                {% else %}
+                <li class="pagination__item">
+                    <a href="?page={{page}}" class="pagination__link {{ page ==  currentPage ? 'pagination__link--active' }}">{{ page }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if  lastPage >  currentPage %}
+                <li class="pagination__item">
+                    <a href="?page={{currentPage+1}}" title="Next" class="pagination__link"><i class="fa fa-angle-right pagination__arrow"></i></a>
+                </li>
+                {% endif %}
+            </ul>
+
+
+
+
+    {% endif %}

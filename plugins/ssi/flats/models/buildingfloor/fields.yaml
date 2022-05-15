@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: Nazwa
+        span: auto
+        disabled: 1
+        readOnly: 0
+        type: text
+        commentAbove: 'Nazwa uzupełni się automatycznie na podstawie piętra i budynku'
+    building:
+        label: Budynek
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    image:
+        label: 'Zdjęcie - rzut piętra'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    floor:
+        label: Piętro
+        span: auto
+        type: text
+        commentAbove: 'np. "Parter", "1", "2"'

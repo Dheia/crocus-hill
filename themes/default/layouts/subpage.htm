@@ -1,0 +1,73 @@
+description = "Domyślna podstrona treściowa"
+
+[emptyForm contactForm]
+group = "Kontakt"
+rules[name] = "required"
+rules[tel] = "required | regex: /^\+?[0-9 ]*$/"
+rules[email] = "required | email"
+rules[message] = "required"
+rules[rodo] = "required"
+rules_messages[rodo.required] = "Musisz zaakceptować regulamin"
+rules_messages[name.required] = "Proszę wpisać imię"
+rules_messages[tel.required] = "Proszę wpisać numer telefonu"
+rules_messages[email.required] = "Proszę wpisać email"
+rules_messages[message.required] = "Proszę wpisać tekst wiadomości"
+rules_messages[tel.regex] = "Nieprawidłowy numer, pole może zawierać numery oraz znak plusa"
+rules_messages[email.email] = "Nieprawidłowy email"
+messages_success = "Formularz został wysłany"
+messages_errors = "Formularz nie został wysłany poprawnie"
+mail_enabled = 1
+mail_subject = "Formularz kontaktowy ze strony"
+mail_recipients[] = "wladyslaw@ssi.com.pl"
+mail_replyto = "email"
+mail_template = "contactForm"
+inline_errors = "disabled"
+sanitize_data = "htmlspecialchars"
+anonymize_ip = "disabled"
+recaptcha_enabled = 0
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[SeoStaticPage]
+
+[staticPage]
+useContent = 1
+default = 0
+
+[localePicker]
+forceUrl = 1
+
+[staticMenuMultilingual mainMenu]
+code = "menu-glowne"
+==
+{variable type="textarea" name="custom_js" tab="JS"}{/variable}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'site/head-global' %}
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="header padding-container {{ this.theme.header_sticky_subsites ? 'header--fixed' }}">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section class="subsite padding-container">
+            <h1>{{ this.page.title }}</h1>
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer class="padding-container">
+            {% partial 'site/footer' %}
+        </footer>
+    </div>
+    {% partial 'site/cookie-bar' %}
+    {% partial 'site/js-in-body' %}
+</body>
+</html>

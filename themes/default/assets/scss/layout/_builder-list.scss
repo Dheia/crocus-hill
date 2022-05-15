@@ -1,0 +1,187 @@
+.builder-list {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 2rem;
+  background-color: #f3f2f1;
+  padding: 2rem;
+  border: 1px solid #cecdcd;
+  border-radius: 10px;
+  font-family: $font-family;
+  @include mq($until: xs) {
+    padding: 0;
+    border: none;
+    background: none;
+  }
+  &--header{
+    font-size: 1.2rem;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 250px 180px 1fr;
+    font-size: 1.3rem;
+    column-gap: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #cecdcd;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+
+    &--header {
+      grid-column: 2/3;
+      background-color: unset;
+      padding: 0 1rem;
+      margin-bottom: -1rem;
+      border: none;
+
+      @include mq($until: lg) {
+        display: none;
+      }
+    }
+    &--deactive {
+      color: rgba($paragraph-color, .5);
+    }
+    &--tender {
+       grid-template-columns: 3fr 1fr 1fr;
+    }
+    &--job {
+      grid-template-columns: 3fr 1fr 2fr;
+    }
+    &--link{
+      transition: background-color .3s ease-in-out;
+      &:hover{
+        background-color: #fff7f7;
+      }
+    }
+    @include mq($until: lg) {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+      & > *{
+        flex-direction: column;
+        font-size: 1rem;
+        &::before{
+          content: attr(data-head);
+          font-weight: $fw-bold;
+          width: 100%;
+          display: block;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &__value{
+    &--title{
+      @include mq($until: lg) {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 15px;
+      }
+      @include mq($until: xs) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__number {
+    padding: .5rem 1rem;
+    align-items: center;
+    display: flex;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: white;
+    background-color: green;
+    @include mq($until: xs) {
+      padding: 0.5rem;
+      justify-content: center;
+    }
+
+    &--end {
+      background-color: $color-main;
+    }
+
+    &--deactive {
+      background-color: rgba($paragraph-color, .5);
+    }
+
+    &--tender {
+      color: white;
+      background-color: $color-main;
+    }
+  }
+
+  &__date {
+    display: flex;
+
+    .date__at, .date__from {
+      font-size: 1.2rem;
+      @include mq($until: lg) {
+        font-size: 1rem;
+      }
+    }
+
+    .date__day {
+      font-size: 0.9rem;
+      line-height: .7;
+      @include mq($until: lg) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &__organizer {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  &__hours {
+    display: flex;
+
+    .hours__at,.hours__from {
+      font-size: 1.2rem;
+      @include mq($until: lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__place {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  &__status {
+    font-size: .75em;
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1.2;
+    font-weight: 600;
+
+    &--end {
+      color: rgba($color-main, .7);
+    }
+
+    &--deactive {
+      color: rgba($paragraph-color, .5);
+    }
+  }
+
+  &--header {
+    font-weight: 600;
+  }
+}
+
+.date__separator {
+  margin: 0 .5rem;
+}
+
+.years {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.year {
+  margin: 0 10px;
+}

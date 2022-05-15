@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+    visibility:
+        label: visibility
+        type: text
+    on_main:
+        label: on_main
+        type: text
+    promo:
+        label: promo
+        type: text

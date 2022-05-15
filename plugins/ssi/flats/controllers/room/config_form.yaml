@@ -1,0 +1,11 @@
+name: Room
+modelClass: SSI\Flats\Models\Room
+form: $/ssi/flats/models/room/fields.yaml
+defaultRedirect: ssi/flats/room
+create:
+    redirect: 'ssi/flats/room/update/:id'
+    redirectClose: ssi/flats/room
+update:
+    redirect: ssi/flats/room
+    redirectClose: ssi/flats/room
+preview: {  }

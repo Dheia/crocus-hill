@@ -1,0 +1,59 @@
+description = "Lista ofert pracy"
+
+[viewBag]
+snippetCode = "job"
+snippetName = "Lista ofert pracy"
+
+[builderList]
+modelClass = "Ssi\Praca\Models\Praca"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "Nie znaleziono żadnych ofert pracy"
+detailsPage = "oferta-pracy"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "status"
+sortDirection = "desc"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<div class="builder-list builder-list--job">
+    <div class="builder-list__container builder-list__container--job builder-list__container--header">
+        <div class="builder-list--header">
+            Nazwa
+        </div>
+        <div class="builder-list--header">
+            Status
+        </div>
+        <div class="builder-list--header">
+            Data ostatniej aktualizacji
+        </div>
+    </div>
+    {% for record in records %}
+    <div class="builder-list__number {% if not record.status %}builder-list__number--deactive{% endif %}">
+        {{ loop.index }}
+    </div>
+    <a href="/praca/{{record.id}}/{{ str_slug(record.title) }}" class="builder-list__container builder-list__container--job builder-list__container--link">
+        <div class="builder-list__value builder-list__value--title">
+            {{ record.title }}
+        </div>
+        <div class="builder-list__value" data-head="Status">
+            {% if record.status %}
+                Aktualne
+            {% else %}
+                Nieaktualne
+            {% endif %}
+        </div>
+        <div class="builder-list__value" data-head="Data ostatniej aktualizacji">
+            {{ record.updated_at | date('d.m.Y')}}
+        </div>
+    </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,15 @@
+[staticMenu mainMenu]
+code = "menu-glowne-pl"
+==
+
+<a class="header__logo" href="{{ 'home' | page }}"><img src="{{this.theme.general_logo.path}}" alt="{{'Strona główna'|_}}"></a>
+
+<nav class="header__nav {{ this.theme.header_fullscreen_menu ? 'header__nav--fullscreen' }}">
+    {% component 'mainMenu' %}
+</nav>
+
+<div class="header__hamburger {{ this.theme.header_fullscreen_menu ? 'header__hamburger--fullscreen' }}">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>

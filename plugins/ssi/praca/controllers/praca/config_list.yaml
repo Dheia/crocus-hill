@@ -1,0 +1,12 @@
+title: Praca
+modelClass: Ssi\Praca\Models\Praca
+list: $/ssi/praca/models/praca/columns.yaml
+recordUrl: 'ssi/praca/praca/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

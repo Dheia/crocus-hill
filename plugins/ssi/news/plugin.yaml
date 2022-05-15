@@ -1,0 +1,24 @@
+plugin:
+    name: 'ssi.news::lang.plugin.name'
+    description: 'ssi.news::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-newspaper-o
+    homepage: ''
+permissions:
+    news:
+        tab: Aktualności
+        label: Aktualności
+navigation:
+    news:
+        label: Aktualności
+        url: ssi/news/news
+        icon: icon-newspaper-o
+        sideMenu:
+            news:
+                label: Aktualności
+                url: ssi/news/news
+                icon: icon-newspaper-o
+            categories:
+                label: Kategorie
+                url: ssi/news/category
+                icon: icon-folder-open

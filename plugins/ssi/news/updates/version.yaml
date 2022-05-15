@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ssi_news_news'
+    - builder_table_create_ssi_news_news.php
+1.0.3:
+    - 'Created table ssi_news_categories'
+    - builder_table_create_ssi_news_categories.php
+1.0.4:
+    - 'Created table ssi_news_news_categories'
+    - builder_table_create_ssi_news_news_categories.php
+1.0.5:
+    - 'Updated table ssi_news_news'
+    - builder_table_update_ssi_news_news.php
+1.0.6:
+    - 'Updated table ssi_news_news'
+    - builder_table_update_ssi_news_news_2.php
+1.0.7:
+    - 'Updated table ssi_news_news'
+    - builder_table_update_ssi_news_news_3.php
+1.0.8:
+    - 'Updated table ssi_news_news'
+    - builder_table_update_ssi_news_news_4.php

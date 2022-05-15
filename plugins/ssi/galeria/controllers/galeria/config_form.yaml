@@ -1,0 +1,10 @@
+name: Galeria
+form: $/ssi/galeria/models/galeria/fields.yaml
+modelClass: SSI\Galeria\Models\Galeria
+defaultRedirect: ssi/galeria/galeria
+create:
+    redirect: 'ssi/galeria/galeria/update/:id'
+    redirectClose: ssi/galeria/galeria
+update:
+    redirect: ssi/galeria/galeria
+    redirectClose: ssi/galeria/galeria

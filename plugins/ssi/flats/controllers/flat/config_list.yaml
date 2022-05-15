@@ -1,0 +1,12 @@
+title: Flat
+modelClass: SSI\Flats\Models\Flat
+list: $/ssi/flats/models/flat/columns.yaml
+recordUrl: 'ssi/flats/flat/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

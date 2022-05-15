@@ -1,0 +1,148 @@
+{% set flat = __SELF__.flat %}
+
+<div class="house">
+
+    <div class="house__header">
+        <div>
+            <h1 class="mt-0">Dom nr {{ flat.name }}</h1>
+
+            <span class="separator"></span>
+
+            <div class="house__status">
+                <span class="{{ flat.status | slug }}">{{ flat.status }}</span>
+            </div>
+        </div>
+
+        <span class="separator"></span>
+
+        <div class="house__area">
+            Powierzchnia użytkowa: <b>{{ flat.area }} m²</b>
+        </div>
+
+        <span class="separator"></span>
+
+        <div class="house__garden">
+            Powierzchnia działki: <b>{{ flat.garden }} m²</b>
+        </div>
+
+        <div class="house__buttons">
+            <a class="button" data-toggle="modal" data-target="#formModal" href="">Zapytaj o dom</a>
+            <a class="button gray" href="{{flat.pdf.path}}" download="{{flat.pdf.file_name}}">Pobierz kartę</a>
+        </div>
+    </div>
+
+    <div class="house__rooms">
+        <div>
+            <div class="house__mobile-img">
+                <a href="{{ flat.parter_image.path }}" class="simplelightbox">
+                    <img src="{{ flat.parter_image.path }}" alt="">
+                </a>
+            </div>
+            <ul class="nd">
+                <li><h4>Parter:</h4></li>
+                {% for item in flat.parter %}
+                    <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div>
+            
+            <div class="house__mobile-img">
+                <a href="{{ flat.floor_image.path }}" class="simplelightbox">
+                    <img src="{{ flat.floor_image.path }}" alt="">
+                </a>
+            </div>
+            <ul class="nd">
+                <li><h4>Piętro:</h4></li>
+                {% for item in flat.floor %}
+                    <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <div class="house__mobile-img">
+                <a href="{{ flat.roof_image.path }}" class="simplelightbox">
+                    <img src="{{ flat.roof_image.path }}" alt="">
+                </a>
+            </div>
+            <div class="house__roof">
+                <ul class="nd">
+                    <li><h4>Poddasze:</h4></li>
+                    {% for item in flat.roof %}
+                        <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
+                    {% endfor %}
+                </ul>
+
+                <div class="house__way">
+                    <img src="{{flat.way.path}}" alt="">
+                    <div class="house__direction"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-spacer lazy">
+        <h4>WIRTUALNY SPACER</h4>
+        <div class="w-spacer__box">
+            <iframe width="100%" height="100%" src="/pano/index.html"></iframe>
+        </div>
+    </div>
+
+    <div class="interior__slider svg-slider">
+
+        {% for item in flat.images %}
+            <div>
+                {% partial 'svg/slide' img=item.path %}
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+     aria-hidden="true" >
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formModalLabel">Wyślij zapytanie dotyczące tego mieszkania</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form data-request="emptyForm::onFormSubmit" class="contact-form">
+                {{ form_token() }}
+
+                <div id="emptyForm_forms_flash"></div>
+
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-12 col-lg-6">{% partial 'components/input' label="Mieszkanie*" name="flatname" type="text" required='true' value=flat.name  readonly='true' %}</div>
+                        <div class="col-12 col-lg-6">{% partial 'components/input' label="Imię i Nazwisko*" name="name" type="text" required='true' %}</div>
+
+                        <div class="col-12 col-lg-6">{% partial 'components/input' label="E-mail*" name="email" type="email" required='true' %}</div>
+                        <div class="col-12 col-lg-6">{% partial 'components/input' label="Telefon*" name="tel"  type="text" required='true' %}</div>
+
+                        <div class="col-12 col-lg-12">{% partial 'components/input' label="Wiadomość" name="message" type="textarea" %}</div>
+
+                    </div>
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="button">Wyślij</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% partial 'components/decorator' height='35vw' width='60vw' top='40%' left='65%' rotate='45' %}
+
+

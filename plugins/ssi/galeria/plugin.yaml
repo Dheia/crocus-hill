@@ -1,0 +1,20 @@
+plugin:
+    name: 'ssi.galeria::lang.plugin.name'
+    description: 'ssi.galeria::lang.plugin.description'
+    author: SSI
+    icon: oc-icon-image
+    homepage: ''
+# navigation:
+#     galeria:
+#         label: Galeria
+#         url: ssi/galeria/galeria
+#         icon: icon-image
+#         sideMenu:
+#             side-menu-item:
+#                 label: Galeria
+#                 url: ssi/galeria/galeria
+#                 icon: icon-table
+#             slider:
+#                 label: Slider
+#                 url: ssi/galeria/slider
+#                 icon: icon-play

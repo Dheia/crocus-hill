@@ -1,0 +1,33 @@
+{% spaceless %}
+
+<div class="alert alert-{{ type }} alert-dismissible" role="alert">
+    <div class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></div>
+
+    {% if title %}
+    <h4>{{ title }}</h4>
+    {% endif %}
+
+    {% if content %}
+    <p>{{ content }}</p>
+    {% endif %}
+
+    {% if list %}
+    <ul>
+        {% for item in list %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</div>
+
+{% if jscript %}
+<script>
+    {% if errors %}
+    var errors = JSON.parse('{{ errors|raw }}');
+    {% endif %}
+    {{ jscript|raw }}
+</script>
+{% endif %}
+
+{% endspaceless %}

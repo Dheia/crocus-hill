@@ -1,0 +1,41 @@
+description = "Formularz kontaktowy"
+==
+<form data-request="{{ __SELF__ }}::onFormSubmit" class="form">
+    <h3>{{'Kontakt' |_ }}</h3>
+    {{ form_token() }}
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+    <div class="form__row">
+        <input type="text" name="name" id="name" class="form__input">
+        <label for="name" class="form__label">{{'Imie' |_ }}</label>
+        <span class="form__border"></span>
+    </div>
+
+    <div class="form__row">
+        <input type="tel" name="tel" id="tel" class="form__input">
+        <label for="tel" class="form__label">{{'Numer Telefonu' |_ }}</label>
+        <span class="form__border"></span>
+    </div>
+
+    <div class="form__row">
+        <input type="email" name="email" id="email" class="form__input">
+        <label for="email" class="form__label">{{'Email' |_ }}</label>
+        <span class="form__border"></span>
+    </div>
+
+    <div class="form__row">
+        <textarea type="text" name="message" id="message" rows="6" class="form__input form__input--textarea"></textarea>
+        <label for="message" class="form__label">{{'Wiadomość' |_ }}</label>
+        <span class="form__border"></span>
+    </div>
+
+    {% partial '@recaptcha' %}
+
+    <!-- SUBMIT BUTTON -->
+    <div class="submitSection">
+        <div class="form__rodo">
+            <input type="checkbox" name="rodo" id="rodo" class="form__input--checkbox">
+            <label for="rodo">{{'oświadczam, że zapoznałem się z ogólnymi zasadami przetwarzaniadanych osobowych i akceptuje' |_}} <a href="/rodo">{{'regulamin'|_}}</a> </label>
+        </div>
+        <button type="submit" class="button button--reverse">{{'Wyślij'|_}}</button>
+    </div>
+</form>

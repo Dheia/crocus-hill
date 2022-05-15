@@ -1,0 +1,143 @@
+.presentation {
+	position: relative;
+	margin: $padding-xl*1.5 0;
+
+	&__img {
+		position: absolute;
+		
+		&-left {
+			left: 0;
+			top: 10vw;
+			width: 25vw;
+			height: 650px;
+		}
+
+		&-right {
+			top: -2vw;
+			right: 0;
+			width: 22vw;
+			height: 600px;
+		}
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__container {
+		border: 2px solid rgb(178, 178, 178);
+		border-left: none;
+		padding: 8vw 10vw 15vw 15vw;
+		margin: 0 10vw;
+	}
+
+	h2 {
+		margin-left: 10vw;
+	}
+
+
+	.slider-arrow {
+		width: 65px;
+		height: 65px;
+		border: none;
+		border-radius: 50%;
+		color: white;
+		background-color: #00000085;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: 0;
+		z-index: 10;
+		transition: all .5s;
+		font-size: 23px;
+		bottom: 2vw;
+	  
+		&:hover {
+		  background-color: $color-main;
+		}
+	
+		&_prev {
+			left: calc(85% - 65px);
+			padding-right: 9px;
+	
+		i	{
+				&::before {
+					background-image: url('../../images/arp.svg');
+				}
+			}
+		}
+	  
+		&_next {
+			right: calc(13% - 65px);
+		  	padding-left: 9px;
+	  
+			i {
+				&::before {
+				background-image: url('../../images/arn.svg');
+				}
+			}
+		}
+	  
+	  
+		i {
+		  &::before {
+			content: '';
+			width: 25px;
+			height: 38px;
+			display: block;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		  }
+		}
+	  }
+
+	&__slider {
+		width: 48vw;
+		margin: -100px 5vw 0 auto;
+
+		img {
+			width: 100%;
+		}
+	}
+	
+
+	&__heading {
+		&-right {
+			text-align: right;
+		}
+	}
+
+	&-type2 {
+
+		.presentation__heading {
+			text-align: right;
+		}
+	
+		.presentation__container {
+			border: none;
+		}
+
+		.presentation__img-left {
+			top: -4vw;
+		}
+
+		.presentation__img-right {
+			top: 8vw;
+			height: 800px;
+		}
+
+		.presentation__heading {
+			margin-right: $padding-xl*1.5;
+			border-bottom: 2px solid rgb(178, 178, 178);
+		}
+
+		.presentation__slider {
+			margin: -150px auto 0 5vw;
+		}
+	}
+	
+}
+

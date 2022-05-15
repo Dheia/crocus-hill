@@ -1,0 +1,4 @@
+title: TextAndImage
+modelClass: SSI\Sekcje\Models\TextAndImage
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: TextAndImage
+form: $/ssi/sekcje/models/textandimage/fields.yaml
+modelClass: SSI\Sekcje\Models\TextAndImage
+defaultRedirect: ssi/sekcje/textandimage
+create:
+    redirect: 'ssi/sekcje/textandimage/update/:id'
+    redirectClose: ssi/sekcje/textandimage
+update:
+    redirect: ssi/sekcje/textandimage
+    redirectClose: ssi/sekcje/textandimage

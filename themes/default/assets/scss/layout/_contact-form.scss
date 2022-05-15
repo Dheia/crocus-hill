@@ -1,0 +1,116 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: rem(50px);
+
+  :focus{outline: none;}
+
+  &__row {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  &__input {
+    margin-top: 5px;
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #505052;
+    background-color: transparent;
+    position: relative;
+    font-size: 1.6rem;
+    width: 100%;
+    &--checkbox{
+      margin: 0 5px 0 0 ;
+    }
+    &--textarea{
+      margin-bottom: -7px;
+    }
+
+    & ~ .form__border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-main;
+      transition: 0.3s;
+    }
+
+    &:focus ~ .form__border {
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    &:focus ~ .form__label {
+      top: -16px;
+      font-size: 12px;
+      color: $color-main;
+      transition: 0.3s;
+    }
+
+    &--has-content ~ .form__border {
+      width: 100%;
+      transition: 0.4s;
+    }
+
+    &--has-content ~ .form__label {
+      top: -16px;
+      font-size: 12px;
+      color: $color-main;
+      transition: 0.3s;
+    }
+
+  }
+
+  &__label  {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0px;
+    color: #505052;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__rodo {
+    font-size: rem(14px);
+    width: 100%;
+    margin-bottom: rem(30px);
+    margin-top: rem(15px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    label, input{
+      cursor: pointer;
+    }
+  }
+
+  select {
+    background-color: unset;
+  }
+
+  option {
+    margin: 5px;
+  }
+
+}
+
+#topic {
+  font-size: rem(18px);
+}
+
+.close {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.alert{
+  h4{
+    margin-top: 15px;
+    font-size: rem(20px);
+  }
+}

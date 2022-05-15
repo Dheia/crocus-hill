@@ -1,0 +1,99 @@
+description = "Dodawanie mapy na podstawie adresu"
+
+[viewBag]
+snippetCode = "map-address"
+snippetName = "Mapa - podaj adres"
+
+snippetProperties[mapStreet][title] = "ulica i numer domu"
+snippetProperties[mapStreet][type] = "string"
+snippetProperties[mapStreet][default] = ""
+snippetProperties[mapStreet][options][] = ""
+
+snippetProperties[mapZipCode][title] = "kod pocztowy"
+snippetProperties[mapZipCode][type] = "string"
+snippetProperties[mapZipCode][default] = ""
+snippetProperties[mapZipCode][options][] = ""
+
+snippetProperties[mapCity][title] = "miasto"
+snippetProperties[mapCity][type] = "string"
+snippetProperties[mapCity][default] = ""
+snippetProperties[mapCity][options][] = ""
+
+snippetProperties[y][title] = "oddalenie [0-20]"
+snippetProperties[y][type] = "string"
+snippetProperties[y][default] = "14"
+snippetProperties[y][options][] = ""
+snippetProperties[mapName][title] = "id kontenera mapy"
+snippetProperties[mapName][type] = "string"
+snippetProperties[mapName][default] = "map1"
+snippetProperties[mapName][options][] = ""
+snippetProperties[mapHeight][title] = "wysokość kontenera mapy"
+snippetProperties[mapHeight][type] = "string"
+snippetProperties[mapHeight][default] = "600px"
+snippetProperties[mapHeight][options][] = ""
+==
+<div class="map" id="{{ mapName }}" style="height:{{ mapHeight }}"></div>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    (function($) {
+
+    if($('#{{ mapName }}').length){
+    const street = '{{ mapStreet }}';
+    const zip_code = '{{ mapZipCode }}';
+    const city = '{{ mapCity }}';
+
+    fetch(`https://nominatim.openstreetmap.org/search/${street} ${zip_code} ${city}?format=json&addressdetails=1&limit=1`)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        if(data.length){
+            const localization = data[0];
+            var map = L.map('{{ mapName }}').setView([localization.lat, localization.lon], '15');
+            L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3NpY29tcGwiLCJhIjoiY2t4ZXJvZzhtNTVtYjJ3bGFuZ2R6Zm51NiJ9.vr3XPFviB-e76z4rbTAcLw', {
+                attributionControl: false,
+                tileSize: 512,
+                zoomOffset: -1
+            }).addTo(map);
+            map.scrollWheelZoom.disable();
+
+            console.log(marker);
+
+            var customIcon = L.icon({
+                //Ścieżka do ikony
+                iconUrl: '{{ mapMarker }}',
+                //Odpowiada za wielkość ikony
+                iconSize: [150, 150],
+                //Odpowiada za część wskazującą na obiekt
+                iconAnchor:   [75, 150],
+                //odpowiada w jakim pkt ma wyskoczyc popup?
+                popupAnchor:  [-3, -76]
+            });
+
+            var points = [
+                ["P1", localization.lat, localization.lon]
+            ];
+
+            var marker = [];
+            var i;
+            for (i = 0; i < points.length; i++) {
+                marker[i] = new L.Marker([points[i][1], points[i][2]], {
+                    icon: customIcon
+                });
+                marker[i].addTo(map);
+            }
+        }else{
+            throw 'Nie znaleziono lokazizacji o podanym adresie';
+        }
+            })
+        .catch((err) => {
+                console.error(err);
+            }
+        );
+    }
+
+    })(jQuery);
+});
+
+</script>

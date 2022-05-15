@@ -1,0 +1,132 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  
+    &__label {
+      font-size: rem(12px);
+      margin-bottom: 5px;
+      &--checkbox{
+        font-size: rem(11px);
+        line-height: rem(16px);
+      }
+    }
+  
+    &__item {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      font-size: rem(14px);
+      // max-width: 500px;
+    }
+  
+    &--checkbox,
+    &--radio {
+      display: inline-block;
+      position: relative;
+      .input__label {
+        margin: 0;
+        cursor: pointer;
+  
+        &--checkbox {
+          padding-left: 35px;
+          @include mq($until: xs) {
+            padding-left: 20px;
+          }
+        }
+        &--radio {
+          padding-left: 35px;
+          @include mq($until: xs) {
+            padding-left: 20px;
+          }
+        }
+      }
+      .input__item {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:hover ~ .input__checkmark {
+          background-color: $color-main;
+        }
+        &:checked ~ .input__checkmark {
+          background-color: $color-main;
+        }
+        &:checked ~ .input__checkmark:after {
+          display: block;
+        }
+      }
+      .input__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 26px;
+        width: 26px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid $color-main;
+        transition: background-color 0.3s ease-in-out;
+        @include mq($until: xs) {
+          height: 15px;
+          width: 15px;
+          top: 1px;
+        }
+        &--radio {
+          display: flex;
+          align-items: center;
+          border-radius: 50%;
+          justify-content: center;
+          right: unset;
+          left: 0;
+          top: -1px;
+          @include mq($until: xs) {
+            top: 1px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 10px;
+          top: 6px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 1.5px 1.5px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          @include mq($until: xs) {
+            left: 6px;
+            top: 2px;
+            width: 4px;
+            height: 8px;
+          }
+        }
+        &--radio::after {
+          border-radius: 50%;
+          background: white;
+          border: none;
+          width: 8px;
+          height: 8px;
+          position: static;
+          @include mq($until: xs) {
+            width: 5px;
+            height: 5px;
+          }
+        }
+      }
+    }
+  }
+  
+  .modal-header .close span {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .modal-title {
+    font-size: rem(18px);
+  }
+  

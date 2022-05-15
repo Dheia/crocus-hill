@@ -1,0 +1,11 @@
+name: Praca
+modelClass: Ssi\Praca\Models\Praca
+form: $/ssi/praca/models/praca/fields.yaml
+defaultRedirect: ssi/praca/praca
+create:
+    redirect: 'ssi/praca/praca/update/:id'
+    redirectClose: ssi/praca/praca
+update:
+    redirect: ssi/praca/praca
+    redirectClose: ssi/praca/praca
+preview: {  }

@@ -1,0 +1,5 @@
+title: 'ssi.galeria::lang.plugin.name'
+modelClass: SSI\Galeria\Models\Galeria
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

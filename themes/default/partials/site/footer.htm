@@ -1,0 +1,24 @@
+==
+use \Cms\Classes\Page;
+function onStart()
+{
+    $this['pages'] = Page::get();
+}
+==
+<div class="footer-small">
+    <a href="/rodo">polityka rodo</a>
+    <div class="footer-small__copyright">
+        {{ this.theme.footer_name }} © {{"now"|date("Y")}}
+    </div>
+    {% if this.theme.footer_realization %}
+        <a class="footer-small__realization" href="https://www.ssi.com.pl/" title="SSI - agencja interaktywna" target="_blank">
+            <span>realizacja strony:</span>
+            <img src="{{'assets/images/ssi.png'|theme}}" alt="SSI - agencja interaktywna">
+        </a>
+    {% else %}
+        <a class="footer-small__realization" href="http://hotelio.biz/" title="Hotelio" target="_blank">
+            <span>realizacja strony:</span>
+            <img src="{{'assets/images/dewelo.png'|theme}}" alt="Dewelo">
+        </a>
+    {% endif %}
+</div>

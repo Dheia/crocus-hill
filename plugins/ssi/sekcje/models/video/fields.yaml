@@ -1,0 +1,23 @@
+fields:
+    title:
+        label: Tytul
+        span: left
+        type: text
+    video:
+        label: 'Kod Embed'
+        size: huge
+        language: html
+        span: right
+        type: codeeditor
+    # height:
+    #     label: Wysokość
+    #     span: left
+    #     default: '35'
+    #     type: text
+    #     comment: '% od szerokości ekranu'
+    # width:
+    #     label: Szerokość
+    #     span: left
+    #     default: '100'
+    #     type: text
+    #     comment: '% od szerokości elementu nadrzędnego'

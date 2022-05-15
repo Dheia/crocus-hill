@@ -1,0 +1,11 @@
+name: Category
+modelClass: SSI\News\Models\Category
+form: $/ssi/news/models/category/fields.yaml
+defaultRedirect: ssi/news/category
+create:
+    redirect: 'ssi/news/category/update/:id'
+    redirectClose: ssi/news/category
+update:
+    redirect: ssi/news/category
+    redirectClose: ssi/news/category
+preview: {  }

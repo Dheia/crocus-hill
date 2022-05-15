@@ -1,0 +1,11 @@
+name: FlatFloor
+modelClass: SSI\Flats\Models\FlatFloor
+form: $/ssi/flats/models/flatfloor/fields.yaml
+defaultRedirect: ssi/flats/flatfloor
+create:
+    redirect: 'ssi/flats/flatfloor/update/:id'
+    redirectClose: ssi/flats/flatfloor
+update:
+    redirect: ssi/flats/flatfloor
+    redirectClose: ssi/flats/flatfloor
+preview: {  }

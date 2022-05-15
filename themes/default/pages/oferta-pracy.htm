@@ -1,0 +1,75 @@
+title = "Oferta pracy"
+url = "/praca/:id/:slug"
+layout = "subpage"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[builderDetails]
+modelClass = "Ssi\Praca\Models\Praca"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "title"
+notFoundMessage = "Taka oferta nie istnieje"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <div class="job">
+        <div class="job__description">
+            <div class="job__title-wrapper">
+                <h2 class="job__title">
+                    {{record.title}}
+                </h2>
+                <span class="job__status {% if not record.status %}job__status--deactive{% endif %}">
+                    {% if record.status %}
+                        Aktualne
+                    {% else %}
+                        Nieaktualne
+                    {% endif %}
+                </span>
+            </div>
+            {{record.description | raw}}
+            <p class="job__contact">
+                Oferty prosimy przesyłać na adres mailowy: <a href="mailto:sekretariat@krwiodawstwo.szczecin.pl">sekretariat@krwiodawstwo.szczecin.pl</a> z dopiskiem "Praca".
+                <br>
+                Oferty pracy można również składać osobiście w sekretariacie RCKiK w Szczecinie lub Kadrach (pok. 107).
+            </p>
+        </div>
+        <ol class="job__rodo">
+            <li>Przetwarzanie danych osobowych w Regionalnym Centrum Krwiodawstwa i Krwiolecznictwa w Szczecinie (dalej RCKiK w Szczecinie) odbywa się zgodnie z obowiązującymi przepisami, w szczególności z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (dalej RODO)</li>
+            <li>Administratorem danych osobowych (dalej ADO) jest Regionalne Centrum Krwiodawstwa i Krwiolecznictwa w Szczecinie (dalej RCKiK w Szczecinie), al. Wojska Polskiego 80/82, 70‑482 Szczecin, tel. (+48) 91 422 18 98, reprezentowane przez Dyrektora Ewę Kłosińską.</li>
+            <li>Do spraw związanych z ochroną danych osobowych ADO powołał na inspektora ochrony danych (dalej IOD).  Z IOD można się kontaktować telefonicznie pod numerem (+48) 91 424 36 64 lub za pomocą poczty elektronicznej pod adresem iod@krwiodawstwo.szczecin.pl.</li>
+            <li>Osobie, której dane osobowe są przetwarzane w RCKiK w Szczecinie przysługuje prawo do:<br>
+                a. żądania od ADO dostępu do danych osobowych dotyczących tej osoby, ich sprostowania, usunięcia lub ograniczenia przetwarzania,<br>
+                b. wniesienia sprzeciwu wobec przetwarzania,<br>
+                c. przenoszenia danych,<br>
+                d. wniesienia skargi do organu nadzorczego.
+            </li>
+            <li>RCKiK w Szczecinie przetwarza dane osobowe w celu realizacji zadań wynikających z ustawy z dnia 22 sierpnia 1997 r. o publicznej służbie krwi (Dz.U. z 2017 r., poz. 1371 t.j.), w szczególności art. 27 ust. 1. Dane osób ubiegających się o pracę są przetwarzane na podstawie przepisów artykułu 221 ustawy z dnia 26 czerwca 1974 r. Kodeks pracy (Dz.U. z 2018 r., poz. 917 t.j., z późn. zm.).
+            </li>
+            <li>
+                Przetwarzane w procesie rekrutacji dane osobowe nie są przekazywane innym odbiorcom, podmiotom ani osobom trzecim.
+            </li>
+            <li>
+                RCKiK w Szczecinie przetwarza następujące dane osobowe: imię (imiona) i nazwisko, imiona rodziców, datę urodzenia, miejsce zamieszkania (adres do korespondencji), wykształcenie, przebieg dotychczasowego zatrudnienia.
+            </li>
+            <li>
+                Wszelkie dane osobowe ponad wymienione w punkcie 7. RCKiK w Szczecinie przetwarza wyłącznie za pisemną zgodą osoby ubiegającej się o pracę. Brak zgody na przetwarzanie dodatkowych danych może spowodować brak możliwości rekrutacji.
+            </li>
+            <li>
+                Dane przetwarzane na potrzeby rekrutacji są usuwane nie później niż 3 miesiące kalendarzowe po  zakończeniu procesu rekrutacji na dane stanowisko, a w przypadku, gdy  RCKiK w Szczecinie nie prowadzi rekrutacji, to przetwarzane dane osobowe są usuwane  nie później niż 3 miesiące kalendarzowe od dnia otrzymania danych. Okres ten może być wydłużony do 1 roku za pisemną zgodą osoby ubiegającej się o pracę na przetwarzanie danych w celu uczestniczenia w następnych rekrutacjach.
+            </li>
+            <li>
+                Żądanie przez RCKiK w Szczecinie podania danych osobowych wyszczególnionych w punkcie 7. jest uprawnieniem wynikającym  z przepisów artykułu 221 ustawy z dnia 26 czerwca 1974 r. Kodeks pracy (Dz.U. z 2018 r., poz. 917 t.j., z późn. zm.). Osoba ubiegająca się o pracę jest zobowiązana do podania żądanych danych, odmowa ich podania skutkuje brakiem możliwości uczestniczenia w procesie rekrutacji.
+            </li>
+        </ol>
+    </div>
+
+
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
