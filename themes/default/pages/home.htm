@@ -25,9 +25,7 @@ sectionName = "Textowa"
 <section class="top lazy" data-bg="{{this.theme.top_bg.path}}">
 
     <div>
-        <span class="top__name">Crocus Hill</span>
-        <div class="separator separator-white separator"></div>
-        <div class="separator separator-white separator-short"></div>
+        <span class="top__name">{% partial 'svg/top-slogan' %}</span>
         <h1>Mieszkania w sercu Szczecina przy Jasnych Błoniach.</h1>
     </div>
 
@@ -78,9 +76,9 @@ sectionName = "Textowa"
     </ul>
 
     <div class="icons__title">
-        <h2>{{ this.theme.icons_title }}</h2>
-        <div class="separator separator-white separator"></div>
-        <div class="separator separator-white separator-short"></div>
+        <h2>{% partial 'svg/slogan' %}</h2>
+        <!-- <div class="separator separator-white separator"></div>
+        <div class="separator separator-white separator-short"></div> -->
     </div>
 
     <ul class="icons__set icons__set-below nd">
@@ -139,7 +137,42 @@ sectionName = "Textowa"
 </section>
 
 <section class="widget">
+
+    <div class="widget__house widget__house-a margin-container-left">
+        <span>Budynek A</span>
+        <span class="widget__total a">21</span>
+        <span>dostępnych<br> mieszkań</span>
+    </div>
+
+    <div class="widget__house widget__house-b margin-container-right">
+        <span>Budynek B</span>
+        <span class="widget__total b">21</span>
+        <span>dostępnych<br> mieszkań</span>
+    </div>
+
     {% partial 'svg/widget' %}
+
+    <div class="widget__panel padding-container">
+
+        <div>
+            <label for="from">
+                Powierzchnia od:
+                <select name="from" id="from">
+                    <option value="0">wszystkie</option>
+                    <option value="50">50m2</option>
+                </select> 
+            </label>
+            <label for="from">
+                do:
+                <select name="to" id="to">
+                    <option value="0">wszystkie</option>
+                    <option value="50">150m2</option>
+                </select> 
+            </label>
+        </div>
+
+    </div>
+
 </section>
 
 <section class="presentation presentation-type2 padding-container">
@@ -189,6 +222,29 @@ sectionName = "Textowa"
     mapCity=this.theme.map_city
     mapMarker=this.theme.map_marker.path
 %}
+
+<section class="three-columns">
+    <img class="three-columns__left lazy" data-src="{{ 'assets/images/pod-klucz.jpg' | theme }}" alt="">
+
+    <div class="three-columns__center">
+
+        <h3 class="decorator-left">Standard deweloperski</h3>
+
+        <p>
+            W Europie Zachodniej i Północnej większość sprzedawanych mieszkań jest już wykończona pod klucz. 
+        </p>
+
+        <p>
+            W Polsce taka usługa zdobywa coraz większą popularność wraz z rosnącą ilością jakościowych inwestycji mieszkaniowych. Właściciele takich mieszkań oczekują dobrego projektu, odpowiednich materiałów i najwyższej jakości prac budowlanych. Usługa wykończenia pod klucz realizowana przez naszego partera pozwala uzyskać taki efekt, a prace zacząć od razu po odbiorze mieszkania. Dzięki temu Tobie pozostaje wejść do gotowego, urządzonego już mieszkania.
+        </p>
+
+        <h3 class="decorator-right">Wykończenie pod klucz</h3>
+
+    </div>
+
+    <img class="three-columns__right lazy" data-src="{{ 'assets/images/stan-deweloperski.jpg' | theme }}" src="" alt="">
+</section>
+
 
 {#
 <div>

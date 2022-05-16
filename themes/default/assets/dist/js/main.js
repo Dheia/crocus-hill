@@ -1369,8 +1369,8 @@ if ($('.header--fixed').length) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Web\C\crocus\crocus-hill.szcz.pl\themes\default\assets\js\main.js */"./themes/default/assets/js/main.js");
-module.exports = __webpack_require__(/*! D:\Web\C\crocus\crocus-hill.szcz.pl\themes\default\assets\scss\main.scss */"./themes/default/assets/scss/main.scss");
+__webpack_require__(/*! D:\2022\CrocusHill\crocus-hill.szcz.pl\themes\default\assets\js\main.js */"./themes/default/assets/js/main.js");
+module.exports = __webpack_require__(/*! D:\2022\CrocusHill\crocus-hill.szcz.pl\themes\default\assets\scss\main.scss */"./themes/default/assets/scss/main.scss");
 
 
 /***/ })

@@ -35389,7 +35389,7 @@ $('.presentation__slider').slick({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Web\C\crocus\crocus-hill.szcz.pl\themes\default\assets\js\important-scripts.js */"./themes/default/assets/js/important-scripts.js");
+module.exports = __webpack_require__(/*! D:\2022\CrocusHill\crocus-hill.szcz.pl\themes\default\assets\js\important-scripts.js */"./themes/default/assets/js/important-scripts.js");
 
 
 /***/ })

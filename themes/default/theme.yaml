@@ -101,12 +101,12 @@ form:
         fileTypes: jpg, png
         tab: Top
         span: left
-      title:
-        label: Nagłówek
-        tab: Top
-        type: text
-        size: small
-        span: right
+      # title:
+      #   label: Nagłówek
+      #   tab: Top
+      #   type: text
+      #   size: small
+      #   span: right
       icons_bg:
         label: Tłó sekcji
         mode: image
@@ -193,16 +193,29 @@ form:
         tab: Contact
         type: text
         span: right
+      footer_logo:
+        label: Wilkie Logo
+        mode: image
+        type: fileupload
+        fileTypes: svg, jpg, png
+        tab: Footer
+        span: left
+      smalllogo:
+        label: Małe Logo
+        mode: image
+        type: fileupload
+        fileTypes: svg, jpg, png
+        tab: Footer
+        span: right
+      footer_bg:
+        label: Tło
+        mode: image
+        type: fileupload
+        fileTypes: jpg, png
+        tab: Footer
+        span: left
       footer_name:
         label: Nazwa firmy
         tab: Footer
         type: text
-        span: left
-      footer_realization:
-        label: Realizacja
-        tab: Footer
-        type: switch
-        on: SSI
-        off: HTL
-        span: left
-        permissions: is_superuser
+        span: right
