@@ -22,13 +22,12 @@ class Flat extends Model
      */
     public $table = 'ssi_flats_flats';
 
-    public $belongsTo = [
-        'building' => [
-            'ssi\flats\models\Building',
-            'key' => 'building_id'
-        ],
-    ];
-
+    // public $belongsTo = [
+    //     'building' => [
+    //         'ssi\flats\models\Building',
+    //         'key' => 'building_id'
+    //     ],
+    // ];
 
     public $attachOne = [
         'pdf' => 'System\Models\File',
@@ -39,7 +38,6 @@ class Flat extends Model
         'way' => 'System\Models\File',
     ];
 
-
     public $attachMany = [
         'images' => 'System\Models\File',
     ];
@@ -47,7 +45,6 @@ class Flat extends Model
     public function beforeSave() {
         $this->slug = str_slug($this->name);
     }
-
 
     /**
      * @var array Validation rules

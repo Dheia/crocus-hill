@@ -24,6 +24,15 @@
   }
 }
 
+a { 
+  &:hover {
+    color: rgb(194, 194, 194);
+    svg {
+      fill: rgb(194, 194, 194);
+    }
+  }
+}
+
 $padding-xxl: 8vw;
 $padding-xl: 100px;
 $padding-lg: 50px;

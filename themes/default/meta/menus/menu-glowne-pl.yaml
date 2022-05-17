@@ -1,10 +1,10 @@
 name: 'Menu główne'
 items:
     -
-        title: Aktualności
-        type: cms-page
+        title: 'O inwestycji'
+        type: url
+        url: '/#'
         code: ''
-        reference: aktualnosci
         viewBag:
             locale:
                 en:
@@ -17,15 +17,114 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: 'All static pages'
-        nesting: ''
-        type: all-static-pages
-        url: ''
+        title: 'Oferta mieszkań'
+        type: url
+        url: '/#'
         code: ''
-        reference: ''
-        cmsPage: ''
-        replace: '1'
         viewBag:
+            locale:
+                en:s
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Wykończenie pod klucz'
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Mapa osiedla'
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Lokalizacja
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Galeria zdjęć'
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'O nas'
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Kontakt'
+        type: url
+        url: '/#'
+        code: ''
+        viewBag:
+            locale:
+                en:
+                    title: ''
+                    url: ''
+                de:
+                    title: ''
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'

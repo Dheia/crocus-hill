@@ -96,3 +96,6 @@
 1.0.33:
     - 'Updated table ssi_flats_flats'
     - builder_table_update_ssi_flats_flats_11.php
+1.0.34:
+    - 'Updated table ssi_flats_flats'
+    - builder_table_update_ssi_flats_flats_12.php

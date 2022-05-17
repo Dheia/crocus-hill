@@ -21,7 +21,6 @@
     }
 
   }
-  
 
   &__item-text {
       font-weight: 600;
@@ -116,11 +115,6 @@
   min-height: 600px;
   background-size: cover;
 
-  h2 {
-    font-size: 3.5vw;
-    color: white;
-  }
-
   &__set {
     margin: 40px auto;
     width: 80%;
@@ -183,6 +177,11 @@
       font-family: $secondary-font;
       line-height: 1.2;
     }
+  }
 
+  @include mq($until: xl) {
+    svg {
+      width: 90vw;
+    }
   }
 }

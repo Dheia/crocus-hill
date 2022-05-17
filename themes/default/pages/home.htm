@@ -21,6 +21,18 @@ width = 100
 [TextAndImage]
 sectionName = "Textowa"
 ==
+<?php
+use SSI\Flats\Models\Flat;
+
+public function onStart() {
+    $A = Flat::where('building', 'A')->count();    
+    $B = Flat::where('building', 'B')->count();
+
+    $this->page->A = $A;
+    $this->page->B = $B;
+}
+?>
+==
 
 <section class="top lazy" data-bg="{{this.theme.top_bg.path}}">
 
@@ -76,7 +88,7 @@ sectionName = "Textowa"
     </ul>
 
     <div class="icons__title">
-        <h2>{% partial 'svg/slogan' %}</h2>
+        {% partial 'svg/slogan' %}
         <!-- <div class="separator separator-white separator"></div>
         <div class="separator separator-white separator-short"></div> -->
     </div>
@@ -140,18 +152,29 @@ sectionName = "Textowa"
 
     <div class="widget__house widget__house-a margin-container-left">
         <span>Budynek A</span>
-        <span class="widget__total a">21</span>
-        <span>dostępnych<br> mieszkań</span>
+        <span class="widget__total a">{{this.page.A}}</span>
+        
+        {% if this.page.A == 1 or this.page.A > 20 %}
+            <span>dostępne<br> mieszkanie</span>
+        {% else %}
+            <span>dostępnych<br> mieszkań</span>
+        {% endif %}
+
     </div>
 
     <div class="widget__house widget__house-b margin-container-right">
         <span>Budynek B</span>
-        <span class="widget__total b">21</span>
-        <span>dostępnych<br> mieszkań</span>
+        <span class="widget__total b">{{this.page.B}}</span>
+        
+        {% if this.page.B == 1 or this.page.B > 20 %}
+            <span>dostępne<br> mieszkanie</span>
+        {% else %}
+            <span>dostępnych<br> mieszkań</span>
+        {% endif %}
     </div>
 
     {% partial 'svg/widget' %}
-
+    <form action="/apartamenty" method="post">
     <div class="widget__panel padding-container">
 
         <div>
@@ -171,8 +194,52 @@ sectionName = "Textowa"
             </label>
         </div>
 
-    </div>
+        <div>
+            <label for="from">
+                Liczba pokoi: 
+                <select name="from" id="from">
+                    <option value="">wszystkie</option>
+                    <option value="1">1</option>
+                </select> 
+            </label>
+            <label for="from">
+                Piętro:
+                <select name="to" id="to">
+                    <option value="">wszystkie</option>
+                    <option value="0">0</option>
+                </select> 
+            </label>
+        </div>
 
+        <div>
+            <button class="button active" href="">wyszukaj</button>
+            <button class="button" href="">zobacz wszystkie</button>
+        </div>
+
+    </div>
+    </form>
+
+    <div class="widget__modal"><span class="close"></span><div class="hata"></div></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event){
+
+            $('.top__button').on('click', function() {
+                $("html, body").animate({ 
+                    scrollTop: $('.widget').offset().top 
+                }, 1000);
+            })
+
+            $('.widget__floor').on('click', function() {
+                $('.widget__modal').addClass('active');
+                $('.hata').html($(this).data('symbol'));
+            });
+
+            $('.close').on('click', function() {
+                $('.widget__modal').removeClass('active');
+            });
+        })
+    </script>
 </section>
 
 <section class="presentation presentation-type2 padding-container">
@@ -244,66 +311,3 @@ sectionName = "Textowa"
 
     <img class="three-columns__right lazy" data-src="{{ 'assets/images/stan-deweloperski.jpg' | theme }}" src="" alt="">
 </section>
-
-
-{#
-<div>
-    <h1>home</h1>
-
-    {% component "VideoSSI" %}
-
-    {% component "TextAndImage" %}
-
-    <div class="row">
-        <div class="col-6">test<i class="fas fa-home"></i></div>
-        <div class="col-6">test2</div>
-    </div>
-    
-    <div class="row" style="margin: 50px -15px;">
-        <div class="col-2 post-left delay1">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="col-2 post-up delay2">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="col-2 post-down delay3">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="col-2 post delay4">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="col-2 post-right delay5">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-        <div class="col-2 post-zoom delay6">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-        </div>
-    </div>
-    
-    <div class="mt-5 mb-5">
-        {% partial 'svg/social/fb' %}
-        {% partial 'svg/social/insta' %}
-        {% partial 'svg/social/booking' %}
-        {% partial 'svg/social/twitter' %}
-        {% partial 'svg/social/youtube' %}
-        {% partial 'svg/social/linkedin' %}
-        {% partial 'svg/social/trip-advisor' %}
-    </div>
-    <div class="h-news">
-        {% component 'newsList' %}
-    </div>
-
-    <h4 class="counter" data-target="300" data-speed="150">0</h4>
-    
-    <div class="current-page-stats">
-        Current Views: <b>{{ this.page.synderstats.views }}</b><br>
-        Current Visits: <b>{{ this.page.synderstats.visits }}</b>
-    </div>
-    
-    <div class="another-page-stats">
-        Views from another Page: <b>{{ '/another-page'|synderviews }}</b><br>
-        Visits from another Page: <b>{{ '/another-page'|syndervisits }}</b>
-    </div>
-</div>
-
-#}

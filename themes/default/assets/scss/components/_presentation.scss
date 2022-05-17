@@ -36,6 +36,9 @@
 		margin-left: 10vw;
 	}
 
+	li {
+		margin-top: 0;
+	}
 
 	.slider-arrow {
 		width: 65px;
@@ -95,9 +98,10 @@
 	  }
 
 	&__slider {
-		width: 48vw;
+		width: 54vw;
 		margin: -100px 5vw 0 auto;
-
+		background-color: white;
+		
 		img {
 			width: 100%;
 		}
@@ -139,5 +143,25 @@
 		}
 	}
 	
+	@include mq($until: md) {
+		&__container {
+			margin: 0 10vw 0 0;
+			padding: 8vw 10vw 15vw 5vw;
+		}
+
+		h2 {
+			margin-left: 0;
+		}
+
+		&__img {
+			display: none;
+		}
+
+		&__slider {
+			width: 100%;
+			margin: -50px auto 0;
+		}
+	}
+
 }
 

@@ -3,16 +3,18 @@ fields:
         label: Nazwa
         span: left
         type: text
+        required: 1
     symbol:
         label: Symbol
         span: right
         type: text
+        required: 1
     status:
         label: Status
         options:
-            Dostępny: dostepny 
+            Dostępny: dostepny
             Rezerwacja: rezerwacja
-            Sprzedane: sprzedane 
+            Sprzedane: sprzedane
         showSearch: true
         span: left
         type: dropdown
@@ -21,93 +23,22 @@ fields:
         span: right
         type: number
         commentAbove: 'podajemy tylko liczbę [m²]'
-    garden:
-        label: Ogródek
-        span: right
-        type: number
-    way:
-        label: 'Dom na Osiedlu'
-        mode: image
-        span: auto
-        required: 0
-        type: fileupload
+    building:
+        label: Budynek
+        options:
+            A: A
+            B: B
+        showSearch: true
+        span: left
+        type: dropdown
 tabs:
     fields:
-        parter_image:
-            label: Render
+        image:
+            label: Zdjęcie Główne
             mode: image
             span: auto
-            required: 0
             type: fileupload
-            tab: Parter
-        parter:
-            label: Pomieszczenia
-            prompt: 'Dodaj nowe pomieszczenie'
-            span: auto
-            type: repeater
-            tab: Parter
-            form:
-                fields:
-                    room:
-                        label: Pomieszczenie
-                        span: auto
-                        type: text
-                        commentAbove: 'nazwa pomieszczenia'
-                    area:
-                        label: Powierzchnia
-                        span: auto
-                        type: number
-                        commentAbove: 'podajemy tylko liczbę [m²]'
-        floor_image:
-            label: Render
-            mode: image
-            span: auto
-            required: 0
-            type: fileupload
-            tab: Piętro
-        floor:
-            label: Pomieszczenia
-            prompt: 'Dodaj nowe pomieszczenie'
-            span: auto
-            type: repeater
-            tab: Piętro
-            form:
-                fields:
-                    room:
-                        label: Pomieszczenie
-                        span: auto
-                        type: text
-                        commentAbove: 'nazwa pomieszczenia'
-                    area:
-                        label: Powierzchnia
-                        span: auto
-                        type: number
-                        commentAbove: 'podajemy tylko liczbę [m²]'
-        roof_image:
-            label: Render
-            mode: image
-            span: auto
-            required: 0
-            type: fileupload
-            tab: Poddasze
-        roof:
-            label: Pomieszczenia
-            prompt: 'Dodaj nowe pomieszczenie'
-            span: auto
-            type: repeater
-            tab: Poddasze
-            form:
-                fields:
-                    room:
-                        label: Pomieszczenie
-                        span: auto
-                        type: text
-                        commentAbove: 'nazwa pomieszczenia'
-                    area:
-                        label: Powierzchnia
-                        span: auto
-                        type: number
-                        commentAbove: 'podajemy tylko liczbę [m²]'
+            tab: 'Zdjęcia i pdf'
         images:
             label: Slider
             mode: image
@@ -128,4 +59,3 @@ tabs:
             span: auto
             type: fileupload
             tab: 'Zdjęcia i pdf'
-            required: 1
