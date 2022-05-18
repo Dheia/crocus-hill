@@ -81,23 +81,23 @@ public function onStart() {
 <section class="icons padding-container lazy" data-bg="{{this.theme.icons_bg.path}}">
     
     <ul class="icons__set icons__set-above nd">
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/sasiedztwo.svg' | theme }}" alt=""><span>Najlepsze<br> sąsiedztwo</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/standard.svg' | theme }}" alt=""><span>Wysoki<br> standard</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/powierzchnie.svg' | theme }}" alt=""><span>Mieszkania 45-82 m²<br> powierzchni</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/szczecin.svg' | theme }}" alt=""><span>To, co najlepsze<br> w Szczecinie</span></li>
+        <li class="icons__icon post delay2"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/sasiedztwo.svg' | theme }});"></div><span>Najlepsze<br> sąsiedztwo</span></li>
+        <li class="icons__icon post delay1"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/standard.svg' | theme }});"></div><span>Wysoki<br> standard</span></li>
+        <li class="icons__icon post delay3"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/powierzchnie.svg' | theme }});"></div><span>Mieszkania 45-82 m²<br> powierzchni</span></li>
+        <li class="icons__icon post delay4"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/szczecin.svg' | theme }});"></div><span>To, co najlepsze<br> w Szczecinie</span></li>
     </ul>
 
-    <div class="icons__title">
+    <div class="icons__title post delay1">
         {% partial 'svg/slogan' %}
         <!-- <div class="separator separator-white separator"></div>
         <div class="separator separator-white separator-short"></div> -->
     </div>
 
     <ul class="icons__set icons__set-below nd">
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/zabudowa.svg' | theme }}" alt=""><span>Kameralna<br> zabudowa</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/oaza.svg' | theme }}" alt=""><span>Oaza w centrum<br> Miasta</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/loggia.svg' | theme }}" alt=""><span>Własne loggia<br> lub ogródki</span></li>
-        <li class="icons__icon"><img src="{{ 'assets/images/icons/blonia.svg' | theme }}" alt=""><span>Mieszkanie przy<br> Jasnych Błoniach</span></li>
+        <li class="icons__icon post delay1"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/zabudowa.svg' | theme }});"></div><span>Kameralna<br> zabudowa</span></li>
+        <li class="icons__icon post delay3"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/oaza.svg' | theme }});"></div><span>Oaza w centrum<br> Miasta</span></li>
+        <li class="icons__icon post delay2"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/loggia.svg' | theme }});"></div><span>Własne loggia<br> lub ogródki</span></li>
+        <li class="icons__icon post delay4"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/blonia.svg' | theme }});"></div><span>Mieszkanie przy<br> Jasnych Błoniach</span></li>
     </ul>
 
 </section>
@@ -143,7 +143,7 @@ public function onStart() {
 
 </div>
 
-<section class="text">
+<section class="text padding-container">
     <h2>Wybierz swoje wymarzone mieszkanie</h2>
     <p>Znalezienie odpowiedniego mieszkania w wysokim standardzie w centrum Szczecina nie jest łatwe, szczególnie jeśli chcesz mieć spokój ducha i szukasz czegoś w nowym budownictwie. Mieszkanie na Jasnych Błoniach to spokojne miejsce do życia dla Twojej rodziny, a do tego doskonała inwestycja na przyszłość. Budynek został wykończony i  zaplanowany tak, by cieszyć wyglądem zarówno dziś, jak i w perspektywie kilku czy kilkudziesięciu lat. Najwyższej jakości wykończenie i dobry projekt sprawiają, że z czasem takie budowle tylko nabierają charakteru i zyskują na wartości. Zrelaksuj się i spokojnie czekaj, aż Twoje mieszkanie w Crocus Hill na Jasnych Błoniach zyska na wartości.</p>
 </section>
@@ -179,14 +179,14 @@ public function onStart() {
 
         <div>
             <label for="from">
-                Powierzchnia od:
+                <span>Powierzchnia od:</span>
                 <select name="from" id="from">
                     <option value="0">wszystkie</option>
                     <option value="50">50m2</option>
                 </select> 
             </label>
             <label for="from">
-                do:
+                <span>do:</span>
                 <select name="to" id="to">
                     <option value="0">wszystkie</option>
                     <option value="50">150m2</option>
@@ -196,14 +196,14 @@ public function onStart() {
 
         <div>
             <label for="from">
-                Liczba pokoi: 
+                <span>Liczba pokoi:</span>
                 <select name="from" id="from">
                     <option value="">wszystkie</option>
                     <option value="1">1</option>
                 </select> 
             </label>
             <label for="from">
-                Piętro:
+                <span>Piętro:</span>
                 <select name="to" id="to">
                     <option value="">wszystkie</option>
                     <option value="0">0</option>
@@ -212,8 +212,8 @@ public function onStart() {
         </div>
 
         <div>
-            <button class="button active" href="">wyszukaj</button>
-            <button class="button" href="">zobacz wszystkie</button>
+            <button class="button active">wyszukaj</button>
+            <a class="button" href="">zobacz wszystkie</a>
         </div>
 
     </div>

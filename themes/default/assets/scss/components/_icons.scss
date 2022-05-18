@@ -152,21 +152,26 @@
     }
   }
 
+  &__img {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   &__icon {
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 2s;
 
-    img {
-      backdrop-filter: blur(20px);
-      background-color: rgba(0, 0, 0, 0.4);
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: scale-down;
-      box-sizing: content-box;
-      padding: 20px;
+
+    &.hidden {
+      opacity: 0;
     }
 
     span {
@@ -183,5 +188,87 @@
     svg {
       width: 90vw;
     }
+
+    &__img {
+      width: 140px;
+      height: 140px;
+    }
   }
+
+  @include mq($until: lg) {
+    &__set {
+      &-above {
+  
+        li {
+          &:nth-child(1) {
+            transform: translate(-30px, 0);
+          }
+          &:nth-child(2) {
+            transform: translate(0, -50px);
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($until: md) {
+    min-height: 700px;
+    svg {
+      width: 90vw;
+    }
+
+    &__img {
+      width: 85px;
+      height: 85px;
+      background-size: 50%;
+    }
+
+    &__set {
+      width: 100%;
+      &-below {
+        li {
+
+          &:nth-child(2) {
+            transform: translate(0, 50px);
+          }
+        }
+      }
+      span {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  @include mq($until: sm) {
+
+    min-height: auto;
+    height: auto;
+
+    svg {
+      width: 95vw;
+    }
+
+    &__set {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 25px;
+
+      &-above {
+  
+        li {
+          transform: translate(0, 0)!important;
+
+        }
+      }
+
+      &-below {
+  
+        li {
+          transform: translate(0, 0)!important;
+        }
+      }
+    }
+
+  }
+
 }

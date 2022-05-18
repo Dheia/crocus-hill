@@ -88,8 +88,8 @@
 		}
 
 		.button {
-			padding: 15px 35px;
-			margin-left: 15px;
+			padding: 15px 30px;
+			margin-left: 7px;
 
 			&.active {
 				color: #53575E;
@@ -151,5 +151,176 @@
 		  .close:hover {
 			opacity: 1;
 		  }
+	}
+
+	@include mq($until: xl) {
+		&__panel {
+			width: 100%;
+			background: $bg-trans-rev;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			position: absolute;
+			bottom: 0;
+			left: 0%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+	
+			select {
+				margin-right: 5px;
+				padding: 10px 8px;
+			}
+		}
+
+		*:not(.widget__total) {
+			font-size: rem(14px);
+		}
+
+		.button {
+			padding: 15px 15px;
+			margin-left: 6px;
+		}
+
+	}
+
+	@include mq($until: lg) {
+
+		&__panel {
+
+			padding-top: 20px;
+			padding-bottom: 20px;
+			align-items: end;
+
+			& > div {
+				display: flex;
+			}
+
+			label {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+			}
+
+			select {
+				margin: 5px 5px 5px 0;
+				padding: 12px 20px;
+			}
+
+			.button {
+				padding: 15px;
+				margin: 5px;
+				width: 170px;
+			}
+		}
+
+		&__house {
+			top: 20px;
+			width: 165px;
+			height: 165px;
+		}
+
+		&__total {
+			font-size: 44px;
+		}
+	}
+
+	@include mq($until: md) {
+
+		overflow: unset;
+		margin-bottom: 100px;
+		
+		&__panel {
+			padding: 20px;
+			top: 100%;
+			bottom:unset;
+
+			.button {
+				width: auto;
+				padding: 15px;
+			}
+
+			select {
+				margin: 5px 10px 5px 0;
+				padding: 12px;
+			}
+
+			span {
+				margin-left: 7px;
+			}
+		}
+
+		&__house {
+			top: 10px;
+			width: 145px;
+			height: 145px;
+		}
+
+		&__total {
+			line-height: 1;
+			font-size: 40px;
+		}
+
+		*:not(.widget__total) {
+			font-size: rem(15px);
+		}
+	}
+
+	@include mq($until: sm) {
+
+		height: 80vw;
+		background-image: url(./../../images/wideget-bg.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 220px;
+
+		svg {
+			display: none;
+			cursor: auto;
+		}
+
+		&__panel {
+			flex-direction: column;
+			align-items: center;
+			padding: 20px 30px;
+
+			select {
+				margin: 5px;
+    			padding: 12px 31px;
+			}
+
+			&> div {
+				margin: 5px 0;
+			}
+
+			.button {
+				width: 145px;
+			}
+		}
+
+	}
+
+	@include mq($until: xs) {
+
+		margin-bottom: 250px;
+		height: 500px;
+		background-position: 10%;
+
+		*:not(.widget__total) {
+			font-size: rem(16px);
+		}
+
+		&__house {
+			&-a{
+				top: 10%;
+			}
+			&-b {
+				top: unset;
+				bottom: 10%;
+			}
+		}
+		
+		.button {
+			width: 143px;
+		}
 	}
 }
