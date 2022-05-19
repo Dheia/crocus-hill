@@ -204,7 +204,8 @@
 
     img {
         width: 29vw;
-        height: 32vw;
+        height: 620px;
+        object-fit: cover;
     }
 
     &__left {
@@ -252,6 +253,67 @@
         &.decorator-right {
             &:after {
                 right: 0;
+            }
+        }
+    }
+
+    @include mq($until: xxl) {
+        img {
+            width: 29vw;
+            height: 600px;
+        }
+    }
+
+    @include mq($until: md) {
+        flex-direction: column-reverse;
+        margin-top: 75px;
+
+        img {
+            width: 100%;
+            height: 60vw;
+        }
+
+        &__center {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        &__right {
+            padding-right: $padding-lg;
+            margin-top: 0;
+        }
+        &__left {
+            margin-top: 0;
+            margin-left: $padding-lg;
+        }
+
+        &:after {
+
+        }
+    }
+
+    @include mq($until: sm) {
+        &__right {
+            padding-right: $padding-sm;
+        }
+        &__left {
+            margin-left: $padding-sm;
+        }
+    }
+
+    @include mq($until: xs) {
+        &__right {
+            padding-right: $padding-xs;
+        }
+        &__left {
+            margin-left: $padding-xs;
+        }
+
+        &__center {
+            p {
+                text-align: justify;
+                width: 100%;
+                padding: 0 $padding-xs;
             }
         }
     }
