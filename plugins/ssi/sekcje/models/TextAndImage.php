@@ -15,8 +15,13 @@ class TextAndImage extends Model
      */
     public $timestamps = false;
 
+    public $attachOne = [
+        'img' => 'System\Models\File',
+        'img_second' => 'System\Models\File',
+    ];
+
     public $attachMany = [
-        'img' => 'System\Models\File'
+        'slider' => 'System\Models\File',
     ];
 
     /**

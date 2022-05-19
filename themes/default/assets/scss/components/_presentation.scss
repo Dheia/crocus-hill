@@ -101,9 +101,17 @@
 		width: 54vw;
 		margin: -100px 5vw 0 auto;
 		background-color: white;
+		height: 35vw;
 		
 		img {
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		div, a {
+			height: 100%;
 		}
 	}
 	
@@ -229,6 +237,7 @@
 		&__slider {
 			width: 100%;
 			margin: -50px auto 0;
+			height: 60vw;
 		}
 	}
 
@@ -237,6 +246,10 @@
 		&__container {
 			margin: 0 5vw 0 0;
 			padding: 8vw 5vw 15vw 5vw;
+
+			p {
+				text-align: justify;
+			}
 		}
 		&__slider {
 			width: 100%;
@@ -256,11 +269,11 @@
 			}
 
 			&_prev {
-				left: calc(80% - 45px);
+				left: calc(70% - 45px);
 			}
 		  
 			&_next {
-				right: calc(14% - 45px);
+				right: calc(20% - 45px);
 			}
 
 		}

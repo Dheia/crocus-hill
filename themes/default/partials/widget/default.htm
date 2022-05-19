@@ -1,0 +1,94 @@
+
+<section class="widget">
+
+    <div class="widget__house widget__house-a margin-container-left post delay1">
+        <span>Budynek A</span>
+        <span class="widget__total a">{{A}}</span>
+        
+        {% if this.page.A == 1 or this.page.A > 20 %}
+            <span>dostępne<br> mieszkanie</span>
+        {% else %}
+            <span>dostępnych<br> mieszkań</span>
+        {% endif %}
+
+    </div>
+
+    <div class="widget__house widget__house-b margin-container-right post delay2">
+        <span>Budynek B</span>
+        <span class="widget__total b">{{B}}</span>
+        
+        {% if this.page.B == 1 or this.page.B > 20 %}
+            <span>dostępne<br> mieszkanie</span>
+        {% else %}
+            <span>dostępnych<br> mieszkań</span>
+        {% endif %}
+    </div>
+
+    {% partial 'svg/widget' %}
+    <form action="/apartamenty" method="post">
+    <div class="widget__panel padding-container">
+
+        <div>
+            <label for="from">
+                <span>Powierzchnia od:</span>
+                <select name="from" id="from">
+                    <option value="0">wszystkie</option>
+                    <option value="50">50m2</option>
+                </select> 
+            </label>
+            <label for="from">
+                <span>do:</span>
+                <select name="to" id="to">
+                    <option value="0">wszystkie</option>
+                    <option value="50">150m2</option>
+                </select> 
+            </label>
+        </div>
+
+        <div>
+            <label for="from">
+                <span>Liczba pokoi:</span>
+                <select name="from" id="from">
+                    <option value="">wszystkie</option>
+                    <option value="1">1</option>
+                </select> 
+            </label>
+            <label for="from">
+                <span>Piętro:</span>
+                <select name="to" id="to">
+                    <option value="">wszystkie</option>
+                    <option value="0">0</option>
+                </select> 
+            </label>
+        </div>
+
+        <div>
+            <button class="button active">wyszukaj</button>
+            <a class="button" href="">zobacz wszystkie</a>
+        </div>
+
+    </div>
+    </form>
+
+    <div class="widget__modal"><span class="close"></span><div class="hata"></div></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event){
+
+            $('.top__button').on('click', function() {
+                $("html, body").animate({ 
+                    scrollTop: $('.widget').offset().top 
+                }, 1000);
+            })
+
+            $('.widget__floor').on('click', function() {
+                $('.widget__modal').addClass('active');
+                $('.hata').html($(this).data('symbol'));
+            });
+
+            $('.close').on('click', function() {
+                $('.widget__modal').removeClass('active');
+            });
+        })
+    </script>
+</section>

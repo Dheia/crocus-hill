@@ -1,10 +1,10 @@
 fields:
     name:
-        label: 'Nazwa sekcji'
+        label: 'Nagłówek'
         span: left
         type: text
     img:
-        label: Zdjęcie
+        label: 'Zdjęcie 1'
         mode: image
         useCaption: true
         thumbOptions:
@@ -17,15 +17,68 @@ fields:
         size: huge
         span: left
         type: richeditor
+    h2:
+        label: 'Nagłówek 2'
+        span: left
+        type: text
+        trigger:
+            action: hide
+            field: form
+            condition: value[1][2]
+    description2:
+        label: Tekst 2
+        size: huge
+        span: left
+        type: richeditor
+        trigger:
+            action: show
+            field: form
+            condition: value[3]
+    img_second:
+        label: 'Zdjęcie 2'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    slider:
+        label: Slider
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+        trigger:
+            action: hide
+            field: form
+            condition: value[3][4]
+    form:
+        label: 'Ksztalt sekcji'
+        options:
+            1: '2 zdjęcia, tekst, nagłówek, slider po prawej'
+            2: '2 zdjęcia, tekst, nagłówek, slider po lewej'
+            3: '2 zdjęcia, 2 teksty, link'
+            4: '2 zdjęcia, 2 nagłówki, tekst'
+        showSearch: true
+        span: left
+        type: dropdown
     button_name:
         label: Przycisk
         type: text
         span: right
+        trigger:
+            action: show
+            field: form
+            condition: value[3]
     button_link:
         label: 'Link przycisku'
         type: text
         span: right
-    extra:
-        label: Extra
-        span: left
-        type: switch
+        trigger:
+            action: show
+            field: form
+            condition: value[3]

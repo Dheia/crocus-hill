@@ -101,12 +101,12 @@ form:
         fileTypes: jpg, png
         tab: Top
         span: left
-      # title:
-      #   label: Nagłówek
-      #   tab: Top
-      #   type: text
-      #   size: small
-      #   span: right
+      title:
+        label: Nagłówek
+        tab: Top
+        type: text
+        size: small
+        span: right
       icons_bg:
         label: Tłó sekcji
         mode: image
@@ -142,15 +142,22 @@ form:
         tab: Mapa
         type: text
         span: left
-      contact_name:
-        label: Nazwa firmy
+      # contact_name:
+      #   label: Nazwa firmy
+      #   tab: Contact
+      #   type: richeditor
+      #   size: small
+      #   span: left
+      #   translatable: true
+      estate_address:
+        label: Lokalizacja osiedla
         tab: Contact
         type: richeditor
         size: small
         span: left
         translatable: true
       contact_address:
-        label: Adres
+        label: Adres biura
         tab: Contact
         type: richeditor
         size: small
@@ -159,40 +166,30 @@ form:
       contact_hours:
         label: Godziny otwarcia
         tab: Contact
-        type: richeditor
+        type: text
         size: small
         span: right
         translatable: true
       contact_phones:
-        label: Numery telefonów
+        label: Numer telefonu
         tab: Contact
-        type: repeater
         span: left
-        form:
-          fields:
-            contact_phone:
-              label: Numer telefonu
-              type: text
+        type: text
       contact_emails:
-        label: Adresy e-mail
         tab: Contact
-        type: repeater
         span: right
-        form:
-          fields:
-            contact_email:
-              label: Adres e-mail
-              type: text
-      contact_fb:
-        label: Link do facebook
-        tab: Contact
+        label: Adres e-mail
         type: text
-        span: left
-      contact_insta:
-        label: Link do instagram
-        tab: Contact
-        type: text
-        span: right
+      # contact_fb:
+      #   label: Link do facebook
+      #   tab: Contact
+      #   type: text
+      #   span: left
+      # contact_insta:
+      #   label: Link do instagram
+      #   tab: Contact
+      #   type: text
+      #   span: right
       footer_logo:
         label: Wilkie Logo
         mode: image

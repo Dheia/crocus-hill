@@ -152,7 +152,9 @@
 
     @include mq($until: xs) {
         margin-top: 50px;
-
+        p {
+            text-align: justify;
+        }
         &__right {
             margin-top: 15px;
             &> div {

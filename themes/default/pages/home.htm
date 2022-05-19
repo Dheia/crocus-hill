@@ -5,21 +5,17 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[newsList]
-newsToShow = 4
-category = "all"
-newsOnMain = 1
-newsPromo = 1
-pageNumber = "{{ :page }}"
-perPage = 0
+[TextAndImage firstSection]
+sectionName = "Dlaczego Crocus Hill"
 
-[VideoSSI]
-videoName = "title"
-height = 35
-width = 100
+[TextAndImage secondSection]
+sectionName = "Mieszkanie w centrum Szczecina wśród magnolii i krokusów"
 
-[TextAndImage]
-sectionName = "Textowa"
+[TextAndImage thirdSection]
+sectionName = "Wejdź do środka…"
+
+[TextAndImage fourthSection]
+sectionName = "Standard deweloperski"
 ==
 <?php
 use SSI\Flats\Models\Flat;
@@ -28,55 +24,23 @@ public function onStart() {
     $A = Flat::where('building', 'A')->count();    
     $B = Flat::where('building', 'B')->count();
 
-    $this->page->A = $A;
-    $this->page->B = $B;
+    $this['A'] = $A;
+    $this['B'] = $B;
 }
 ?>
 ==
-
 <section class="top lazy" data-bg="{{this.theme.top_bg.path}}">
 
     <div>
         <span class="top__name">{% partial 'svg/top-slogan' %}</span>
-        <h1>Mieszkania w sercu Szczecina przy Jasnych Błoniach.</h1>
+        <h1>{{ this.theme.title }}</h1>
     </div>
 
     <div class="top__button">Znajdź mieszkanie <span class="arrow-down"></span></div>
 
 </section>
 
-<section class="presentation padding-container">
-
-    <div class="presentation__heading">
-        <h2>Dlaczego Crocus Hill</h2>
-    </div>
-
-    <div class="presentation__img presentation__img-left">
-        <img src="{{ 'img.jpg' | media }}" alt="">
-    </div>
-    
-    <div class="presentation__container">
-        <p>
-            Coraz więcej osób definiuje luksus jako czas dla siebie, spokój i piękne otoczenie. Pamiętamy o tym, 
-            planując nasze inwestycje. Co sprawia, że w niektórych budynkach sprzed lat ceny mieszkań dorównują 
-            tym w nowym budownictwie? Zazwyczaj decyduje połączenie kilku czynników. Dobra architektura i ponadczasowe 
-            projekty wnętrz, które bronią się po latach. Metraże i plany wnętrz zgodne z potrzebami niezależnie od epoki. 
-            A także szlachetne, naturalne materiały, wśród których dobrze się żyje. Wszystko to znajdą Państwo w bryłach 
-            osiedla Crocus Hill, ale w nowoczesnym, energooszczędnym wydaniu, z uwzględnieniem potrzeb.
-        </p>
-    </div>
-
-    <div class="presentation__img presentation__img-right">
-        <img src="{{ 'img.jpg' | media }}" alt="">
-    </div>
-
-    <ul class="presentation__slider nd">
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-    </ul>
-
-</section>
+{% component "firstSection" %}
 
 <section class="icons padding-container lazy" data-bg="{{this.theme.icons_bg.path}}">
     
@@ -89,8 +53,6 @@ public function onStart() {
 
     <div class="icons__title post delay1">
         {% partial 'svg/slogan' %}
-        <!-- <div class="separator separator-white separator"></div>
-        <div class="separator separator-white separator-short"></div> -->
     </div>
 
     <ul class="icons__set icons__set-below nd">
@@ -102,185 +64,15 @@ public function onStart() {
 
 </section>
 
-<div class="two-columns">
-
-    <div class="two-columns__left">
-
-        <div class="padding-container-left">
-            <h3>Wejdź do środka…</h3>
-            <p>
-                Jedni poprzestają na fasadzie, inni dbają tylko o same mieszkania. 
-                Nam zależało, by stworzyć spójny, szlachetny styl, który przenika cały budynek. 
-                Hall, windy i pozostałe części wspólne mają reprezentacyjny charakter dzięki 
-                zastosowanym materiałom wykończeniowym. Minimalizm i czytelna komunikacja ułatwiają 
-                poruszanie się po budynku. A to tylko początek, bo najbardziej liczą się przecież 
-                mieszkania, o które zadbaliśmy w każdym calu.
-            </p>
-        </div>
-
-        <img src="{{ 'assets/images/left.jpg' | theme }}" alt="">
-        
-    </div>
-
-    <div class="two-columns__right">
-
-        <img src="{{ 'assets/images/right.jpg' | theme }}" alt="">
-
-        <div class="">
-            <h3>3 etapy</h3>
-            <p>
-                Osiedle Crocus Hill to łącznie 5 budynków. <br>
-                Budowa została podzielona na 3 etapy. <br>
-                Etap I – budynki A i B – 100 mieszkań, <br>
-                Data zakończenia: 2022 <br>
-                Następnie Etap II oraz Etap III
-            </p>
-
-            <a href="">Dowiedz się więcej</a>
-        </div>
-
-    </div>
-
-</div>
+{% component "thirdSection" %}
 
 <section class="text padding-container">
-    <h2>Wybierz swoje wymarzone mieszkanie</h2>
-    <p>Znalezienie odpowiedniego mieszkania w wysokim standardzie w centrum Szczecina nie jest łatwe, szczególnie jeśli chcesz mieć spokój ducha i szukasz czegoś w nowym budownictwie. Mieszkanie na Jasnych Błoniach to spokojne miejsce do życia dla Twojej rodziny, a do tego doskonała inwestycja na przyszłość. Budynek został wykończony i  zaplanowany tak, by cieszyć wyglądem zarówno dziś, jak i w perspektywie kilku czy kilkudziesięciu lat. Najwyższej jakości wykończenie i dobry projekt sprawiają, że z czasem takie budowle tylko nabierają charakteru i zyskują na wartości. Zrelaksuj się i spokojnie czekaj, aż Twoje mieszkanie w Crocus Hill na Jasnych Błoniach zyska na wartości.</p>
+    {% content 'home/tekst' %}
 </section>
 
-<section class="widget">
+{% partial 'widget/default' %}
 
-    <div class="widget__house widget__house-a margin-container-left">
-        <span>Budynek A</span>
-        <span class="widget__total a">{{this.page.A}}</span>
-        
-        {% if this.page.A == 1 or this.page.A > 20 %}
-            <span>dostępne<br> mieszkanie</span>
-        {% else %}
-            <span>dostępnych<br> mieszkań</span>
-        {% endif %}
-
-    </div>
-
-    <div class="widget__house widget__house-b margin-container-right">
-        <span>Budynek B</span>
-        <span class="widget__total b">{{this.page.B}}</span>
-        
-        {% if this.page.B == 1 or this.page.B > 20 %}
-            <span>dostępne<br> mieszkanie</span>
-        {% else %}
-            <span>dostępnych<br> mieszkań</span>
-        {% endif %}
-    </div>
-
-    {% partial 'svg/widget' %}
-    <form action="/apartamenty" method="post">
-    <div class="widget__panel padding-container">
-
-        <div>
-            <label for="from">
-                <span>Powierzchnia od:</span>
-                <select name="from" id="from">
-                    <option value="0">wszystkie</option>
-                    <option value="50">50m2</option>
-                </select> 
-            </label>
-            <label for="from">
-                <span>do:</span>
-                <select name="to" id="to">
-                    <option value="0">wszystkie</option>
-                    <option value="50">150m2</option>
-                </select> 
-            </label>
-        </div>
-
-        <div>
-            <label for="from">
-                <span>Liczba pokoi:</span>
-                <select name="from" id="from">
-                    <option value="">wszystkie</option>
-                    <option value="1">1</option>
-                </select> 
-            </label>
-            <label for="from">
-                <span>Piętro:</span>
-                <select name="to" id="to">
-                    <option value="">wszystkie</option>
-                    <option value="0">0</option>
-                </select> 
-            </label>
-        </div>
-
-        <div>
-            <button class="button active">wyszukaj</button>
-            <a class="button" href="">zobacz wszystkie</a>
-        </div>
-
-    </div>
-    </form>
-
-    <div class="widget__modal"><span class="close"></span><div class="hata"></div></div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event){
-
-            $('.top__button').on('click', function() {
-                $("html, body").animate({ 
-                    scrollTop: $('.widget').offset().top 
-                }, 1000);
-            })
-
-            $('.widget__floor').on('click', function() {
-                $('.widget__modal').addClass('active');
-                $('.hata').html($(this).data('symbol'));
-            });
-
-            $('.close').on('click', function() {
-                $('.widget__modal').removeClass('active');
-            });
-        })
-    </script>
-</section>
-
-<section class="presentation presentation-type2 padding-container">
-
-    <div class="presentation__heading">
-        <h2>Mieszkanie w centrum Szczecina wśród magnolii i krokusów</h2>
-    </div>
-
-    <div class="presentation__img presentation__img-left">
-        <img src="{{ 'img.jpg' | media }}" alt="">
-    </div>
-    
-    <div class="presentation__container">
-        <p>
-            Jasne Błonia to przedłużenie najpiękniejszej promenady Szczecina i brama do słynnego różanego ogrodu Różanka, 
-            ogrodu botanicznego czy ogrodu dendrologicznego im. Stefana Kownasa. Ze swojego mieszkania w centrum Szczecina przy 
-            ul. Janosika będziesz miał tylko kilkaset metrów do tych najbardziej spektakularnych szczecińskich terenów zielonych. 
-            Wiosną kwitną tu krokusy, latem magnolie, a jesienią trawniki pokrywają dywany wielokolorowych liści – czy do szczęścia 
-            potrzeba czegoś więcej? 
-        </p>
-        <p>
-            Najlepsze w Szczecinie Najlepsze szkoły, restauracje i usługi w mieście – wszystkie znajdują się 
-            nieomal przy tej samej ulicy, co osiedle Crocus Hill:<br>
-            • Trzecie najlepsze liceum w Polsce w rankingu Perspektywy 2021: 100 m <br>
-            • Najlepsza szkoła podstawowa w Polsce w rankingu WaszaEdukacja.pl 2021: 100 m <br>
-            • Szczeciński Dom Sportu z basenem olimpijskim: 300 m <br>
-            • Najpiękniejszy park Szczecina w rankingu Tripadvisor - Park Kasprowicza: 500 m
-        </p>
-    </div>
-
-    <div class="presentation__img presentation__img-right">
-        <img src="{{ 'img.jpg' | media }}" alt="">
-    </div>
-
-    <ul class="presentation__slider nd">
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-        <li><a href=""><img src="{{ 'img.jpg' | media }}" alt=""></a></li>
-    </ul>
-
-</section>
+{% component "secondSection" %}
 
 {% partial 'snippets/map-from-address' 
     mapName='mapName' 
@@ -290,24 +82,4 @@ public function onStart() {
     mapMarker=this.theme.map_marker.path
 %}
 
-<section class="three-columns">
-    <img class="three-columns__left lazy" data-src="{{ 'assets/images/pod-klucz.jpg' | theme }}" alt="">
-
-    <div class="three-columns__center">
-
-        <h3 class="decorator-left">Standard deweloperski</h3>
-
-        <p>
-            W Europie Zachodniej i Północnej większość sprzedawanych mieszkań jest już wykończona pod klucz. 
-        </p>
-
-        <p>
-            W Polsce taka usługa zdobywa coraz większą popularność wraz z rosnącą ilością jakościowych inwestycji mieszkaniowych. Właściciele takich mieszkań oczekują dobrego projektu, odpowiednich materiałów i najwyższej jakości prac budowlanych. Usługa wykończenia pod klucz realizowana przez naszego partera pozwala uzyskać taki efekt, a prace zacząć od razu po odbiorze mieszkania. Dzięki temu Tobie pozostaje wejść do gotowego, urządzonego już mieszkania.
-        </p>
-
-        <h3 class="decorator-right">Wykończenie pod klucz</h3>
-
-    </div>
-
-    <img class="three-columns__right lazy" data-src="{{ 'assets/images/stan-deweloperski.jpg' | theme }}" src="" alt="">
-</section>
+{% component "fourthSection" %}
