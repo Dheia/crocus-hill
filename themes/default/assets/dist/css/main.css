@@ -13894,11 +13894,11 @@ img {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 @media (max-width: 61.99em) {
   .site-wrapper {
-    overflow: hidden;
     position: relative;
   }
 }
@@ -15746,28 +15746,30 @@ div#flags .active-lang img {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  min-height: 100px;
+  height: 100px;
   background: transparent linear-gradient(217deg, #22242F 0%, #262834E3 54%, #464B5D 100%) 0% 0% no-repeat padding-box;
+  z-index: 500;
+}
+
+.header .logo-lines {
+  transition: all 1s;
 }
 
 .header--fixed {
   position: fixed;
   width: 100%;
-  transition: background-color .3s ease-in-out;
-}
-
-.header--fixed.sticky {
-  background-color: lemonchiffon;
 }
 
 .header__logo {
   z-index: 100;
 }
 
-.header__logo img {
+.header__logo svg {
   position: absolute;
   top: 0;
   z-index: 100;
+  transition: all .7s;
+  height: auto;
 }
 
 .header__nav {
@@ -15848,7 +15850,7 @@ div#flags .active-lang img {
   .header__nav {
     width: 84%;
   }
-  .header__logo img {
+  .header__logo svg {
     width: 160px;
   }
 }
@@ -15860,7 +15862,7 @@ div#flags .active-lang img {
   .header__nav {
     width: 87%;
   }
-  .header__logo img {
+  .header__logo svg {
     width: 110px;
   }
 }
@@ -15875,7 +15877,7 @@ div#flags .active-lang img {
   .header__nav {
     width: 100%;
   }
-  .header__logo img {
+  .header__logo svg {
     width: 100px;
   }
 }
@@ -15884,7 +15886,7 @@ div#flags .active-lang img {
   .header {
     min-height: 60px;
   }
-  .header__logo img {
+  .header__logo svg {
     width: 80px;
   }
 }
@@ -16859,7 +16861,7 @@ div#flags .active-lang img {
 }
 
 .top {
-  height: calc(100vh - 100px);
+  height: 100vh;
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -16870,6 +16872,7 @@ div#flags .active-lang img {
   justify-content: flex-end;
   text-align: center;
   min-height: 515px;
+  transition: all .5s;
 }
 
 .top * {
@@ -16906,17 +16909,8 @@ div#flags .active-lang img {
 }
 
 @media (max-width: 61.99em) {
-  .top {
-    height: calc(100vh - 70px);
-  }
   .top__button {
     margin: 5vw auto 5vw;
-  }
-}
-
-@media (max-width: 35.99em) {
-  .top {
-    height: calc(100vh - 60px);
   }
 }
 

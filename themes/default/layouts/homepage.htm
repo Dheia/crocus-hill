@@ -27,6 +27,44 @@ code = "menu-glowne"
             {% partial 'site/footer' %}
         </footer>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            let height = '-120px';
+
+            $( document ).scroll(function(){
+                if ($(window).width() < 575) {
+                    height = '-25px';
+                } else if ($(window).width() < 1200) {
+                    height = '-40px';
+                } else if($(window).width() < 1500) {
+                    height = '-80px';
+                } else if ($(window).width() > 1500) {
+                    height = '-120px';
+                }
+
+                if ($(window).scrollTop() > 50) {
+
+                    $('.header__logo svg').css('top', height);
+                    $('.header').css('height', '80px');
+                    $('.logo-lines').css('opacity', '0');
+
+                } else {
+
+                    $('.header__logo svg').css('top', '0');  
+                    $('.header').css('height', '100px');  
+                    $('.logo-lines').css('opacity', '1');
+                }  
+
+                if($(window).scrollTop() < 600) {
+                    $('.top').css('padding-bottom', $(window).scrollTop()*.3);
+                }
+            });
+
+
+        })
+    </script>
     {% partial 'site/cookie-bar' %}
     {% partial 'site/js-in-body' %}
 </body>

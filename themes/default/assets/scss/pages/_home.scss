@@ -1,5 +1,5 @@
 .top {
-    height: calc(100vh - 100px);
+    height: 100vh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -10,6 +10,7 @@
     justify-content: flex-end;
     text-align: center;
     min-height: 515px;
+    transition: all .5s;
 
     * {
         color: white;
@@ -47,7 +48,6 @@
     }
 
     @include mq($until: md) {
-        height: calc(100vh - 70px);
 
         &__button {
             margin: 5vw auto 5vw;
@@ -55,7 +55,7 @@
     }
 
     @include mq($until: xs) {
-        height: calc(100vh - 60px);
+
     }
 }
 

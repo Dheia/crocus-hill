@@ -18,7 +18,8 @@ $(function() {
   require("./sticky-header");
   require("./pop-up");
   require("./simple-lightbox");
-
+  const anime = require('./anime');
+  
   $(".gallery").each(function() {
     $(this)
       .find("a")
@@ -29,4 +30,13 @@ $(function() {
     $(".simplelightbox").simpleLightbox();
   }
 
+  anime({
+    targets: '.standard path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutSine',
+    duration: 1500,
+    delay: function(el, i) { return i * 250 },
+    direction: 'alternate',
+    loop: true
+  });
 });

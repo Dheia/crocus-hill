@@ -9,8 +9,8 @@
     display: flex;
     flex-flow: column;
     min-height: 100vh;
+    overflow: hidden;
     @include mq($until: md){
-      overflow: hidden;
       position: relative;
     }
 }

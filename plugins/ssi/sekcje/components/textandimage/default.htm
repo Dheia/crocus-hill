@@ -33,7 +33,7 @@
     </div>
 
     <div class="presentation__img presentation__img-left">
-        <img src="{{ section.img.path }}" alt="">
+        <img class="post-left delay1" src="{{ section.img.path }}" alt="">
     </div>
     
     <div class="presentation__container">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="presentation__img presentation__img-right">
-        <img src="{{ section.img_second.path }}" alt="">
+        <img class="post-right delay2" src="{{ section.img_second.path }}" alt="">
     </div>
     {% if section.slider %}
 
@@ -66,13 +66,13 @@
             {{ section.description | raw }}  
         </div>
 
-        <img src="{{ section.img.path }}" alt="">
+        <img class="post-left delay1" src="{{ section.img.path }}" alt="">
         
     </div>
 
     <div class="two-columns__right">
 
-        <img src="{{ section.img_second.path }}" alt="">
+        <img class="post-right delay2" src="{{ section.img_second.path }}" alt="">
 
         <div class="">
             <h3>{{ section.h2 }}</h3>
@@ -87,7 +87,7 @@
 {% elseif section.form == 4 %} 
 
 <section class="three-columns">
-    <img class="three-columns__left lazy" data-src="{{ section.img.path }}" alt="">
+    <img class="three-columns__left lazy post-left delay1" data-src="{{ section.img.path }}" alt="">
 
     <div class="three-columns__center">
 
@@ -99,7 +99,7 @@
 
     </div>
 
-    <img class="three-columns__right lazy" data-src="{{ section.img_second.path }}" src="" alt="">
+    <img class="three-columns__right lazy post-right delay2" data-src="{{ section.img_second.path }}" src="" alt="">
 </section>
 
  {% endif %}

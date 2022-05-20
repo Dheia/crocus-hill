@@ -3,26 +3,28 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  min-height: 100px;
+  height: 100px;
   background: $bg;
+  z-index: 500;
+
+  .logo-lines {
+    transition: all 1s;
+  }
 
   &--fixed {
     position: fixed;
     width: 100%;
-    transition: background-color .3s ease-in-out;
-
-    &.sticky {
-      background-color: lemonchiffon;
-    }
   }
 
   &__logo {
     z-index: 100;
 
-    img {
+    svg {
       position: absolute;
       top: 0;
       z-index: 100;
+      transition: all .7s;
+      height: auto;
     }
   }
 
@@ -101,7 +103,7 @@
     }
     
     &__logo {
-      img {
+      svg {
         width: 160px;
       }
     }
@@ -118,7 +120,7 @@
     }
     
     &__logo {
-      img {
+      svg {
         width: 110px;
       }
     }
@@ -137,7 +139,7 @@
     }
     
     &__logo {
-      img {
+      svg {
         width: 100px;
       }
     }
@@ -148,7 +150,7 @@
     min-height: 60px;
     
     &__logo {
-      img {
+      svg {
         width: 80px;
       }
     }
