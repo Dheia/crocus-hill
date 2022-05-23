@@ -1,7 +1,7 @@
 <?php namespace SSI\Flats\Models;
 
 use Model;
-
+use SSI\Flats\Models\Room;
 /**
  * Model
  */
@@ -15,7 +15,7 @@ class Flat extends Model
      */
     public $timestamps = false;
 
-    protected $jsonable = ['parter', 'floor', 'roof'];
+    protected $jsonable = ['parter', 'floor', 'roof', 'rooms'];
 
     /**
      * @var string The database table used by the model.
@@ -43,8 +43,16 @@ class Flat extends Model
     ];
 
     public function beforeSave() {
-        $this->slug = str_slug($this->name);
+        $this->slug = str_slug($this->symbol);
     }
+
+    public function getRoomOptions() { 
+	
+		$slo = Room::orderBy('name')->lists('name','id');;
+		
+		return $slo;	 
+		
+	}
 
     /**
      * @var array Validation rules

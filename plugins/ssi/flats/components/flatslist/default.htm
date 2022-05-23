@@ -32,7 +32,7 @@
 
         {% for flat in flats %}
 
-        <a href="/dom/{{ flat.id }}/{{ flat.slug }}" id="flat{{ flat.symbol }}" data-available="{{flat.status}}" data-price="{{flat.price}}" data-garden="{{flat.garden}}" data-area="{{ flat.area|number_format(2) }}" data-extra="{{ extraString }}" class="flat-list__item flatItem {% if flat.status == 'sprzedane' %} not-active-link {% endif %} {% if onlyCommercial == '1' %}flat-list__item--commercial{% endif %} {{ flat.status }}">
+        <a href="/oferta-mieszkan/{{ flat.id }}/{{ flat.slug }}" id="flat{{ flat.symbol }}" data-available="{{flat.status}}" data-price="{{flat.price}}" data-garden="{{flat.garden}}" data-area="{{ flat.area|number_format(2) }}" data-extra="{{ extraString }}" class="flat-list__item flatItem {% if flat.status == 'sprzedane' %} not-active-link {% endif %} {% if onlyCommercial == '1' %}flat-list__item--commercial{% endif %} {{ flat.status }}">
 
             <div download="{{flat.symbol}}.pdf" class="flat-list__info">
                 {% if flat.name %}

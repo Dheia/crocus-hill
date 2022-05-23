@@ -14,6 +14,10 @@ navigation:
                 label: Mieszkania
                 url: /ssi/flats/flat
                 icon: icon-home
+            rooms:
+                label: Powierzchni
+                url: /ssi/flats/room
+                icon: icon-lightbulb-o
             # buildings:
             #     label: Budynki
             #     url: /ssi/flats/building
@@ -26,10 +30,6 @@ navigation:
             #     label: 'Piętra mieszkania'
             #     url: /ssi/flats/flatfloor
             #     icon: icon-sort
-            # rooms:
-            #     label: Pokoje
-            #     url: /ssi/flats/room
-            #     icon: icon-lightbulb-o
             # garages:
             #     label: Garaże
             #     url: /ssi/flats/garage

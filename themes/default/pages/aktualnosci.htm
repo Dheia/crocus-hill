@@ -1,11 +1,7 @@
-title = "Aktualności"
-url = "/aktualnosci"
+url = "/oferta-mieszkan/:id/:slug"
 layout = "subpage"
+title = "Mieszkanie"
 
-[newsList]
-newsToShow = 0
-category = "all"
-pageNumber = "{{ :page }}"
-perPage = 0
+[singleFlat]
 ==
-{% component "newsList" %}
+{% component "singleFlat" %}

@@ -18,11 +18,15 @@ fields:
         showSearch: true
         span: left
         type: dropdown
+    rooms_number:
+        label: Liczba pokoi
+        span: right
+        type: number
     area:
         label: Metraż
         span: right
         type: number
-        commentAbove: 'podajemy tylko liczbę [m²]'
+        # commentAbove: 'podajemy tylko liczbę [m²]'
     building:
         label: Budynek
         options:
@@ -31,6 +35,33 @@ fields:
         showSearch: true
         span: left
         type: dropdown
+    deadline:
+        label: Etap
+        options:
+            Etap I: Etap I
+            Etap II: Etap II
+        showSearch: true
+        span: left
+        type: dropdown
+    floor:
+        label: Poziom
+        options:
+            Parter: Parter
+            Piętro 1: Piętro 1
+            Piętro 2: Piętro 2
+            Piętro 3: Piętro 3
+        showSearch: true
+        span: right
+        type: dropdown
+    direction:
+        label: Kierunek
+        span: left
+        type: dropdown
+        options:
+            N: 'N'
+            W: 'W'
+            S: 'S'
+            E: 'E'
 tabs:
     fields:
         image:
@@ -59,3 +90,29 @@ tabs:
             span: auto
             type: fileupload
             tab: 'Zdjęcia i pdf'
+        garden:
+            label: Ogródek z tarasem
+            type: number
+            span: right
+            tab: Powierzchnie
+        rooms: 
+            label: Pokoje
+            prompt: 'Dodaj nowy element'
+            type: repeater
+            tab: Powierzchnie
+            span: left
+            form:
+                fields:
+                    room:
+                        label: Nazwa pokoju/Przestrzeni
+                        span: auto
+                        type: dropdown
+                    value:
+                        label: Metraż
+                        span: auto
+                        type: text         
+        loggia:
+            label: Loggia
+            type: number
+            span: right
+            tab: Powierzchnie  

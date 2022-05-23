@@ -50,20 +50,21 @@ code = "menu-glowne"
     {% partial 'site/head-global' %}
 </head>
 <body>
-    <div class="site-wrapper">
+    <div class="site-wrapper subsite">
         <!-- Header -->
         <header class="header padding-container {{ this.theme.header_sticky_subsites ? 'header--fixed' }}">
             {% partial 'site/header' %}
         </header>
 
         <!-- Content -->
-        <section class="subsite padding-container">
+        {% if this.page.settings.url != '/oferta-mieszkan/:id/:slug' %}
             <h1>{{ this.page.title }}</h1>
-            {% page %}
-        </section>
+        {% endif %}
+        
+        {% page %}
 
         <!-- Footer -->
-        <footer class="padding-container">
+        <footer class="">
             {% partial 'site/footer' %}
         </footer>
     </div>
