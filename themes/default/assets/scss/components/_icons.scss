@@ -8,7 +8,7 @@
     flex-direction: column;
     padding: 0;
     align-items: center;
-    max-width: 200px;
+    max-width: 100px;
     justify-self: center;
 
     img {
@@ -23,8 +23,18 @@
   }
 
   &__item-text {
-      font-weight: 600;
-      font-size: rem(16px);
+      font-weight: 500;
+      font-family: $secondary-font;
+      font-size: rem(19px);
+      width: min-intrinsic;
+      width: -webkit-min-content;
+      width: -moz-min-content;
+      width: min-content;
+      display: table-caption;
+      display: -ms-grid;
+      -ms-grid-columns: min-content;
+      text-align: center;
+      margin-top: 25px;
   }
 
   @include mq($until: md) {

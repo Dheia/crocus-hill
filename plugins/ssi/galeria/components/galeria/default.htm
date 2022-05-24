@@ -1,6 +1,6 @@
 <div class="gallery columns-{{__SELF__.property('imagesInRow')}}">
     {% for image in __SELF__.images %}
-        <a href="{{image.path | resize(1400)}}" data-lightbox="{{__SELF__.id}}" class="gallery__link lazy"
+        <a href="{{image.path }}" data-lightbox="{{__SELF__.id}}" class="gallery__link lazy"
            data-bg="{{image.path | resize(600, 450, {mode:'crop'})}}" alt="{{ image.title }}" title="{{ image.title }}">
         </a>
     {% endfor %}

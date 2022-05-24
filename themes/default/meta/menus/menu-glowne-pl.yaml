@@ -2,9 +2,11 @@ name: 'Menu główne'
 items:
     -
         title: 'O inwestycji'
-        type: url
-        url: '/#'
+        nesting: 0
+        type: static-page
         code: ''
+        reference: o-inwestycji
+        replace: 0
         viewBag:
             locale:
                 en:
@@ -18,12 +20,16 @@ items:
             isExternal: '0'
     -
         title: 'Oferta mieszkań'
-        type: url
-        url: '/#'
+        nesting: null
+        type: cms-page
+        url: null
         code: ''
+        reference: oferta-mieszkan
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
-                en:s
+                en:
                     title: ''
                     url: ''
                 de:
@@ -34,9 +40,13 @@ items:
             isExternal: '0'
     -
         title: 'Wykończenie pod klucz'
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:
@@ -50,9 +60,13 @@ items:
             isExternal: '0'
     -
         title: 'Mapa osiedla'
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:
@@ -66,9 +80,13 @@ items:
             isExternal: '0'
     -
         title: Lokalizacja
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:
@@ -82,9 +100,13 @@ items:
             isExternal: '0'
     -
         title: 'Galeria zdjęć'
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:
@@ -98,9 +120,13 @@ items:
             isExternal: '0'
     -
         title: 'O nas'
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:
@@ -113,10 +139,14 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Kontakt'
+        title: Kontakt
+        nesting: null
         type: url
         url: '/#'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 en:

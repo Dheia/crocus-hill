@@ -7,8 +7,15 @@ code: ""
 form:
   tabs:
     fields:
-      general_logo:
-        label: Logo
+      # general_logo:
+      #   label: Logo
+      #   mode: image
+      #   type: fileupload
+      #   fileTypes: svg, jpg, png
+      #   tab: General
+      #   span: left
+      subsite_logo:
+        label: Logo na podstronach
         mode: image
         type: fileupload
         fileTypes: svg, jpg, png
@@ -112,6 +119,13 @@ form:
         mode: image
         type: fileupload
         fileTypes: jpg, png
+        tab: Ikony
+        span: left
+      slogan:
+        label: Slogan sekcji
+        mode: image
+        type: fileupload
+        fileTypes: png, svg
         tab: Ikony
         span: left
       icons_title:

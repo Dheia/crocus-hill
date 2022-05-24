@@ -3,8 +3,11 @@ code = "menu-glowne-pl"
 ==
 
 <a class="header__logo" href="{{ 'home' | page }}">
-    {#<img src="{{this.theme.general_logo.path}}" alt="{{'Strona główna'|_}}">#}
-    {% partial 'svg/logo' %}
+    {% if this.page.settings.layout == 'homepage' %}
+        {% partial 'svg/logo' %}
+    {% else %}
+        <img src="{{this.theme.subsite_logo.path}}" alt="{{'Strona główna'|_}}">
+    {% endif %}
 </a>
 
 <nav class="header__nav {{ this.theme.header_fullscreen_menu ? 'header__nav--fullscreen' }}">

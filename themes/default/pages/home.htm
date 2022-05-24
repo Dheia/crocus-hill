@@ -43,7 +43,7 @@ public function onStart() {
 {% component "firstSection" %}
 
 <section class="icons padding-container lazy" data-bg="{{this.theme.icons_bg.path}}">
-    
+
     <ul class="icons__set icons__set-above nd">
         <li class="icons__icon post delay2"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/sasiedztwo.svg' | theme }});"></div><span>Najlepsze<br> sąsiedztwo</span></li>
         <li class="icons__icon post delay1"><div class="icons__img" style="background-image: url({{ 'assets/images/icons/standard.svg' | theme }});"></div><span>Wysoki<br> standard</span></li>
@@ -52,7 +52,7 @@ public function onStart() {
     </ul>
 
     <div class="icons__title post delay1">
-        {% partial 'svg/slogan' %}
+        <img src="{{ this.theme.slogan.path }}" alt="{{ this.theme.icons_title }}">
     </div>
 
     <ul class="icons__set icons__set-below nd">
@@ -63,6 +63,8 @@ public function onStart() {
     </ul>
 
 </section>
+
+{% partial 'svg/slogan' %}
 
 {% component "thirdSection" %}
 

@@ -41,7 +41,7 @@
 
     @include mq($until: xl) {
         &__name {
-            svg {
+            img {
                 width: 80vw;
             }
         }

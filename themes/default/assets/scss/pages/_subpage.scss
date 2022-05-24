@@ -1,5 +1,112 @@
 .subsite {
-    h1 {
-        padding-top: 200px;
+
+    p {
+        font-size: rem(15px);
     }
+
+    &__top {
+        display: flex;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        justify-content: space-between;
+
+        &> div {
+            width: 47%;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+    }
+
+    &__top-content {
+        &> div {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__top-image {
+        height: auto;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .row {
+        margin: 50px 0;
+        place-items: end;
+        justify-content: space-between;
+
+        &>div {
+            max-width: 710px;
+        }
+    }
+
+    @include mq($until: xl) {
+        
+        &__top {
+
+            &> div {
+                width: 48%;
+            }
+        }
+    }
+
+    @include mq($until: lg) {
+        
+        &__top-image {
+            height: 50%;
+            width: 35%!important;
+        }
+
+        &__top-content {
+            width: 60%!important;
+        }
+    }
+
+    @include mq($until: md) {
+        
+        &__top {
+            flex-direction: column;
+        }
+
+        &__top-image {
+            height: calc(80vh - 80px);
+            width: 100%!important;
+        }
+
+        &__top-content {
+            padding: 0 $padding-lg;
+            width: 100%!important;
+        }
+    }
+
+    @include mq($until: sm) {
+
+        &__top-image {
+            height: calc(65vh - 70px);
+        }
+
+        &__top-content {
+            padding: 0 $padding-sm;
+        }
+        
+    }
+
+    @include mq($until: xs) {
+
+        &__top-image {
+            height: 60vw;
+        }
+
+        &__top-content {
+            padding: 0 $padding-xs;
+        }
+        
+    }
+
 }

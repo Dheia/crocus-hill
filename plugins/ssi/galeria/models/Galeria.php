@@ -30,16 +30,16 @@ class Galeria extends Model
         'images' => 'System\Models\File'
     ];
 
-    public function afterSave(){
-        $imgPath = $this->image->getLocalPath();
-        $width = 800;
-        $height = 800;
-        $options = []; // or ['mode' => 'crop']
+    // public function afterSave(){
+    //     $imgPath = $this->image->getLocalPath();
+    //     $width = 800;
+    //     $height = 800;
+    //     $options = []; // or ['mode' => 'crop']
 
-        Resizer::open($imgPath)
-            ->resize($width, $height, $options)
-            ->save($imgPath);
-    }
+    //     Resizer::open($imgPath)
+    //         ->resize($width, $height, $options)
+    //         ->save($imgPath);
+    // }
 
     public function beforeSave() {
         $this->slug = str_slug($this->name);
