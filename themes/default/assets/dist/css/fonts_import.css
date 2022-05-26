@@ -46,3 +46,10 @@
     src: url('../../fonts/ProzaLibre-SemiBold.ttf');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Beata';
+    font-weight: 400;
+    src: url('../../fonts/Beata.ttf');
+    font-display: swap;
+}

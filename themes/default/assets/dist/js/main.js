@@ -1382,6 +1382,8 @@ $(function () {
 
   __webpack_require__(/*! ./simple-lightbox */ "./themes/default/assets/js/simple-lightbox.js");
 
+  __webpack_require__(/*! ./sort */ "./themes/default/assets/js/sort.js");
+
   var anime = __webpack_require__(/*! ./anime */ "./themes/default/assets/js/anime.js");
 
   $(".gallery").each(function () {
@@ -2381,6 +2383,88 @@ $(function () {
     return this;
   };
 })(jQuery, window, document);
+
+/***/ }),
+
+/***/ "./themes/default/assets/js/sort.js":
+/*!******************************************!*\
+  !*** ./themes/default/assets/js/sort.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var sortButtons = _toConsumableArray(document.querySelectorAll(".flatSortBy"));
+
+if (sortButtons) {
+  var sortItems = function sortItems(sortBy) {
+    var order = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'asc';
+    var $people = $('#flatList'),
+        $peopleli = $people.children('.flatItem');
+    $peopleli.sort(function (a, b) {
+      var an = a.getAttribute("data-".concat(sortBy)),
+          bn = b.getAttribute("data-".concat(sortBy));
+
+      switch (order) {
+        case 'desc':
+          if (an < bn) {
+            return 1;
+          }
+
+          if (an > bn) {
+            return -1;
+          }
+
+          break;
+
+        case 'asc':
+          if (an > bn) {
+            return 1;
+          }
+
+          if (an < bn) {
+            return -1;
+          }
+
+          break;
+
+        default:
+          return 0;
+      }
+    });
+    $peopleli.detach().appendTo($people);
+  };
+
+  sortButtons.forEach(function (items) {
+    items.addEventListener("click", function (e) {
+      var sortBy = e.target.dataset.sortby;
+      var order = e.target.dataset.order;
+      sortItems(sortBy, order);
+      sortButtons.forEach(function (button) {
+        button.classList.remove("active");
+        button.dataset.order = "asc";
+      });
+      items.classList.add("active");
+
+      if (order == 'asc') {
+        e.target.dataset.order = "desc";
+      } else if (order == 'desc') {
+        e.target.dataset.order = "asc";
+      }
+    });
+  });
+}
 
 /***/ }),
 

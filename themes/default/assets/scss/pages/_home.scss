@@ -41,7 +41,15 @@
 
     @include mq($until: xl) {
         &__name {
-            img {
+            svg {
+                width: 80vw;
+            }
+        }
+    }
+
+    @include mq($until: lg) {
+        &__name {
+            svg {
                 width: 80vw;
             }
         }
@@ -77,98 +85,6 @@
         border-bottom: 1px solid white;
         transform: rotate(-45deg);
         margin-top: 7px;
-    }
-}
-
-.two-columns {
-    margin-top: 100px;
-    display: flex;
-
-    &> div {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-
-    &__left {
-        justify-content: space-between;
-        margin-top: 100px;
-
-        &> div {
-            padding: 50px 10%;
-            width: 85%;
-            border-right: 2px solid #b2b2b2;
-        }
-
-        img {
-            width: 95%;
-        }
-    }
-
-    &__right {
-        place-items: end;
-        justify-content: space-between;
-        
-        &> div {
-            width: 85%;
-            border-left: 2px solid #b2b2b2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 5vw;
-        }
-
-        img {
-            width: 95%;
-        }
-
-        a {
-            margin-top: 30px;
-            font-family: $secondary-font;
-        }
-    }
-
-    @include mq($until: md) {
-        flex-direction: column;
-        margin-top: 75px;
-
-        &> div {
-            width: 100%;
-        }
-
-        &__left {
-            margin-top: 0;
-        }
-
-        &__right {
-            margin-top: 50px;
-            
-            &> div {
-                padding-top: 40px;
-            }
-        }
-    }
-
-    @include mq($until: xs) {
-        margin-top: 50px;
-        p {
-            text-align: justify;
-        }
-        &__right {
-            margin-top: 15px;
-            &> div {
-                width: 90%;
-                padding-top: 30px;
-            }
-        }
-        
-        &__left {
-            &> div {
-                padding: 30px 15px;
-                width: 90%;
-            }
-        }
     }
 }
 

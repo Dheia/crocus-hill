@@ -18,6 +18,7 @@ $(function() {
   require("./sticky-header");
   require("./pop-up");
   require("./simple-lightbox");
+  require("./sort");
   const anime = require('./anime');
   
   $(".gallery").each(function() {

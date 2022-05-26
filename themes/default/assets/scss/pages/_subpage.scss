@@ -1,10 +1,11 @@
 .subsite {
 
-    p {
-        font-size: rem(15px);
-    }
-
     &__top {
+        
+        p {
+            font-size: rem(15px);
+        }
+
         display: flex;
         margin-top: 100px;
         margin-bottom: 50px;
@@ -36,6 +37,12 @@
         }
     }
 
+    &__content {
+        p {
+            font-size: rem(15px);
+        }
+    }
+
     .row {
         margin: 50px 0;
         place-items: end;
@@ -44,6 +51,16 @@
         &>div {
             max-width: 710px;
         }
+    }
+
+    &__header {
+        position: absolute;
+        top: 7vw;
+        font-family: $beata-font;
+        z-index: 1;
+        color: white;
+        font-size: rem(80px);
+        text-shadow: 0px 3px 26px #0000009D;
     }
 
     @include mq($until: xl) {
@@ -83,9 +100,18 @@
             padding: 0 $padding-lg;
             width: 100%!important;
         }
+
+        &__header {
+            top: 80px;
+            font-size: rem(65px);
+        }
     }
 
     @include mq($until: sm) {
+
+        .widget {
+            height: 300px;
+        }
 
         &__top-image {
             height: calc(65vh - 70px);

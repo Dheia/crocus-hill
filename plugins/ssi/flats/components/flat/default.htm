@@ -1,104 +1,49 @@
 {% set flat = __SELF__.flat %}
 
-<div class="house padding-container">
+<div class="house">
 
-    <div class="house__header">
-        <div>
-            <h1 class="mt-0">Dom nr {{ flat.name }}</h1>
-
-            <span class="separator"></span>
-
-            <div class="house__status">
-                <span class="{{ flat.status | slug }}">{{ flat.status }}</span>
-            </div>
-        </div>
-
-        <span class="separator"></span>
-
-        <div class="house__area">
-            Powierzchnia użytkowa: <b>{{ flat.area }} m²</b>
-        </div>
-
-        <span class="separator"></span>
-
-        <div class="house__garden">
-            Powierzchnia działki: <b>{{ flat.garden }} m²</b>
-        </div>
-
-        <div class="house__buttons">
-            <a class="button" data-toggle="modal" data-target="#formModal" href="">Zapytaj o dom</a>
-            <a class="button gray" href="{{flat.pdf.path}}" download="{{flat.pdf.file_name}}">Pobierz kartę</a>
-        </div>
+    <div class="house__top delay1 lazy" data-bg="{{ '/subpage_bg.jpg' | media }}" >
+        <h1 class="padding-container-left">Mieszkanie {{ flat.name }}</h1>
     </div>
 
-    <div class="house__rooms">
-        <div>
-            <div class="house__mobile-img">
-                <a href="{{ flat.parter_image.path }}" class="simplelightbox">
-                    <img src="{{ flat.parter_image.path }}" alt="">
-                </a>
-            </div>
-            <ul class="nd">
-                <li><h4>Parter:</h4></li>
-                {% for item in flat.parter %}
-                    <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
+    <div class="house__main padding-container-left">
+        <div class="house__areas">
+            <h3>Suma powierzchni <span>{{ flat.area }}</span></h3>
+            <ol class="nd">
+                {% for item in flat.rooms %}
+                    <li><div><span>{{ item.room |lower}}</span> <b>{{ item.value }} m²</b></div></li>
                 {% endfor %}
-            </ul>
-        </div>
-        
-        <div>
-            
-            <div class="house__mobile-img">
-                <a href="{{ flat.floor_image.path }}" class="simplelightbox">
-                    <img src="{{ flat.floor_image.path }}" alt="">
-                </a>
+            </ol>
+                
+            <div class="house__buttons">
+                <a class="button button-no-r white" data-toggle="modal" data-target="#formModal" href="">Zapytaj o mieszkanie</a>
+                <a class="button button-no-r white" href="{{flat.pdf.path}}" download="{{flat.pdf.file_name}}">Karta mieszkania</a>
             </div>
-            <ul class="nd">
-                <li><h4>Piętro:</h4></li>
-                {% for item in flat.floor %}
-                    <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
-                {% endfor %}
-            </ul>
         </div>
 
-        <div>
-            <div class="house__mobile-img">
-                <a href="{{ flat.roof_image.path }}" class="simplelightbox">
-                    <img src="{{ flat.roof_image.path }}" alt="">
-                </a>
+        <div class="house__plans">
+            <div class="house__mainplan post delay2">
+                <img class="lazy" data-src="{{ flat.image.path }}" alt="Plan {{ flat.name }}">
             </div>
-            <div class="house__roof">
-                <ul class="nd">
-                    <li><h4>Poddasze:</h4></li>
-                    {% for item in flat.roof %}
-                        <li><b>{{ item.room }}:</b> <span>{{ item.area }} m²</span></li>
-                    {% endfor %}
-                </ul>
 
-                <div class="house__way">
-                    <img src="{{flat.way.path}}" alt="">
-                    <div class="house__direction"></div>
+            <div class="house__building padding-container-right">
+                <div>
+                    <span>Budynek {{flat.building}} <br>{{flat.deadline}}</span>
+
+                    {% partial 'svg/homes' %}
+                </div>
+                
+                <div>
+                    <span>Mieszkanie {{flat.name}} <br>{{flat.floor}}</span>
+                </div>
+
+                <div class="house__direction">
+                    Północny wschód
                 </div>
             </div>
         </div>
     </div>
-<!-- 
-    <div class="w-spacer lazy">
-        <h4>WIRTUALNY SPACER</h4>
-        <div class="w-spacer__box">
-            <iframe width="100%" height="100%" src="/pano/index.html"></iframe>
-        </div>
-    </div> -->
 
-    <div class="interior__slider svg-slider">
-
-        {% for item in flat.images %}
-            <div>
-                {% partial 'svg/slide' img=item.path %}
-            </div>
-        {% endfor %}
-
-    </div>
 </div>
 
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
@@ -143,5 +88,12 @@
     </div>
 </div>
 
+<style>
+    .{{flat.building}} {
+        fill: #6C0D52;
+    }
 
-
+    .{{flat.symbol|slug}} {
+        fill: #6C0D52;
+    }
+</style>

@@ -1,0 +1,101 @@
+.house {
+    &__top {
+        position: relative;
+        height: 400px;
+
+        h1 {
+            position: absolute;
+            bottom: 30px;
+            color: white;
+        }
+    }
+
+    &__main {
+        background-color: #F1F2F2;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__areas {
+        width: 35%;
+        max-width: 500px;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        ol {
+            margin-left: 0;
+            li {
+                border-bottom: 1px solid white;
+                margin-bottom: 5px;
+                padding-bottom: 10px;
+                padding-left: 30px;
+                position: relative;
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                counter-increment: li;
+                &::before { 
+                    content: counter(li) " ";
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+
+        h3 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+
+            span {
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        .button {
+            width: 49%;
+        }
+    }
+
+    &__plans {
+        width: 62%;
+
+        svg {
+            height: 150px;
+        }
+    }
+
+    &__mainplan {
+        margin-top: -10vw;
+        background-color: white;
+
+        img {
+            padding: 10%;
+        }
+    }
+
+    &__building {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            align-items: center;
+            svg {
+                margin-left: 30px;
+            }
+        }
+    }
+}

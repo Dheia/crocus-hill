@@ -7,23 +7,35 @@
     <div class="flat-list__head {% if onlyCommercial == '1' %}flat-list__head--commercial{% endif %}">
 
         <span class="flat-list__head-item">
-           Nr
+            Budynek
+        </span> 
+
+        <span data-sortby="floor" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
+            Piętro
+        </span> 
+
+        <span class="flat-list__head-item">
+            Mieszkanie
         </span> 
 
         <span data-sortby="area" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
             Powierzchnia
         </span> 
 
-        <span data-sortby="garden" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
-            Pow. działki
-        </span>
+        <span data-sortby="rooms_number" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
+            Pokoje
+        </span> 
 
-        <span data-sortby="availability" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
+        <span data-sortby="status" data-order="asc" class="flatSortBy flat-list__head-item flat-list__head-item--action">
             Dostępność
         </span>
 
         <span class="flat-list__head-item">
-            Plan
+            Cena
+        </span>
+
+        <span class="flat-list__head-item">
+            Szczegóły
         </span>
 
     </div>
@@ -32,34 +44,48 @@
 
         {% for flat in flats %}
 
-        <a href="/oferta-mieszkan/{{ flat.id }}/{{ flat.slug }}" id="flat{{ flat.symbol }}" data-available="{{flat.status}}" data-price="{{flat.price}}" data-garden="{{flat.garden}}" data-area="{{ flat.area|number_format(2) }}" data-extra="{{ extraString }}" class="flat-list__item flatItem {% if flat.status == 'sprzedane' %} not-active-link {% endif %} {% if onlyCommercial == '1' %}flat-list__item--commercial{% endif %} {{ flat.status }}">
+        <a href="/oferta-mieszkan/{{ flat.id }}/{{ flat.slug }}" id="flat{{ flat.symbol }}" 
+            data-available="{{flat.status}}" 
+            data-price="{{flat.price}}" 
+            data-floor="{{flat.floor}}" 
+            data-floor="{{flat.floor}}" 
+            data-status="{{ flat.status }}" 
+            data-rooms_number="{{ flat.rooms_number }}" 
+            data-area="{{ flat.area|number_format(2) }}" 
+            data-extra="{{ extraString }}" 
+            class="flat-list__item flatItem {% if flat.status == 'sprzedane' %} not-active-link {% endif %} {% if onlyCommercial == '1' %}flat-list__item--commercial{% endif %} {{ flat.status }}"
+            >
 
-            <div download="{{flat.symbol}}.pdf" class="flat-list__info">
-                {% if flat.name %}
-                    <span class="flat-list__item-label">Nr</span> <span class="flat-list__item-value"><span>{{ flat.symbol }}</span></span>
-                {% endif %}
-            </div>
-      
-            <div download="{{flat.symbol}}.pdf" class="flat-list__info">
-                {% if flat.area %}
-                    <span class="flat-list__item-label">Powierzchnia</span> <span class="flat-list__item-value"><span>{{ flat.area }} m&sup2;</span></span>
-                {% endif %}
-            </div>
-
-            <div download="{{flat.symbol}}.pdf" class="flat-list__info">
-                {% if flat.garden %}
-                    <span class="flat-list__item-label">Pow. działki</span> <span class="flat-list__item-value"><span>{{ flat.garden }} m&sup2;</span></span>
-                {% endif %}
-            </div>
-
-            <div download="{{flat.symbol}}.pdf" class="flat-list__info">
-                {% if flat.status %}
-                    <span class="flat-list__item-label">Dostępność:</span> <span class="flat-list__item-value"><span style="text-transform: capitalize;">{{ flat.status }}</span></span>
-                {% endif %}
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Budynek</span> <span class="flat-list__item-value"><span class="flat-list__item-desktop">Budynek </span><span>{{ flat.building }}</span></span>
             </div>
             
-            <div class="pdf-butons" >
-                <div class="flat-list__info">Zobacz </div>
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Piętro </span> <span class="flat-list__item-value"><span>{{ flat.floor }}</span></span>
+            </div>
+            
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Lokal </span> <span class="flat-list__item-value"><span class="flat-list__item-desktop">Lokal </span><span>{{ flat.symbol }}</span></span>
+            </div>
+      
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Powierzchnia </span> <span class="flat-list__item-value"><span class="flat-list__item-desktop">Powierzchnia </span><span>{{ flat.area }} m&sup2;</span></span>
+            </div>
+
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Pokoje </span> <span class="flat-list__item-value"><span class="flat-list__item-desktop">Pokoje </span><span>{{ flat.rooms_number }}</span></span>
+            </div>
+
+            <div class="flat-list__info">
+                <span class="flat-list__item-label">Dostępność </span> <span class="flat-list__item-value"><span style="text-transform: capitalize;">{{ flat.status }}</span></span>
+            </div>
+            
+            <div class="flat-list__info ask-buttons" >
+                <span class="flat-list__item-label">Cena </span><div class="flat-list__item-value"><span>Zapytaj</span></div>
+            </div>
+
+            <div class="flat-list__info pdf-buttons" >
+                <span class="flat-list__item-label">Szczegóły </span><div class="flat-list__item-value"><span>Zobacz więcej</span></div>
             </div>
 
         </a>

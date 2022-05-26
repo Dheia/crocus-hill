@@ -1,0 +1,22 @@
+url = "/oferta-mieszkan/:id/:slug"
+layout = "subpage"
+title = "Mieszkanie"
+
+[singleFlat]
+
+[IkonySSI]
+galleryName = "zestaw I"
+iconsInRow = 4
+
+[TextAndImage]
+sectionName = "Standard deweloperski(strona oferty)"
+==
+{% component "singleFlat" %}
+
+<div class="padding-container">
+    {% component "IkonySSI" %}
+</div>
+
+<div class="padding-container">
+    {% component "TextAndImage" %}
+</div>

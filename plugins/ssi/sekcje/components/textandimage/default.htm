@@ -1,35 +1,10 @@
 {% set section = __SELF__.section() %}
 
-{#
-<section class="article"> 
-
-    {% if section.extra %}
-        <div class="article__logo post-left delay1">
-            <img class="lazy" data-src="{{this.theme.general_logo.path}}" alt="Osiedle Słoneczne" width="240" height="100">
-        </div>
-    {% endif %}
-
-    <div class="article__image post-left delay1">
-        <img class="lazy" data-src="{{ section.img.path }}" alt="{{ section.name }}" height="700" width="500">
-    </div>
-
-    <div class="article__text">
-        <h3>{{ section.name }}</h3>
-
-        {{ section.description | raw }}  
-
-        {% if section.button_link %}
-            <a class="button" href="{{ section.button_link }}">{{ section.button_name }}</a>
-        {% endif %}
-    </div>
-    
-</section>
-#}
 {% if section.form == 1 or section.form == 2 %}
 <section class="presentation padding-container {% if section.form == 2 %} presentation-type2 {% endif %}">
 
     <div class="presentation__heading">
-        <h2>{{ section.name }}</h2>
+        <h2>{{ section.h1 }}</h2>
     </div>
 
     <div class="presentation__img presentation__img-left">
@@ -56,13 +31,13 @@
     {% endif %}
 
 </section>
- {% elseif section.form == 3 %} 
- <div class="two-columns">
+{% elseif section.form == 3 %} 
+<div class="two-columns">
 
     <div class="two-columns__left">
 
         <div class="padding-container-left">
-            <h3>{{ section.name }}</h3>
+            <h3>{{ section.h1 }}</h3>
             {{ section.description | raw }}  
         </div>
 
@@ -91,7 +66,7 @@
 
     <div class="three-columns__center">
 
-        <h3 class="decorator-left">{{ section.name }}</h3>
+        <h3 class="decorator-left">{{ section.h1 }}</h3>
 
         {{ section.description | raw }}  
 
@@ -102,4 +77,34 @@
     <img class="three-columns__right lazy post-right delay2" data-src="{{ section.img_second.path }}" src="" alt="">
 </section>
 
- {% endif %}
+{% elseif section.form == 5 %}
+<div class="chess">
+
+    <div class="chess__left">
+
+        <div class="chess__text">
+            <h3>{{ section.h1 }}</h3>
+            {{ section.description | raw }}  
+        </div>
+
+        <div class="chess__img">
+            <img class="post-right delay1" src="{{ section.img.path }}" alt="">
+        </div>
+        
+    </div>
+
+    <div class="chess__right">
+
+        <div class="chess__img">
+            <img class="post-left delay2" src="{{ section.img_second.path }}" alt="">
+        </div>
+
+        <div class="chess__text">
+            <h3>{{ section.h2 }}</h3>
+            {{ section.description2 | raw }}
+        </div>
+
+    </div>
+
+</div>
+{% endif %}

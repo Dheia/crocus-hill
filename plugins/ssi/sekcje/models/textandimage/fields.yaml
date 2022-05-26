@@ -1,5 +1,9 @@
 fields:
     name:
+        label: 'Nazwa'
+        span: left
+        type: text
+    h1:
         label: 'Nagłówek'
         span: left
         type: text
@@ -33,7 +37,7 @@ fields:
         trigger:
             action: show
             field: form
-            condition: value[3]
+            condition: value[3][5]
     img_second:
         label: 'Zdjęcie 2'
         mode: image
@@ -55,7 +59,7 @@ fields:
         trigger:
             action: hide
             field: form
-            condition: value[3][4]
+            condition: value[3][4][5]
     form:
         label: 'Ksztalt sekcji'
         options:
@@ -63,6 +67,7 @@ fields:
             2: '2 zdjęcia, tekst, nagłówek, slider po lewej'
             3: '2 zdjęcia, 2 teksty, link'
             4: '2 zdjęcia, 2 nagłówki, tekst'
+            5: '2 zdjęcia, 2 nagłówki, 2 teksty'
         showSearch: true
         span: left
         type: dropdown

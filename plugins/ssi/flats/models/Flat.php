@@ -48,7 +48,7 @@ class Flat extends Model
 
     public function getRoomOptions() { 
 	
-		$slo = Room::orderBy('name')->lists('name','id');;
+		$slo = Room::orderBy('name')->lists('name','name');
 		
 		return $slo;	 
 		

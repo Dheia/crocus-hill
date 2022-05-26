@@ -1,4 +1,7 @@
+{% if subsite %}
+<section class="widget widget-sub">
 
+    {% else %}
 <section class="widget">
 
     <div class="widget__house widget__house-a margin-container-left post delay1">
@@ -23,6 +26,7 @@
             <span>dostępnych<br> mieszkań</span>
         {% endif %}
     </div>
+    {% endif %}
 
     {% partial 'svg/widget' %}
     <form action="/apartamenty" method="post">

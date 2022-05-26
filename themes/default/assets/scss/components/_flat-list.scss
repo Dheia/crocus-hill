@@ -1,0 +1,325 @@
+.flat-list {
+
+  @include mq($until: sm) {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: 10% 10% 12% 17% 13% 13% 12% 13%;
+    justify-content: stretch;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+
+    @include mq($until: lg) {
+      grid-template-columns: 10% 10% 12% 19% 13% 13% 10% 13%;
+    }
+
+    @include mq($until: md) {
+      grid-template-columns: 10% 10% 12% 19% 10% 13% 10% 16%;
+    }
+
+    @include mq($until: sm) {
+      display: none;
+    }
+    position: relative;
+
+  }
+
+  &__head-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $fw-medium;
+    font-size: rem(18px);
+    color: #767676;
+    font-family: $secondary-font;
+    font-weight: 600;
+    &--action{
+      cursor: pointer;
+      transition: color .3s;
+      &:hover{
+        color: $color-extra
+      }
+    }
+    &.active{
+      color: $color-extra
+    }
+    i{
+      margin-right: 5px;
+      padding-bottom: 9px;
+    }
+    &[data-order="asc"]{
+      i{
+        transform: scale(1);
+      }
+    }
+    &[data-order="desc"]{
+      i{
+        transform: scale(-1);
+      }    
+    }
+    @include mq($until: xxl) {
+      font-size: rem(16px);
+    }
+
+    @include mq($until: xl) {
+      font-size: rem(14px);
+    }
+
+    @include mq($until: md) {
+      font-size: rem(15px);
+    }
+    
+    &--left {
+      justify-content: flex-start;
+    }
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+  &__item {
+    display: grid;
+    padding: 0 20px;
+    grid-template-columns: 10% 10% 12% 17% 13% 13% 12% 13%;
+    justify-content: stretch;
+    align-items: center;
+    transition: 0.3s;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: #F1F2F2;
+    transition: all .3s;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #dfdfdf;
+    }
+
+    @include mq($until: lg) {
+      grid-template-columns: 10% 10% 12% 19% 13% 13% 10% 13%;
+    }
+    @include mq($until: md) {
+      grid-template-columns: 10% 10% 12% 19% 10% 13% 10% 16%;
+    }
+
+    @include mq($until: sm) {
+      display: flex;
+      flex-direction: column;
+
+      grid-gap: 0;
+      padding: 20px;
+    }
+
+    @include mq($until: sm) {
+      flex-direction:column;
+      align-items: center;
+    }
+
+  }
+  &__status {
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+  &__info {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(16px);
+    font-weight: 500;
+    @include mq($until: lg) {
+      font-size: rem(14px);
+    }
+    @include mq($until: sm) {
+      justify-content: flex-start;
+      font-weight: $fw-bold;
+      font-size: rem(18px);
+      padding: 0;
+      flex-basis: 100%;
+      margin: 8px 0;
+      &:last-child{
+        margin-left: auto;
+
+        @include mq($until: sm) {
+         margin-left: unset;
+        }
+      }
+    }
+    &--left {
+      justify-content: flex-start;
+    }
+    &--right {
+      justify-content: flex-end;
+    }
+    &--button{
+      @include mq($until: md) {
+        flex-basis: 48%;
+        .flat-list__item-label{
+          display: none;
+        }
+        .flat-list__item-value{
+          width: 100%;
+          button, a, span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+
+          }
+          
+        }
+      }
+    }
+
+  }
+  &__item-value{
+    position: relative;
+  }
+
+  @include mq($until: md) {
+    &__item-desktop {
+      display: none;
+    } 
+  }
+
+  &__item-label {
+    display: none;
+    @include mq($until: sm) {
+      display: block;
+      margin-right: 10px;
+      font-weight: $fw-regular;
+      font-size: rem(16px);
+      display: inline;
+    }
+  }
+  &__item-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(16px);
+    @include mq($until: lg) {
+      font-size: rem(14px);
+    }
+    @include mq($until: md) {
+      display: inline;
+    }
+    span:first-letter {
+      text-transform: uppercase;
+    }
+    span,
+    a {
+      font-weight: 400;
+      margin-left: 5px;
+      color: #3F3F3F;
+      transition: all .3s;
+      @include mq($until: xxl) {
+        font-size: rem(14px);
+      }
+      @include mq($until: xl) {
+        font-size: rem(13px);
+      }
+      @include mq($until: md) {
+        font-size: rem(14px);
+      }
+      @include mq($until: sm) {
+        font-size: rem(16px);
+      }
+    }
+    svg {
+      height: 20px;
+      fill: $color-main;
+      transition: 0.2s;
+      margin-right: 5px;
+      @include mq($until: xl) {
+        height: 21px;
+      }
+    }
+    a,
+    button {
+      border: 1px solid #000;
+      background-color: #fff;
+      padding: 5px 10px;
+      transition: 0.2s;
+
+      &:hover {
+        border: 1px solid $color-main;
+        background-color: $color-main;
+        color: $color-font-light;
+        svg {
+          fill: $color-font-light;
+          @include mq($until: md) {
+            // width: 10px
+          }
+        }
+      }
+      @include mq($until: md) {
+        padding: 5px 8px;
+        font-size: rem(16px);
+        font-weight: $fw-semi-bold;
+      }
+    }
+  }
+
+  &__no-results {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: rem(26px);
+    color: $border-color;
+  }
+
+  @include mq($until: sm) {
+    &__item {
+      &> div {
+        max-width: 310px;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+}
+.pdf-butons{
+  display: flex;
+  justify-content: center;
+  @include mq($until: md) {
+    a{
+      margin-bottom: 5px;
+    }
+    
+    div {
+      margin-bottom: 0;
+      justify-content: flex-end;
+      font-size: rem(20px);
+    }
+  }
+
+  &__separator{
+    padding: 0 5px;
+    opacity: .3;
+    @include mq($until: md) {
+      padding: 0 13px;
+    }
+  }
+}
+
+.flatslist-wrapper {
+  position: relative;
+  margin-top: 30px;
+
+  @include mq($until: sm) {
+    padding: 0;
+  }
+}

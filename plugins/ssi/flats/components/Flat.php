@@ -34,11 +34,11 @@ class Flat extends \Cms\Classes\ComponentBase
         return $query;
     }
     protected function loadRooms(){
-        $query = Room::lists('name', 'id');
+        $query = Room::lists('name', 'name');
         return $query;
     }
     protected function loadFlatFloors(){
-        $query = FlatFloor::lists('name', 'id');
+        $query = FlatFloor::lists('name', 'name');
         return $query;
     }
 

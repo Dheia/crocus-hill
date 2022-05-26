@@ -58,11 +58,11 @@ code = "menu-glowne"
 
         <!-- Content -->
         {% if this.page.settings.url != '/oferta-mieszkan/:id/:slug' %}
-            <h1>{{ this.page.title }}</h1>
+            <h1 class="subsite__header padding-container-left">{{ this.page.title }}</h1>
         {% endif %}
-        
-        {% page %}
-
+        <div class="subsite__content">
+            {% page %}
+        </div>
         <!-- Footer -->
         <footer class="">
             {% partial 'site/footer' %}
